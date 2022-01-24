@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-OL-2kf">
                                 <rect key="frame" x="40" y="249" width="240" height="70"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите ваше имя" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cJ-xQ-XXQ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите ваше имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cJ-xQ-XXQ">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                         <color key="textColor" systemColor="systemGray3Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -31,7 +31,8 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Войти"/>
                                         <connections>
-                                            <segue destination="FR6-8E-XKf" kind="presentation" id="fcM-hd-q3s"/>
+                                            <action selector="enterPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpk-bI-4c0"/>
+                                            <segue destination="CZs-Ku-BIJ" kind="presentation" id="eAW-9H-Pmg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -45,48 +46,65 @@
                             <constraint firstItem="vSi-OL-2kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wuq-kp-1JM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="visitorNameTextField" destination="5cJ-xQ-XXQ" id="BXL-KH-pWV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="98.4375"/>
+            <point key="canvasLocation" x="18.75" y="98.239436619718305"/>
         </scene>
-        <!--Item-->
+        <!--Обо мне-->
         <scene sceneID="DHu-ad-NYZ">
             <objects>
-                <viewController id="8Ts-z1-a3B" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8Ts-z1-a3B" customClass="WelcomeViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRW-ZV-5vp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-fP-M3D">
+                                <rect key="frame" x="113" y="40" width="94" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="T1v-my-6Rc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zrz-fP-M3D" firstAttribute="centerX" secondItem="qRW-ZV-5vp" secondAttribute="centerX" id="QTs-ph-Ra2"/>
+                            <constraint firstItem="zrz-fP-M3D" firstAttribute="top" secondItem="T1v-my-6Rc" secondAttribute="top" constant="40" id="Ybu-YH-h6Y"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Wek-HV-2tC"/>
+                    <tabBarItem key="tabBarItem" title="Обо мне" image="person" catalog="system" id="Wek-HV-2tC"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="zrz-fP-M3D" id="hEP-Cl-rBY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUT-bd-gSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="874"/>
+            <point key="canvasLocation" x="728" y="903"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="MHb-NI-Sj3">
+        <!--Tab Bar View Controller-->
+        <scene sceneID="wZC-it-jiV">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="FR6-8E-XKf" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="CZs-Ku-BIJ" customClass="TabBarViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="UdE-wD-zT4"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fF7-v2-iPE">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTR-E9-Haq">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8Ts-z1-a3B" kind="relationship" relationship="viewControllers" id="Dmv-1T-8HT"/>
+                        <segue destination="8Ts-z1-a3B" kind="relationship" relationship="viewControllers" id="MoO-i5-dJz"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9lg-qw-MSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pjB-Wl-iQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.75" y="98.239436619718305"/>
+            <point key="canvasLocation" x="728" y="98"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
