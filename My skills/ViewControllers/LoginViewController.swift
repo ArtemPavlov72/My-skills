@@ -17,17 +17,17 @@ class LoginViewController: UIViewController {
     
     //первый цвет для градиента
     private let topColor = UIColor(
-        red: 215/255,
-        green: 210/255,
-        blue: 230/255,
-        alpha: 1
+        red: 0/255,
+        green: 150/255,
+        blue: 180/255,
+        alpha: 0.1
     )
     //второй цвет для градиента
     private let bottomColor = UIColor(
-        red: 180/255,
-        green: 180/255,
-        blue: 210/255,
-        alpha: 1
+        red: 130/255,
+        green: 0/255,
+        blue: 150/255,
+        alpha: 0.2
     )
     
     override func viewDidLoad() {

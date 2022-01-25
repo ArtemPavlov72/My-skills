@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-OL-2kf">
-                                <rect key="frame" x="40" y="249" width="240" height="70"/>
+                                <rect key="frame" x="40" y="249.5" width="240" height="69.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите ваше имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cJ-xQ-XXQ">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
@@ -27,9 +27,18 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-sa-cN1">
-                                        <rect key="frame" x="0.0" y="39" width="240" height="31"/>
+                                        <rect key="frame" x="0.0" y="39" width="240" height="30.5"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Войти"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Войти">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="enterPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpk-bI-4c0"/>
                                             <segue destination="CZs-Ku-BIJ" kind="presentation" id="eAW-9H-Pmg"/>
@@ -41,9 +50,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
+                            <constraint firstItem="vSi-OL-2kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kb4-Gp-DVC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vSi-OL-2kf" secondAttribute="trailing" constant="40" id="ehU-MS-wet"/>
                             <constraint firstItem="vSi-OL-2kf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="poS-E5-rLN"/>
-                            <constraint firstItem="vSi-OL-2kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wuq-kp-1JM"/>
                         </constraints>
                     </view>
                     <connections>
