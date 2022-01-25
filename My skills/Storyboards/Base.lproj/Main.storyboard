@@ -22,23 +22,24 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите ваше имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cJ-xQ-XXQ">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <color key="textColor" systemColor="systemGray3Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-sa-cN1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-sa-cN1">
                                         <rect key="frame" x="0.0" y="39" width="240" height="30.5"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Войти">
                                                     <attributes>
-                                                        <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                        <font key="NSFont" size="16" name="Helvetica"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
-                                        </buttonConfiguration>
+                                        </state>
                                         <connections>
                                             <action selector="enterPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpk-bI-4c0"/>
                                             <segue destination="CZs-Ku-BIJ" kind="presentation" id="eAW-9H-Pmg"/>
@@ -122,6 +123,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

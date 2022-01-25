@@ -44,8 +44,11 @@ class LoginViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func enterPressed() {
         guard let inputText = visitorNameTextField.text, !inputText.isEmpty else {
-            showAlert(with: "Вы ничего не ввели =(", and: "Пожалуйста, введите свое имя")
+            showAlert(with: "Вы ничего не ввели..", and: "Пожалуйста, введите свое имя")
             return
+        }
+        if let _ = Double(inputText) {
+            showAlert(with: "УУПС!", and: "Попробуйте ввести имя при помощи букв")
         }
         visitorName = visitorNameTextField.text ?? "888"
     }
