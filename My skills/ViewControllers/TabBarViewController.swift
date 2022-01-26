@@ -16,9 +16,19 @@ class TabBarViewController: UITabBarController {
         setupViewControllers()
     }
     
+    //MARK: - Dynamic title for tabBar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = self.tabBar.selectedItem?.title
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        self.navigationItem.title = item.title
+    }
+    
+    //MARK: - Public Methods
     private func setupViewControllers() {
         guard let welcomeVC = viewControllers?.first as? WelcomeViewController else {return}
-        
         welcomeVC.visitor = visitor
     }
 }

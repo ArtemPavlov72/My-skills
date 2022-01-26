@@ -23,7 +23,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите ваше имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cJ-xQ-XXQ">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
-                                        <color key="textColor" systemColor="systemGray6Color"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -117,7 +117,7 @@
         <!--Проекты-->
         <scene sceneID="kig-9A-1O7">
             <objects>
-                <tableViewController id="9pb-vs-YAO" sceneMemberID="viewController">
+                <tableViewController title="Проекты" id="9pb-vs-YAO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GpB-F3-Mmn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +137,7 @@
                             <outlet property="delegate" destination="9pb-vs-YAO" id="BWx-L2-HcE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Проекты" image="highlighter" catalog="system" id="6YA-Jk-xY8"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Проекты" image="highlighter" catalog="system" id="6YA-Jk-xY8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suW-jL-abi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,9 +171,6 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

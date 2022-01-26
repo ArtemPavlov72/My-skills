@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigationController?.topViewController?.title = "Главный экран"
         welcomeLabel.text = "Привет, \(visitor)!"
     }
 }
