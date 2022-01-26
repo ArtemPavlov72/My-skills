@@ -42,7 +42,7 @@
                                         </state>
                                         <connections>
                                             <action selector="enterPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpk-bI-4c0"/>
-                                            <segue destination="CZs-Ku-BIJ" kind="presentation" id="eAW-9H-Pmg"/>
+                                            <segue destination="b8B-gN-imi" kind="presentation" id="gBZ-ct-2Cj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.75" y="98.239436619718305"/>
+            <point key="canvasLocation" x="-784" y="97"/>
         </scene>
         <!--Обо мне-->
         <scene sceneID="DHu-ad-NYZ">
@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-fP-M3D">
-                                <rect key="frame" x="113" y="40" width="94" height="32"/>
+                                <rect key="frame" x="113" y="131" width="94" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,11 +95,12 @@
             </objects>
             <point key="canvasLocation" x="728" y="903"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Обо мне-->
         <scene sceneID="wZC-it-jiV">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="CZs-Ku-BIJ" customClass="TabBarViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Обо мне" id="1li-Au-uhJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTR-E9-Haq">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,6 +112,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjB-Wl-iQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6bb-VF-bNo">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IK7-w0-rjP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="b8B-gN-imi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2d1-Bn-5ol">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TFm-rg-OUI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="CZs-Ku-BIJ" kind="relationship" relationship="rootViewController" id="LEP-65-uXE"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-23" y="96"/>
         </scene>
     </scenes>
     <resources>
