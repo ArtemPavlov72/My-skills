@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -72,23 +71,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-fP-M3D">
-                                <rect key="frame" x="113" y="131" width="94" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="7nt-VS-9jK">
+                                <rect key="frame" x="25" y="131" width="270" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-fP-M3D">
+                                        <rect key="frame" x="84" y="0.0" width="102" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст привествия" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnG-79-BmK">
+                                        <rect key="frame" x="64.5" y="91.5" width="141" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T1v-my-6Rc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zrz-fP-M3D" firstAttribute="centerX" secondItem="qRW-ZV-5vp" secondAttribute="centerX" id="QTs-ph-Ra2"/>
-                            <constraint firstItem="zrz-fP-M3D" firstAttribute="top" secondItem="T1v-my-6Rc" secondAttribute="top" constant="40" id="Ybu-YH-h6Y"/>
+                            <constraint firstItem="7nt-VS-9jK" firstAttribute="leading" secondItem="T1v-my-6Rc" secondAttribute="leading" constant="25" id="9VJ-0N-C1S"/>
+                            <constraint firstItem="7nt-VS-9jK" firstAttribute="top" secondItem="T1v-my-6Rc" secondAttribute="top" constant="40" id="A1i-vy-PeC"/>
+                            <constraint firstItem="T1v-my-6Rc" firstAttribute="trailing" secondItem="7nt-VS-9jK" secondAttribute="trailing" constant="25" id="Bjo-4U-rfk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Главный экран" image="house.fill" catalog="system" id="Wek-HV-2tC"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="zrz-fP-M3D" id="hEP-Cl-rBY"/>
+                        <outlet property="welcomeTextLabel" destination="BnG-79-BmK" id="WVd-FF-NRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUT-bd-gSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,6 +114,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Главный экран" id="1li-Au-uhJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTR-E9-Haq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -146,7 +159,6 @@
         <!--Navigation Controller-->
         <scene sceneID="6bb-VF-bNo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IK7-w0-rjP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="b8B-gN-imi" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2d1-Bn-5ol">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
@@ -159,6 +171,7 @@
                         <segue destination="CZs-Ku-BIJ" kind="relationship" relationship="rootViewController" id="LEP-65-uXE"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IK7-w0-rjP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23" y="96"/>
         </scene>

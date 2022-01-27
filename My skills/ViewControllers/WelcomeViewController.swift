@@ -10,12 +10,13 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var welcomeTextLabel: UILabel!
     
     var visitor = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.topViewController?.title = "Главный экран"
         welcomeLabel.text = "Привет, \(visitor)!"
+        welcomeTextLabel.text = "Меня зовут Артем, и это мое тестовое приложение, где я пробую новые скилы в разработке SWIFT 👨🏻‍🏫... В общем, чувствуй себя, как дома! На следующей вкладке, ты найдешь разные проекты - это либо ДЗ от курсов Swiftbook, либо какие-то заинтересовавшие меня проекты на просторах гугла..🤓"
     }
 }
