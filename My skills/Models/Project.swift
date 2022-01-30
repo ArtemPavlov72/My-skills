@@ -33,7 +33,6 @@ enum ProjectDescription: CaseIterable {
     case trafficLights,
          quiz
     
-    
     var projectData: Project {
         switch self {
         case .trafficLights:

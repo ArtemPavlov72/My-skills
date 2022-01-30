@@ -26,10 +26,15 @@ class TabBarViewController: UITabBarController {
         self.navigationItem.title = item.title
     }
     
-    //MARK: - Public Methods
+    //MARK: - Private Methods
     private func setupViewControllers() {
+        let projects = Project.getProjectsList()
+        
+        guard let projectsVC = viewControllers?.last as? ProjectsTableViewController else {return}
         guard let welcomeVC = viewControllers?.first as? WelcomeViewController else {return}
+        
         welcomeVC.visitor = visitor
+        projectsVC.projectList = projects
     }
 }
     
