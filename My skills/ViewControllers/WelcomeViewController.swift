@@ -9,11 +9,14 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var welcomeTextLabel: UILabel!
     
+    //MARK: - Public Properties
     var visitor = ""
     
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeLabel.text = "Привет, \(visitor)!"

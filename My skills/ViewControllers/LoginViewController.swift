@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         alpha: 0.2
     )
     
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: topColor, bottomColor: bottomColor)

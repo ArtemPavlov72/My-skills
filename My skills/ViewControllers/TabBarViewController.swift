@@ -9,14 +9,16 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
+    //MARK: - Public Properties
     var visitor = ""
     
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
     }
     
-    //MARK: - Dynamic title for tabBar
+    //Dynamic title for tabBar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = self.tabBar.selectedItem?.title

@@ -9,6 +9,7 @@ import UIKit
 
 class ProjectsTableViewController: UITableViewController {
     
+    //MARK: - Public Properties
     var projectList: [Project] = []
     
     // MARK: - Table view data source
