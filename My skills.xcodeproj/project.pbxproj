@@ -14,6 +14,7 @@
 		882344BD2799D337005F8FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882344BC2799D337005F8FF6 /* Assets.xcassets */; };
 		882344C02799D337005F8FF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882344BE2799D337005F8FF6 /* LaunchScreen.storyboard */; };
 		88782C9427A50A680015041B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9327A50A680015041B /* Project.swift */; };
+		88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9527A7781E0015041B /* TrafficLightController.swift */; };
 		88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12DE279BCA7F008CDC58 /* Visitor.swift */; };
 		88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */; };
 		88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E3279F274F008CDC58 /* TabBarViewController.swift */; };
@@ -30,6 +31,7 @@
 		882344BF2799D337005F8FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		882344C12799D337005F8FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88782C9327A50A680015041B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		88782C9527A7781E0015041B /* TrafficLightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightController.swift; sourceTree = "<group>"; };
 		88EE12DE279BCA7F008CDC58 /* Visitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
 		88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		88EE12E3279F274F008CDC58 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 			path = "My skills";
 			sourceTree = "<group>";
 		};
+		88782C9727A778250015041B /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				88782C9527A7781E0015041B /* TrafficLightController.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
 		88EE12DA279BC9E7008CDC58 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */,
 				88EE12E3279F274F008CDC58 /* TabBarViewController.swift */,
 				88EE12E527A1C656008CDC58 /* ProjectsTableViewController.swift */,
+				88782C9727A778250015041B /* Projects */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				882344B62799D335005F8FF6 /* SceneDelegate.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
+				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
 				88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */,
 				88782C9427A50A680015041B /* Project.swift in Sources */,
 			);
