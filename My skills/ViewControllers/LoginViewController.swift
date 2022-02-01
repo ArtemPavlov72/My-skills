@@ -46,11 +46,17 @@ class LoginViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func enterPressed() {
         guard let inputText = visitorNameTextField.text, !inputText.isEmpty else {
-            showAlert(with: "Вы ничего не ввели..", and: "Пожалуйста, введите свое имя")
+            showAlert(
+                with: "Вы ничего не ввели..",
+                and: "Пожалуйста, введите свое имя"
+            )
             return
         }
         if let _ = Double(inputText) {
-            showAlert(with: "УУПС!", and: "Попробуйте ввести имя при помощи букв")
+            showAlert(
+                with: "УУПС!",
+                and: "Попробуйте ввести имя при помощи букв"
+            )
         }
         visitor.name = visitorNameTextField.text ?? "888"
     }
@@ -80,3 +86,19 @@ extension UIView {
         layer.insertSublayer(gradient, at: 0)
     }
 }
+
+//MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        enterPressed()
+        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+        return true
+    }
+}
+
+

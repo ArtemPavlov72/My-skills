@@ -24,7 +24,10 @@
                                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="W96-29-VpI"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-sa-cN1">
                                         <rect key="frame" x="0.0" y="39" width="240" height="30.5"/>
@@ -41,7 +44,7 @@
                                         </state>
                                         <connections>
                                             <action selector="enterPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpk-bI-4c0"/>
-                                            <segue destination="b8B-gN-imi" kind="presentation" id="gBZ-ct-2Cj"/>
+                                            <segue destination="b8B-gN-imi" kind="presentation" identifier="showWelcomeVC" id="gBZ-ct-2Cj"/>
                                         </connections>
                                     </button>
                                 </subviews>
