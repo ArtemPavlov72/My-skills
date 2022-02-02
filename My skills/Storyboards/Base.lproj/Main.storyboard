@@ -74,8 +74,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7nt-VS-9jK">
-                                <rect key="frame" x="25" y="106" width="270" height="254"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7nt-VS-9jK">
+                                <rect key="frame" x="25" y="106" width="270" height="262"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHQ-cs-LY8">
                                         <rect key="frame" x="50" y="0.0" width="170" height="170"/>
@@ -85,13 +85,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-fP-M3D">
-                                        <rect key="frame" x="84" y="186" width="102" height="31.5"/>
+                                        <rect key="frame" x="84" y="190" width="102" height="31.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст привествия" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnG-79-BmK">
-                                        <rect key="frame" x="64.5" y="233.5" width="141" height="20.5"/>
+                                        <rect key="frame" x="64.5" y="241.5" width="141" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -154,9 +154,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="LrR-3P-44k" kind="show" id="sgb-Z7-Frk"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -165,6 +162,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" tag="1" title="Проекты" image="highlighter" catalog="system" id="6YA-Jk-xY8"/>
+                    <connections>
+                        <segue destination="m7C-hU-kd3" kind="show" identifier="showQuiz" id="8f9-6K-a3a"/>
+                        <segue destination="LrR-3P-44k" kind="show" identifier="showTrafficLights" id="RVb-D4-4VP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suW-jL-abi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,6 +238,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdW-3m-zNF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2281.875" y="94.014084507042256"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z5p-zM-cEF">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="m7C-hU-kd3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxu-u4-JL8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ЗДЕСЬ БУДЕТ КВИЗ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbX-be-D1U">
+                                <rect key="frame" x="35" y="268" width="250" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.30149926960000001" green="0.29382866800000002" blue="0.78474716909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bkr-Nf-vJe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HbX-be-D1U" firstAttribute="centerY" secondItem="zxu-u4-JL8" secondAttribute="centerY" id="6cL-j4-Dyc"/>
+                            <constraint firstItem="HbX-be-D1U" firstAttribute="centerX" secondItem="zxu-u4-JL8" secondAttribute="centerX" id="RfZ-14-2iY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OUQ-EH-xZL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9m-AP-kBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2282" y="838"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6bb-VF-bNo">

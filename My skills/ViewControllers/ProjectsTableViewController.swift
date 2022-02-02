@@ -23,10 +23,22 @@ class ProjectsTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let project = projectList[indexPath.row]
         
-        content.text = project.fullDescription
+        content.text = project.rawValue
         cell.contentConfiguration = content
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentProject = projectList[indexPath.row]
+        
+        switch currentProject {
+            
+        case .trafficLights:
+            performSegue(withIdentifier: "showTrafficLights", sender: nil)
+        case .quiz:
+            performSegue(withIdentifier: "showQuiz", sender: nil)
+        }
     }
     
 }
