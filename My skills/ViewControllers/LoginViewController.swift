@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var visitorNameTextField: UITextField!
     
     //MARK: - Private Properties
-    private let visitor = Visitor(name: "")
+    private var visitor = Visitor(name: "")
     
     //первый цвет для градиента
     private let topColor = UIColor(
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationVC = segue.destination as? UINavigationController else {return}
         guard let tabBarVC = navigationVC.topViewController as? TabBarViewController else {return}
-        tabBarVC.visitor = visitor.name
+        tabBarVC.visitor = visitor
     }
     
     //MARK: - IBActions

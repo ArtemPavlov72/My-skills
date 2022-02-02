@@ -10,7 +10,7 @@ import UIKit
 class TabBarViewController: UITabBarController {
     
     //MARK: - Public Properties
-    var visitor = ""
+    var visitor: Visitor!
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
