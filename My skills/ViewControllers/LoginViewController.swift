@@ -74,7 +74,6 @@ extension LoginViewController {
 }
 
 //MARK: - Set background color
-//устанавливаем градиент для фона
 extension UIView {
     func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
         let gradient = CAGradientLayer()

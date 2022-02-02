@@ -24,7 +24,7 @@ class TrafficLightController: UIViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        startButton.layer.cornerRadius = 35
+        startButton.layer.cornerRadius = 25
         
         redLight.alpha = lightIsOff
         yellowLight.alpha = lightIsOff

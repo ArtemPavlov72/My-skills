@@ -12,6 +12,8 @@ class WelcomeViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var welcomeTextLabel: UILabel!
+    @IBOutlet var developerPhoto: UIImageView!
+    
     
     //MARK: - Public Properties
     var visitor: Visitor!
@@ -19,7 +21,12 @@ class WelcomeViewController: UIViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Привет, \(visitor.name)!"
-        welcomeTextLabel.text = "Меня зовут Артем, и это мое тестовое приложение, где я пробую новые скилы в разработке SWIFT 👨🏻‍🏫... В общем, чувствуй себя, как дома! На следующей вкладке, ты найдешь разные проекты - это либо ДЗ от курсов Swiftbook, либо какие-то заинтересовавшие меня проекты на просторах гугла..🤓"
+        welcomeLabel.text = "Привет, \(visitor.name)👋"
+        developerPhoto.image = UIImage(named: "pavlov_artem")
+        welcomeTextLabel.text = "Меня зовут Артем, и это мое тестовое приложение, где я пробую новые скилы в разработке SWIFT 👨🏻‍🏫... На следующей вкладке ты найдешь некоторые мои проекты 😇"
+    }
+    
+    override func viewWillLayoutSubviews() {
+        developerPhoto.layer.cornerRadius = developerPhoto.frame.width / 2
     }
 }
