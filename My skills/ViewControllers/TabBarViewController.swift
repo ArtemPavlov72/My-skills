@@ -30,7 +30,7 @@ class TabBarViewController: UITabBarController {
     
     //MARK: - Private Methods
     private func setupViewControllers() {
-        let projects = Project.getProjectsList()
+        let projects = Project.allCases
         
         guard let projectsVC = viewControllers?.last as? ProjectsTableViewController else {return}
         guard let welcomeVC = viewControllers?.first as? WelcomeViewController else {return}
