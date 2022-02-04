@@ -16,6 +16,7 @@
 		886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996627ACF43000FF3B6C /* QuizViewController.swift */; };
 		886D996927ACF5D000FF3B6C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996827ACF5D000FF3B6C /* QuestionsViewController.swift */; };
 		886D996B27ACF6E100FF3B6C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996A27ACF6E100FF3B6C /* ResultViewController.swift */; };
+		886D996E27AD025A00FF3B6C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996D27AD025A00FF3B6C /* Question.swift */; };
 		88782C9427A50A680015041B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9327A50A680015041B /* Project.swift */; };
 		88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9527A7781E0015041B /* TrafficLightController.swift */; };
 		88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12DE279BCA7F008CDC58 /* Visitor.swift */; };
@@ -36,6 +37,7 @@
 		886D996627ACF43000FF3B6C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		886D996827ACF5D000FF3B6C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		886D996A27ACF6E100FF3B6C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		886D996D27AD025A00FF3B6C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		88782C9327A50A680015041B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		88782C9527A7781E0015041B /* TrafficLightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightController.swift; sourceTree = "<group>"; };
 		88EE12DE279BCA7F008CDC58 /* Visitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				88EE12DE279BCA7F008CDC58 /* Visitor.swift */,
 				88782C9327A50A680015041B /* Project.swift */,
+				886D996D27AD025A00FF3B6C /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				882344B62799D335005F8FF6 /* SceneDelegate.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
+				886D996E27AD025A00FF3B6C /* Question.swift in Sources */,
 				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
 				88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */,
 				88782C9427A50A680015041B /* Project.swift in Sources */,
