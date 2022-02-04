@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: topColor, bottomColor: bottomColor)
+        self.overrideUserInterfaceStyle = .light
     }
     
     //MARK: - Navigation
