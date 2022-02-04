@@ -123,7 +123,13 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="CZs-Ku-BIJ" customClass="TabBarViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Главный экран" id="1li-Au-uhJ"/>
+                    <navigationItem key="navigationItem" title="Главный экран" id="1li-Au-uhJ">
+                        <barButtonItem key="rightBarButtonItem" title="Выход" id="OVF-ol-xeC">
+                            <connections>
+                                <segue destination="5Ws-Fi-fxK" kind="unwind" unwindAction="unwindWithSegue:" id="bSL-6g-LMF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTR-E9-Haq">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -135,6 +141,7 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjB-Wl-iQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5Ws-Fi-fxK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="728" y="98"/>
         </scene>

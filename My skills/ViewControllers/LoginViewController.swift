@@ -61,6 +61,10 @@ class LoginViewController: UIViewController {
         }
         visitor.name = visitorNameTextField.text ?? "888"
     }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        visitorNameTextField.text = ""
+    }
 }
 
 //MARK: - Private Methods
