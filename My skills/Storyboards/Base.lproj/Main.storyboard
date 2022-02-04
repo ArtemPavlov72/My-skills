@@ -408,10 +408,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-j3-u3M">
-                                <rect key="frame" x="126.5" y="184.5" width="67" height="199"/>
+                                <rect key="frame" x="117" y="184.5" width="86" height="199"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVn-og-4MP">
-                                        <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
@@ -419,7 +419,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-FA-zU7">
-                                        <rect key="frame" x="0.0" y="56" width="67" height="31"/>
+                                        <rect key="frame" x="0.0" y="56" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
@@ -427,7 +427,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs4-cA-qWn">
-                                        <rect key="frame" x="0.0" y="112" width="67" height="31"/>
+                                        <rect key="frame" x="0.0" y="112" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
@@ -435,9 +435,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-DT-nV8">
-                                        <rect key="frame" x="0.0" y="168" width="67" height="31"/>
+                                        <rect key="frame" x="0.0" y="168" width="86" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
                                             <action selector="singleButtonPressed:" destination="TTx-5d-xyc" eventType="touchUpInside" id="V0k-E9-QAX"/>
                                         </connections>
@@ -498,7 +498,7 @@
         <!--Результат-->
         <scene sceneID="1mb-hC-40b">
             <objects>
-                <viewController id="Iuc-Pk-2CC" sceneMemberID="viewController">
+                <viewController id="Iuc-Pk-2CC" customClass="ResultViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cx1-rY-nan">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -530,12 +530,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="JbE-rV-6oh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rbd-Ie-qXk">
+                        <barButtonItem key="rightBarButtonItem" title="Закончить" id="rbd-Ie-qXk">
                             <connections>
                                 <segue destination="Djs-RG-wph" kind="unwind" unwindAction="unwindWithSegue:" id="QUx-Lg-0HE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultLabelDescription" destination="IrW-OO-iWc" id="3gw-dC-AZT"/>
+                        <outlet property="resultLabelText" destination="hJ6-5S-7qF" id="NWP-EB-4UO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uF5-ue-nfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Djs-RG-wph" userLabel="Exit" sceneMemberID="exit"/>
