@@ -7,5 +7,5 @@
 
 enum Project: String, CaseIterable {
     case trafficLights = "Светофор",
-         quiz = "Квиз"
+         quiz = "Квиз: Что ты знаешь обо мне?"
 }
