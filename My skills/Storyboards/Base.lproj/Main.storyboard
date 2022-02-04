@@ -296,7 +296,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tSE-Jd-8kO">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tSE-Jd-8kO">
                                 <rect key="frame" x="0.0" y="91" width="320" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-4w-rFj">
@@ -314,13 +314,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="168" translatesAutoresizingMaskIntoConstraints="NO" id="Ey8-xd-XF8">
                                         <rect key="frame" x="0.0" y="47" width="288" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6p-Em-n4Y">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6p-Em-n4Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="78.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgH-Y4-K1D">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgH-Y4-K1D">
                                                 <rect key="frame" x="246.5" y="0.0" width="41.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -435,17 +435,26 @@
                             <constraint firstItem="Nye-mK-S10" firstAttribute="trailing" secondItem="Qli-6N-xnF" secondAttribute="trailing" constant="16" id="E18-UF-Gsh"/>
                             <constraint firstItem="eR1-4w-rFj" firstAttribute="leading" secondItem="Nye-mK-S10" secondAttribute="leading" constant="16" id="FtQ-iv-Z6c"/>
                             <constraint firstItem="Nye-mK-S10" firstAttribute="trailing" secondItem="eR1-4w-rFj" secondAttribute="trailing" constant="16" id="Hyg-s7-8mu"/>
+                            <constraint firstItem="tSE-Jd-8kO" firstAttribute="trailing" secondItem="Nye-mK-S10" secondAttribute="trailing" id="LMe-fV-npT"/>
                             <constraint firstItem="tSE-Jd-8kO" firstAttribute="top" secondItem="Nye-mK-S10" secondAttribute="top" id="Ne9-Z1-BSJ"/>
                             <constraint firstItem="Nye-mK-S10" firstAttribute="trailing" secondItem="MNc-kW-BV2" secondAttribute="trailing" constant="16" id="Qut-AX-pbr"/>
+                            <constraint firstItem="tSE-Jd-8kO" firstAttribute="leading" secondItem="Nye-mK-S10" secondAttribute="leading" id="WhW-Kg-2J9"/>
                             <constraint firstItem="eR1-4w-rFj" firstAttribute="top" secondItem="tSE-Jd-8kO" secondAttribute="bottom" constant="8" symbolic="YES" id="aRf-Xo-6Vm"/>
                             <constraint firstItem="h9m-j3-u3M" firstAttribute="centerY" secondItem="y5F-Yt-N61" secondAttribute="centerY" id="eqg-yq-Edr"/>
                             <constraint firstItem="Qli-6N-xnF" firstAttribute="centerY" secondItem="y5F-Yt-N61" secondAttribute="centerY" id="lOL-F5-tMi"/>
+                            <constraint firstItem="tSE-Jd-8kO" firstAttribute="top" secondItem="Nye-mK-S10" secondAttribute="top" id="mfc-24-98h"/>
                             <constraint firstItem="MNc-kW-BV2" firstAttribute="centerY" secondItem="y5F-Yt-N61" secondAttribute="centerY" id="s8l-Yp-oYg"/>
                             <constraint firstItem="Qli-6N-xnF" firstAttribute="leading" secondItem="Nye-mK-S10" secondAttribute="leading" constant="16" id="u0e-Wd-ojH"/>
                             <constraint firstItem="h9m-j3-u3M" firstAttribute="centerX" secondItem="y5F-Yt-N61" secondAttribute="centerX" id="ulq-HF-3ZM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="joA-NF-S90"/>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="joA-NF-S90">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="F0J-nx-vjB">
+                            <connections>
+                                <segue destination="Iuc-Pk-2CC" kind="show" id="NSL-h8-fRT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Iuc-Pk-2CC" kind="show" id="zQb-B6-HVR"/>
                     </connections>
@@ -489,10 +498,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="JbE-rV-6oh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rbd-Ie-qXk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rbd-Ie-qXk">
+                            <connections>
+                                <segue destination="Djs-RG-wph" kind="unwind" unwindAction="unwindWithSegue:" id="QUx-Lg-0HE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uF5-ue-nfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Djs-RG-wph" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4436" y="838"/>
         </scene>
@@ -534,6 +548,9 @@
             <point key="canvasLocation" x="2981" y="838"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NSL-h8-fRT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
