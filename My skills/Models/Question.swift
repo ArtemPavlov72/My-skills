@@ -36,7 +36,7 @@ struct Question {
                 title: "Сколько лет я езжу на одной машине?",
                 type: .ranged,
                 answers: [
-                    Answer(title: "Какая машина?", degreeOfFamiliarity: .withOutMeting),
+                    Answer(title: "1 год", degreeOfFamiliarity: .withOutMeting),
                     Answer(title: "2 года", degreeOfFamiliarity: .familiar),
                     Answer(title: "6 лет", degreeOfFamiliarity: .friend),
                     Answer(title: "10 лет", degreeOfFamiliarity: .relative)

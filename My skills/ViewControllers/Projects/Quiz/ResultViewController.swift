@@ -18,7 +18,20 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        updateResult()
+    }
+    
+    private func updateResult() {
+        let mostFrequencyFamiliarity = Dictionary(grouping: answers) { $0.degreeOfFamiliarity }
+            .sorted { $0.value.count > $1.value.count }
+            .first?.key
         
+        updateUI(with: mostFrequencyFamiliarity)
+    }
+    
+    private func updateUI(with familiarity: Familiarity?) {
+        resultLabelText.text = "Мы - \(familiarity?.rawValue ?? "")!"
+        resultLabelDescription.text = familiarity?.definition ?? ""
     }
     
 }
