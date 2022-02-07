@@ -19,6 +19,7 @@
 		886D996E27AD025A00FF3B6C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996D27AD025A00FF3B6C /* Question.swift */; };
 		88782C9427A50A680015041B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9327A50A680015041B /* Project.swift */; };
 		88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9527A7781E0015041B /* TrafficLightController.swift */; };
+		88ECCC1F27B142990017015F /* ColorMix.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88ECCC1E27B142990017015F /* ColorMix.storyboard */; };
 		88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12DE279BCA7F008CDC58 /* Visitor.swift */; };
 		88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */; };
 		88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E3279F274F008CDC58 /* TabBarViewController.swift */; };
@@ -40,6 +41,7 @@
 		886D996D27AD025A00FF3B6C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		88782C9327A50A680015041B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		88782C9527A7781E0015041B /* TrafficLightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightController.swift; sourceTree = "<group>"; };
+		88ECCC1E27B142990017015F /* ColorMix.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ColorMix.storyboard; sourceTree = "<group>"; };
 		88EE12DE279BCA7F008CDC58 /* Visitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
 		88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		88EE12E3279F274F008CDC58 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				882344B92799D335005F8FF6 /* Main.storyboard */,
 				882344BE2799D337005F8FF6 /* LaunchScreen.storyboard */,
+				88ECCC1E27B142990017015F /* ColorMix.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				882344C02799D337005F8FF6 /* LaunchScreen.storyboard in Resources */,
 				882344BD2799D337005F8FF6 /* Assets.xcassets in Resources */,
 				882344BB2799D335005F8FF6 /* Main.storyboard in Resources */,
+				88ECCC1F27B142990017015F /* ColorMix.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
