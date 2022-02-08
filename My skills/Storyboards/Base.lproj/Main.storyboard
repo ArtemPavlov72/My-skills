@@ -172,7 +172,7 @@
                     <connections>
                         <segue destination="m7C-hU-kd3" kind="show" identifier="showQuiz" id="8f9-6K-a3a"/>
                         <segue destination="LrR-3P-44k" kind="show" identifier="showTrafficLights" id="RVb-D4-4VP"/>
-                        <segue destination="2Tv-1O-OTn" kind="show" id="KuU-hc-DUO"/>
+                        <segue destination="2Tv-1O-OTn" kind="show" identifier="colorMix" id="KuU-hc-DUO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suW-jL-abi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

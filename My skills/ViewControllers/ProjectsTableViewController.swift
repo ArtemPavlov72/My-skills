@@ -38,6 +38,8 @@ class ProjectsTableViewController: UITableViewController {
             performSegue(withIdentifier: "showTrafficLights", sender: nil)
         case .quiz:
             performSegue(withIdentifier: "showQuiz", sender: nil)
+        case .colorMix:
+            performSegue(withIdentifier: "colorMix", sender: nil)
         }
     }
     
