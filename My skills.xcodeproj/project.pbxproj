@@ -20,6 +20,8 @@
 		88782C9427A50A680015041B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9327A50A680015041B /* Project.swift */; };
 		88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782C9527A7781E0015041B /* TrafficLightController.swift */; };
 		88ECCC1F27B142990017015F /* ColorMix.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88ECCC1E27B142990017015F /* ColorMix.storyboard */; };
+		88ECCC2127B144600017015F /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECCC2027B144600017015F /* ColorViewController.swift */; };
+		88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECCC2227B144880017015F /* ColorMixViewController.swift */; };
 		88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12DE279BCA7F008CDC58 /* Visitor.swift */; };
 		88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */; };
 		88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E3279F274F008CDC58 /* TabBarViewController.swift */; };
@@ -42,6 +44,8 @@
 		88782C9327A50A680015041B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		88782C9527A7781E0015041B /* TrafficLightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightController.swift; sourceTree = "<group>"; };
 		88ECCC1E27B142990017015F /* ColorMix.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ColorMix.storyboard; sourceTree = "<group>"; };
+		88ECCC2027B144600017015F /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		88ECCC2227B144880017015F /* ColorMixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMixViewController.swift; sourceTree = "<group>"; };
 		88EE12DE279BCA7F008CDC58 /* Visitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
 		88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		88EE12E3279F274F008CDC58 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +114,18 @@
 			children = (
 				886D996527ACF3E100FF3B6C /* TrafficLight */,
 				886D996C27ACF6E900FF3B6C /* Quiz */,
+				88ECCC2427B1449F0017015F /* ColorMix */,
 			);
 			path = Projects;
+			sourceTree = "<group>";
+		};
+		88ECCC2427B1449F0017015F /* ColorMix */ = {
+			isa = PBXGroup;
+			children = (
+				88ECCC2027B144600017015F /* ColorViewController.swift */,
+				88ECCC2227B144880017015F /* ColorMixViewController.swift */,
+			);
+			path = ColorMix;
 			sourceTree = "<group>";
 		};
 		88EE12DA279BC9E7008CDC58 /* Storyboards */ = {
@@ -240,11 +254,13 @@
 				88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */,
 				886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */,
 				882344B82799D335005F8FF6 /* LoginViewController.swift in Sources */,
+				88ECCC2127B144600017015F /* ColorViewController.swift in Sources */,
 				882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */,
 				882344B62799D335005F8FF6 /* SceneDelegate.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
 				886D996E27AD025A00FF3B6C /* Question.swift in Sources */,
+				88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */,
 				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
 				88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */,
 				88782C9427A50A680015041B /* Project.swift in Sources */,
