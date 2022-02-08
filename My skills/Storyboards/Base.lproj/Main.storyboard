@@ -172,6 +172,7 @@
                     <connections>
                         <segue destination="m7C-hU-kd3" kind="show" identifier="showQuiz" id="8f9-6K-a3a"/>
                         <segue destination="LrR-3P-44k" kind="show" identifier="showTrafficLights" id="RVb-D4-4VP"/>
+                        <segue destination="2Tv-1O-OTn" kind="show" id="KuU-hc-DUO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suW-jL-abi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -245,6 +246,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdW-3m-zNF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2281.875" y="94.014084507042256"/>
+        </scene>
+        <!--ColorMix-->
+        <scene sceneID="ndU-78-aYp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ColorMix" id="2Tv-1O-OTn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="P8T-58-Kvw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjT-uT-gmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="721"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="z5p-zM-cEF">
