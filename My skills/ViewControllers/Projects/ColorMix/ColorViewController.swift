@@ -7,23 +7,44 @@
 
 import UIKit
 
-class ColorViewController: UIViewController {
+protocol ColorViewControllerDelegate {
+    func setColor(_ color: UIColor)
+}
 
+class ColorViewController: UIViewController {
+    
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        changeColorButton()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let colorMixVC = segue.destination as? ColorMixViewController else {return}
+        colorMixVC.delegate = self
+        colorMixVC.viewColor = view.backgroundColor
     }
-    */
+    
+    // MARK: - Private Methods
+    private func changeColorButton() {
+        let changeButton = UIBarButtonItem(
+            title: "Редактировать",
+            style: .plain,
+            target: self,
+            action: #selector(changeColorButtonAction)
+        )
+        navigationItem.rightBarButtonItem = changeButton
+    }
+    
+    @objc private func changeColorButtonAction() {
+        performSegue(withIdentifier: "changeColor", sender: nil)
+    }
+}
 
+// MARK: - Delegate New Color
+extension ColorViewController: ColorViewControllerDelegate {
+    func setColor(_ color: UIColor) {
+        view.backgroundColor = color
+    }
 }

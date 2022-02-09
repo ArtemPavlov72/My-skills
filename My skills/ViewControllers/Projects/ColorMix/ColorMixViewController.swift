@@ -8,22 +8,105 @@
 import UIKit
 
 class ColorMixViewController: UIViewController {
-
+    
+    // MARK: - IB Outlets
+    @IBOutlet var colorView: UIView!
+    
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
+    
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
+    
+    @IBOutlet var redTextField: UITextField!
+    @IBOutlet var greenTextField: UITextField!
+    @IBOutlet var blueTextField: UITextField!
+    
+    // MARK: - Public Properties
+    var delegate: ColorViewControllerDelegate!
+    var viewColor: UIColor!
+    
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        colorView.layer.cornerRadius = 30
+        
+        redSlider.tintColor = .red
+        greenSlider.tintColor = .green
+        
+        colorView.backgroundColor = viewColor
+        
+        setSliders()
+        setValue(for: redLabel, greenLabel, blueLabel)
+        setValue(for: redTextField, greenTextField, blueTextField)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - IB Actions
+    @IBAction func doneButtonPressed() {
+        delegate.setColor(colorView.backgroundColor ?? .red)
+        dismiss(animated: true)
     }
-    */
+    
+    @IBAction func rgbSlider(_ sender: UISlider) {
+        switch sender {
+        case redSlider:
+            setValue(for: redLabel)
+            setValue(for: redTextField)
+        case greenSlider:
+            setValue(for: greenLabel)
+            setValue(for: greenTextField)
+        default:
+            setValue(for: blueLabel)
+            setValue(for: blueTextField)
+        }
+        setColor()
+    }
+}
 
+// MARK: - Private Methods
+extension ColorMixViewController {
+    
+    private func setColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1)
+    }
+    
+    private func setSliders() {
+        let color = CIColor(color: viewColor)
+        
+        redSlider.value = Float(color.red)
+        greenSlider.value = Float(color.green)
+        blueSlider.value = Float(color.blue)
+    }
+    
+    private func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redLabel: label.text = stringValueFromSlider(redSlider)
+            case greenLabel: label.text = stringValueFromSlider(greenSlider)
+            default: label.text = stringValueFromSlider(blueSlider)
+            }
+        }
+    }
+    
+    private func setValue(for textField: UITextField...) {
+        textField.forEach { textField in
+            switch textField {
+            case redTextField: redTextField.text = stringValueFromSlider(redSlider)
+            case greenTextField: greenTextField.text = stringValueFromSlider(greenSlider)
+            default: blueTextField.text = stringValueFromSlider(blueSlider)
+            }
+        }
+    }
+    
+    private func stringValueFromSlider(_ slider:UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
+    
 }
