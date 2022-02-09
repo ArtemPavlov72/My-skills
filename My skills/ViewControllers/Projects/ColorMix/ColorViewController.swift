@@ -18,7 +18,7 @@ class ColorViewController: UIViewController {
         super.viewDidLoad()
         changeColorButton()
     }
-    
+
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let colorMixVC = segue.destination as? ColorMixViewController else {return}
