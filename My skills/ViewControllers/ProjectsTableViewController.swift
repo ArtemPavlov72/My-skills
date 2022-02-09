@@ -38,7 +38,12 @@ class ProjectsTableViewController: UITableViewController {
             performSegue(withIdentifier: "showTrafficLights", sender: nil)
         case .quiz:
             performSegue(withIdentifier: "showQuiz", sender: nil)
+        case .colorMix:
+            let colorMixStoryboard = UIStoryboard(name: "ColorMix", bundle: Bundle.main)
+            let colorVC = colorMixStoryboard.instantiateInitialViewController()
+            if let viewController = colorVC {
+                show(viewController, sender: nil)
+            }
         }
     }
-    
 }
