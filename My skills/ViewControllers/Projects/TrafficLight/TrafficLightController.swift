@@ -39,8 +39,9 @@ class TrafficLightController: UIViewController {
     
     // MARK: - IB Actions
     
-    @IBAction func startButtonPressed() {
-    if startButton.currentTitle == "START" {
+    @IBAction func startButtonPressed(_ sender: UIButton) {
+        sender.pulsate()
+        if startButton.currentTitle == "START" {
             startButton.setTitle("NEXT", for: .normal)
         }
         

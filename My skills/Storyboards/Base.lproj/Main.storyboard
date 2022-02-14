@@ -218,7 +218,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonPressed" destination="LrR-3P-44k" eventType="touchUpInside" id="Eyb-DE-lnv"/>
+                                    <action selector="startButtonPressed:" destination="LrR-3P-44k" eventType="touchUpInside" id="dnH-j8-U0W"/>
                                 </connections>
                             </button>
                         </subviews>
