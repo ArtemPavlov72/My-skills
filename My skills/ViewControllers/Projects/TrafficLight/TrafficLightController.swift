@@ -60,7 +60,7 @@ class TrafficLightController: UIViewController {
             currentLight = .red
         }
     }
-}
+} // new
 
 // MARK: - Set Enum For Lights
 extension TrafficLightController {
