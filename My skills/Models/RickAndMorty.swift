@@ -37,4 +37,6 @@ struct Location: Decodable {
     let name: String
 }
 
-
+enum Link: String {
+    case rickAndMorty = "https://rickandmortyapi.com/api/character"
+}
