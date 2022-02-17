@@ -44,9 +44,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="509-nB-eiQ">
+                        <barButtonItem key="leftBarButtonItem" title="Выход" id="uWT-4C-qqt">
+                            <connections>
+                                <action selector="exitButton:" destination="Hmk-gA-s4c" id="C1j-7Y-XZW"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Next" id="h4T-m9-joi"/>
-                            <barButtonItem title="Previous" id="ehi-bx-yyd"/>
+                            <barButtonItem title="Дальше" id="h4T-m9-joi"/>
+                            <barButtonItem title="Обратно" id="ehi-bx-yyd"/>
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
@@ -57,7 +62,7 @@
         <!--Navigation Controller-->
         <scene sceneID="k49-P5-tX9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LnQ-WG-BZS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="LnQ-WG-BZS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="s1B-s6-9zR">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
