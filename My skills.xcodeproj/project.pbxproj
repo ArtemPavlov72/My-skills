@@ -16,6 +16,7 @@
 		8831C48727BEB73900EC0EDA /* RickAndMorty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8831C48627BEB73900EC0EDA /* RickAndMorty.storyboard */; };
 		8831C48927BEBFEF00EC0EDA /* CharactersListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */; };
 		8831C48C27BEC40E00EC0EDA /* RickAndMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C48B27BEC40E00EC0EDA /* RickAndMorty.swift */; };
+		8831C48E27BECAA900EC0EDA /* RickAndMortyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */; };
 		886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996627ACF43000FF3B6C /* QuizViewController.swift */; };
 		886D996927ACF5D000FF3B6C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996827ACF5D000FF3B6C /* QuestionsViewController.swift */; };
 		886D996B27ACF6E100FF3B6C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996A27ACF6E100FF3B6C /* ResultViewController.swift */; };
@@ -44,6 +45,7 @@
 		8831C48627BEB73900EC0EDA /* RickAndMorty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RickAndMorty.storyboard; sourceTree = "<group>"; };
 		8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListController.swift; sourceTree = "<group>"; };
 		8831C48B27BEC40E00EC0EDA /* RickAndMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMorty.swift; sourceTree = "<group>"; };
+		8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCell.swift; sourceTree = "<group>"; };
 		886D996627ACF43000FF3B6C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		886D996827ACF5D000FF3B6C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		886D996A27ACF6E100FF3B6C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */,
+				8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				88ECCC2127B144600017015F /* ColorViewController.swift in Sources */,
 				8831C48C27BEC40E00EC0EDA /* RickAndMorty.swift in Sources */,
 				882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */,
+				8831C48E27BECAA900EC0EDA /* RickAndMortyCell.swift in Sources */,
 				882344B62799D335005F8FF6 /* SceneDelegate.swift in Sources */,
 				88B5C58827BA158400E12DE0 /* Extension + UIButton.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
