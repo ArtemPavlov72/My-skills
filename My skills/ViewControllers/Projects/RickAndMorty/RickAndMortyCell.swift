@@ -9,8 +9,8 @@ import UIKit
 
 class RickAndMortyCell: UITableViewCell {
     
-    @IBOutlet var heroImage: UIImageView!
-    @IBOutlet var heroNameLabel: UILabel!
+    @IBOutlet weak var heroImage: UIImageView!
+    @IBOutlet weak var heroNameLabel: UILabel!
     
     func configure(with hero: Hero?) {
         heroNameLabel.text = hero?.name
