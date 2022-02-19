@@ -15,7 +15,7 @@ class CharactersListController: UITableViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 80
+        tableView.rowHeight = 90
         fetchHeroes()
     }
     

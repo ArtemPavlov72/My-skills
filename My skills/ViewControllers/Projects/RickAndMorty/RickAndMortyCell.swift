@@ -9,7 +9,12 @@ import UIKit
 
 class RickAndMortyCell: UITableViewCell {
     
-    @IBOutlet weak var heroImage: UIImageView!
+    @IBOutlet weak var heroImage: UIImageView! {
+        didSet {
+            heroImage.layer.cornerRadius = heroImage.frame.height / 2
+        }
+    }
+    
     @IBOutlet weak var heroNameLabel: UILabel!
     
     func configure(with hero: Hero?) {
