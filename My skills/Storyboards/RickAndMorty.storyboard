@@ -67,8 +67,16 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Далее" id="h4T-m9-joi"/>
-                            <barButtonItem title="Назад" id="ehi-bx-yyd"/>
+                            <barButtonItem tag="1" title="Далее" id="h4T-m9-joi">
+                                <connections>
+                                    <action selector="barButtonNavigation:" destination="Hmk-gA-s4c" id="AD9-W8-fub"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Назад" id="ehi-bx-yyd">
+                                <connections>
+                                    <action selector="barButtonNavigation:" destination="Hmk-gA-s4c" id="Eyg-Px-Md1"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>

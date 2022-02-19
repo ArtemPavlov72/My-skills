@@ -16,13 +16,21 @@ class CharactersListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 90
-        fetchHeroes()
+        fetchHeroes(from: Link.rickAndMorty.rawValue)
     }
     
     // MARK: - IB Actions
     @IBAction func exitButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
+    
+    @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
+        sender.tag == 1
+        ? fetchHeroes(from: rickAndMorty?.info.next)
+        : fetchHeroes(from: rickAndMorty?.info.prev)
+        
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         rickAndMorty?.results.count ?? 0
@@ -38,8 +46,9 @@ class CharactersListController: UITableViewController {
 
 // MARK: - Networking
 extension CharactersListController {
-    func fetchHeroes() {
-        guard let url = URL(string: Link.rickAndMorty.rawValue) else {return}
+    func fetchHeroes(from url: String?) {
+        guard let stringUrl = url else {return}
+        guard let url = URL(string: stringUrl) else {return}
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
