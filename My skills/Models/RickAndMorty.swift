@@ -32,6 +32,7 @@ struct Hero: Decodable {
     """
     Имя: \(name)
     Статус персонажа: \(status)
+    Раса: \(species)
     Пол: \(gender)
     Место рождения: \(origin.name)
     Текущее местоположения: \(location.name)
