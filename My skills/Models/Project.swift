@@ -8,5 +8,6 @@
 enum Project: String, CaseIterable {
     case trafficLights = "Светофор",
          quiz = "Квиз: Что ты знаешь обо мне?",
-         colorMix = "Смешай цвета"
+         colorMix = "Смешай цвета",
+         rickAndMorty = "Рик и Морти"
 }

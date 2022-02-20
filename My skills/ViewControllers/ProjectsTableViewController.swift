@@ -44,6 +44,8 @@ class ProjectsTableViewController: UITableViewController {
             if let viewController = colorVC {
                 show(viewController, sender: nil)
             }
+        case .rickAndMorty:
+            performSegue(withIdentifier: "rickAndMorty", sender: nil)
         }
     }
 }
