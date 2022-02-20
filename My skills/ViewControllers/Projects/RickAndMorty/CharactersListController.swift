@@ -28,7 +28,6 @@ class CharactersListController: UITableViewController {
         sender.tag == 1
         ? fetchHeroes(from: rickAndMorty?.info.next)
         : fetchHeroes(from: rickAndMorty?.info.prev)
-        
     }
     
     // MARK: - Table view data source

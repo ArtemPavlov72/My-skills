@@ -17,6 +17,7 @@
 		8831C48927BEBFEF00EC0EDA /* CharactersListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */; };
 		8831C48C27BEC40E00EC0EDA /* RickAndMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C48B27BEC40E00EC0EDA /* RickAndMorty.swift */; };
 		8831C48E27BECAA900EC0EDA /* RickAndMortyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */; };
+		8831C49227C2084100EC0EDA /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831C49127C2084100EC0EDA /* CharacterDetailsViewController.swift */; };
 		886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996627ACF43000FF3B6C /* QuizViewController.swift */; };
 		886D996927ACF5D000FF3B6C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996827ACF5D000FF3B6C /* QuestionsViewController.swift */; };
 		886D996B27ACF6E100FF3B6C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D996A27ACF6E100FF3B6C /* ResultViewController.swift */; };
@@ -46,6 +47,7 @@
 		8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListController.swift; sourceTree = "<group>"; };
 		8831C48B27BEC40E00EC0EDA /* RickAndMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMorty.swift; sourceTree = "<group>"; };
 		8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCell.swift; sourceTree = "<group>"; };
+		8831C49127C2084100EC0EDA /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		886D996627ACF43000FF3B6C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		886D996827ACF5D000FF3B6C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		886D996A27ACF6E100FF3B6C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */,
+				8831C49127C2084100EC0EDA /* CharacterDetailsViewController.swift */,
 				8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */,
 			);
 			path = RickAndMorty;
@@ -291,6 +294,7 @@
 				88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */,
 				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
 				88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */,
+				8831C49227C2084100EC0EDA /* CharacterDetailsViewController.swift in Sources */,
 				88782C9427A50A680015041B /* Project.swift in Sources */,
 				886D996B27ACF6E100FF3B6C /* ResultViewController.swift in Sources */,
 			);
