@@ -41,6 +41,14 @@ class CharactersListController: UITableViewController {
         cell.configure(with: hero)
         return cell
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else {return}
+        let hero = rickAndMorty?.results[indexPath.row]
+        guard let characterVC = segue.destination as? CharacterDetailsViewController else {return}
+        characterVC.hero = hero
+    }
 }
 
 // MARK: - Networking

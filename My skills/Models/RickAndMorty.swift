@@ -27,6 +27,16 @@ struct Hero: Decodable {
     let image: String
     let episode: [String]
     let url: String
+    
+    var description: String {
+    """
+    Имя: \(name)
+    Статус персонажа: \(status)
+    Пол: \(gender)
+    Место рождения: \(origin.name)
+    Текущее местоположения: \(location.name)
+    """
+    }
 }
 
 struct Location: Decodable {

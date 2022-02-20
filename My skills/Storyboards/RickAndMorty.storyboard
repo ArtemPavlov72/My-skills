@@ -53,6 +53,7 @@
                                 <connections>
                                     <outlet property="heroImage" destination="rJk-pL-a6h" id="0Yy-si-Sew"/>
                                     <outlet property="heroNameLabel" destination="Pvs-bn-VAf" id="em7-Xg-fcH"/>
+                                    <segue destination="OHn-jr-YIR" kind="show" id="Uqw-JE-kqI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,9 +81,6 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <connections>
-                        <segue destination="OHn-jr-YIR" kind="show" id="IhN-zC-9F7"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57e-Xf-gaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,17 +94,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-br-CsV">
-                                <rect key="frame" x="16" y="285" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-br-CsV">
+                                <rect key="frame" x="16" y="315" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDJ-Ky-Av4">
-                                <rect key="frame" x="75" y="107" width="170" height="170"/>
+                                <rect key="frame" x="60" y="107" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="G7t-fJ-Npe"/>
-                                    <constraint firstAttribute="height" constant="170" id="qsT-tX-zVU"/>
+                                    <constraint firstAttribute="width" constant="200" id="G7t-fJ-Npe"/>
+                                    <constraint firstAttribute="height" constant="200" id="qsT-tX-zVU"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -115,12 +113,16 @@
                         <constraints>
                             <constraint firstItem="jwD-v3-bEV" firstAttribute="trailing" secondItem="ODx-br-CsV" secondAttribute="trailing" constant="16" id="CLW-oi-bQa"/>
                             <constraint firstItem="ODx-br-CsV" firstAttribute="leading" secondItem="jwD-v3-bEV" secondAttribute="leading" constant="16" id="Wur-9d-jFr"/>
-                            <constraint firstItem="VDJ-Ky-Av4" firstAttribute="centerX" secondItem="dFS-ew-Wcs" secondAttribute="centerX" id="eG4-xA-dAC"/>
                             <constraint firstItem="ODx-br-CsV" firstAttribute="top" secondItem="VDJ-Ky-Av4" secondAttribute="bottom" constant="8" id="k7K-gn-3Xb"/>
+                            <constraint firstItem="VDJ-Ky-Av4" firstAttribute="centerX" secondItem="dFS-ew-Wcs" secondAttribute="centerX" id="sEL-XC-vET"/>
                             <constraint firstItem="VDJ-Ky-Av4" firstAttribute="top" secondItem="jwD-v3-bEV" secondAttribute="top" constant="16" id="tne-4t-1TC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bud-ze-QwD"/>
+                    <connections>
+                        <outlet property="characterDetailsLabel" destination="ODx-br-CsV" id="DSA-Rc-OT8"/>
+                        <outlet property="characterImage" destination="VDJ-Ky-Av4" id="yBh-fF-Q6e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdf-ti-UiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
