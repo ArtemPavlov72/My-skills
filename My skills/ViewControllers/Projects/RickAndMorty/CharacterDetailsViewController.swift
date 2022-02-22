@@ -24,7 +24,8 @@ class CharacterDetailsViewController: UIViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = hero.name //не забыть задать минимальное значение текста и констрейнты
+        self.navigationItem.largeTitleDisplayMode = .never
+        setTitle()
         
         characterDetailsLabel.text = hero.description
         loadImage(from: hero.image)
@@ -40,5 +41,14 @@ class CharacterDetailsViewController: UIViewController {
                 self.characterImage.image = UIImage(data: imageData)
             }
         }
+    }
+    
+    private func setTitle() {
+        let titleLabel = UILabel()
+        titleLabel.text = "\(hero.name)"
+        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.bold)
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
+        navigationItem.titleView = titleLabel
     }
 }
