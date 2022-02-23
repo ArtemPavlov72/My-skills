@@ -95,33 +95,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-br-CsV">
-                                <rect key="frame" x="16" y="315" width="288" height="24"/>
+                                <rect key="frame" x="16" y="345" width="288" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDJ-Ky-Av4">
-                                <rect key="frame" x="60" y="107" width="200" height="200"/>
+                                <rect key="frame" x="60" y="137" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="G7t-fJ-Npe"/>
                                     <constraint firstAttribute="height" constant="200" id="qsT-tX-zVU"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="HrO-Sp-fkd">
+                                <rect key="frame" x="16" y="91" width="288" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jwD-v3-bEV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jwD-v3-bEV" firstAttribute="trailing" secondItem="ODx-br-CsV" secondAttribute="trailing" constant="16" id="CLW-oi-bQa"/>
+                            <constraint firstItem="HrO-Sp-fkd" firstAttribute="leading" secondItem="jwD-v3-bEV" secondAttribute="leading" constant="16" id="KDt-5u-aaz"/>
                             <constraint firstItem="ODx-br-CsV" firstAttribute="leading" secondItem="jwD-v3-bEV" secondAttribute="leading" constant="16" id="Wur-9d-jFr"/>
+                            <constraint firstItem="VDJ-Ky-Av4" firstAttribute="top" secondItem="HrO-Sp-fkd" secondAttribute="bottom" constant="10" id="XNg-Zs-96a"/>
+                            <constraint firstItem="jwD-v3-bEV" firstAttribute="trailing" secondItem="HrO-Sp-fkd" secondAttribute="trailing" constant="16" id="h6G-uv-NNd"/>
                             <constraint firstItem="ODx-br-CsV" firstAttribute="top" secondItem="VDJ-Ky-Av4" secondAttribute="bottom" constant="8" id="k7K-gn-3Xb"/>
+                            <constraint firstItem="HrO-Sp-fkd" firstAttribute="top" secondItem="dFS-ew-Wcs" secondAttribute="topMargin" id="kOJ-b0-wX8"/>
                             <constraint firstItem="VDJ-Ky-Av4" firstAttribute="centerX" secondItem="dFS-ew-Wcs" secondAttribute="centerX" id="sEL-XC-vET"/>
-                            <constraint firstItem="VDJ-Ky-Av4" firstAttribute="top" secondItem="jwD-v3-bEV" secondAttribute="top" constant="16" id="tne-4t-1TC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bud-ze-QwD"/>
                     <connections>
-                        <outlet property="characterDetailsLabel" destination="ODx-br-CsV" id="DSA-Rc-OT8"/>
-                        <outlet property="characterImage" destination="VDJ-Ky-Av4" id="yBh-fF-Q6e"/>
+                        <outlet property="heroDetailsLabel" destination="ODx-br-CsV" id="DSA-Rc-OT8"/>
+                        <outlet property="heroImage" destination="VDJ-Ky-Av4" id="yBh-fF-Q6e"/>
+                        <outlet property="heroNameLabel" destination="HrO-Sp-fkd" id="xTr-8I-1IJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdf-ti-UiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
