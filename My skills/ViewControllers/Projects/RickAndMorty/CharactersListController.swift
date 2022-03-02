@@ -38,8 +38,8 @@ class CharactersListController: UITableViewController {
     
     @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
         sender.tag == 1
-        ? fetchHeroes(from: rickAndMorty?.info.next)
-        : fetchHeroes(from: rickAndMorty?.info.prev)
+        ? fetchHeroes(from: rickAndMorty?.info.next ?? "")
+        : fetchHeroes(from: rickAndMorty?.info.prev ?? "")
     }
     
     // MARK: - Table view data source
@@ -70,29 +70,17 @@ class CharactersListController: UITableViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
-}
-
-// MARK: - Networking
-extension CharactersListController {
-    func fetchHeroes(from url: String?) {
-        guard let stringUrl = url else {return}
-        guard let url = URL(string: stringUrl) else {return}
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+    
+    private func fetchHeroes(from url: String) {
+        NetworkManager.shared.fetchData(from: url) { result in
+            switch result {
+            case .success(let rickAndMorty):
+                self.rickAndMorty = rickAndMorty
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-            do {
-                self.rickAndMorty = try JSONDecoder().decode(RickAndMorty.self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        }
     }
 }
 
