@@ -29,15 +29,9 @@ class CharacterDetailsViewController: UIViewController {
         
         heroNameLabel.text = hero.name
         heroDetailsLabel.text = hero.description
-        loadImage(from: hero.image)
-    }
-    
-    //MARK: - Private Methods
-    private func loadImage(from url: String) {
+        
         DispatchQueue.global().async {
-            guard let urlImage = URL(string: url) else {return}
-            guard let imageData = try? Data(contentsOf: urlImage) else {return}
-            
+            guard let imageData = ImageManager.shared.loadImage(from: self.hero.image) else {return}
             DispatchQueue.main.async {
                 self.heroImage.image = UIImage(data: imageData)
             }

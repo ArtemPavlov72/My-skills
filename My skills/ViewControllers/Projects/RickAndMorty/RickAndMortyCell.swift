@@ -22,9 +22,7 @@ class RickAndMortyCell: UITableViewCell {
         heroNameLabel.text = hero?.name
         
         DispatchQueue.global().async {
-            guard let url = URL(string: hero?.image ?? "") else {return}
-            guard let imageData = try? Data(contentsOf: url) else {return}
-            
+            guard let imageData = ImageManager.shared.loadImage(from: hero?.image) else {return}
             DispatchQueue.main.async {
                 self.heroImage.image = UIImage(data: imageData)
             }
