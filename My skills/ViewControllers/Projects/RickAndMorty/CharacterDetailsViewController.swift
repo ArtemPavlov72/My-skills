@@ -2,7 +2,7 @@
 //  CharacterDetailsViewController.swift
 //  My skills
 //
-//  Created by iMac on 20.02.2022.
+//  Created by Artem Pavlov on 20.02.2022.
 //
 
 import UIKit
@@ -29,9 +29,13 @@ class CharacterDetailsViewController: UIViewController {
         
         heroNameLabel.text = hero.name
         heroDetailsLabel.text = hero.description
-        
+        getImage(from: hero.image)
+    }
+    
+    // MARK: - Private methods
+    private func getImage(from url: String) {
         DispatchQueue.global().async {
-            guard let imageData = ImageManager.shared.loadImage(from: self.hero.image) else {return}
+            guard let imageData = ImageManager.shared.loadImage(from: url) else {return}
             DispatchQueue.main.async {
                 self.heroImage.image = UIImage(data: imageData)
             }

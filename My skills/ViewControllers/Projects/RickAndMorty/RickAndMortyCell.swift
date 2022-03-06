@@ -2,7 +2,7 @@
 //  RickAndMortyCell.swift
 //  My skills
 //
-//  Created by iMac on 17.02.2022.
+//  Created by Artem Pavlov on 17.02.2022.
 //
 
 import UIKit
