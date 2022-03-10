@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
@@ -42,6 +43,23 @@ class NetworkManager {
             }
         } .resume()
     }
+    
+    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
+        AF.request(Link.rickAndMorty.rawValue)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                    
+                case .success(let value):
+                print(value)
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+                
+            }
+    }
+    
+    
 }
 
 class ImageManager {

@@ -8,12 +8,42 @@
 struct RickAndMorty: Decodable {
     let info: Info
     let results: [Hero]
+    
+    init() {
+       info = Info()
+        results = []
+    }
+    
+    init(rickAndMortyData: [String: Any]) {
+        let infoDict = rickAndMortyData["info"] as? [String: Any] ?? [:]
+        info = Info(value: infoDict)
+        results = rickAndMortyData["results"] as? [Hero] ?? []
+    }
+
+    static func getRickAndMorty(from value: Any) -> RickAndMorty {
+        guard let data = value as? [String: Any] else { return RickAndMorty() }
+        let rickAndMorty = RickAndMorty(rickAndMortyData: data)
+        return rickAndMorty
+    }
 }
 
 struct Info: Decodable {
     let pages: Int
     let next: String?
     let prev: String?
+    
+    init() {
+        pages = 0
+        next = ""
+        prev = ""
+    }
+    
+    init(value: [String: Any]) {
+        pages = value["pages"] as? Int ?? 0
+        next = value["next"] as? String
+        prev = value["prev"] as? String
+    }
+    
 }
 
 struct Hero: Decodable {
@@ -27,6 +57,24 @@ struct Hero: Decodable {
     let image: String
     let episode: [String]
     let url: String
+    
+    init(value: [String: Any]) {
+        id = value["id"] as? Int ?? 0
+        name = value["name"] as? String ?? ""
+        status = value["status"] as? String ?? ""
+        species = value["species"] as? String ?? ""
+        gender = value["gender"] as? String ?? ""
+        
+        let originDict = value["status"] as? [String: String] ?? [:]
+        origin = Location(value: originDict)
+        
+        let locationDict = value["status"] as? [String: String] ?? [:]
+        location = Location(value: locationDict)
+        
+        image = value["image"] as? String ?? ""
+        episode = value["episode"] as? [String] ?? []
+        url = value["url"] as? String ?? ""
+    }
     
     var description: String {
     """
@@ -42,6 +90,10 @@ struct Hero: Decodable {
 
 struct Location: Decodable {
     let name: String
+    
+    init(value: [String: String?]) {
+        name = value["name"] as? String ?? ""
+    }
 }
 
 enum Link: String {
