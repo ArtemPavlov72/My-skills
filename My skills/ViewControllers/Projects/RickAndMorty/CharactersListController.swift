@@ -28,7 +28,8 @@ class CharactersListController: UITableViewController {
         self.navigationItem.largeTitleDisplayMode = .always
         tableView.rowHeight = 90
         setupSearchController()
-        fetchHeroes(from: Link.rickAndMorty.rawValue)
+        //fetchHeroes(from: Link.rickAndMorty.rawValue)
+        fetchHeroesWitAlamofire(from: Link.rickAndMorty.rawValue)
     }
     
     // MARK: - IB Actions
@@ -38,8 +39,10 @@ class CharactersListController: UITableViewController {
     
     @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
         sender.tag == 1
-        ? fetchHeroes(from: rickAndMorty?.info.next ?? "")
-        : fetchHeroes(from: rickAndMorty?.info.prev ?? "")
+        //? fetchHeroes(from: rickAndMorty?.info.next ?? "")
+        //: fetchHeroes(from: rickAndMorty?.info.prev ?? "")
+        ? fetchHeroesWitAlamofire(from: rickAndMorty?.info.next ?? "")
+        : fetchHeroesWitAlamofire(from: rickAndMorty?.info.prev ?? "")
     }
     
     // MARK: - Table view data source
@@ -73,6 +76,18 @@ class CharactersListController: UITableViewController {
     
     private func fetchHeroes(from url: String) {
         NetworkManager.shared.fetchData(from: url) { result in
+            switch result {
+            case .success(let rickAndMorty):
+                self.rickAndMorty = rickAndMorty
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func fetchHeroesWitAlamofire(from url: String) {
+        NetworkManager.shared.fetchDataWithAlamofire(url) { result in
             switch result {
             case .success(let rickAndMorty):
                 self.rickAndMorty = rickAndMorty

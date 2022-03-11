@@ -49,9 +49,11 @@ class NetworkManager {
             .validate()
             .responseJSON { dataResponse in
                 switch dataResponse.result {
-                    
                 case .success(let value):
-                print(value)
+                    let rickAndMorty = RickAndMorty.getRickAndMorty(from: value)
+                    DispatchQueue.main.async {
+                        completion(.success(rickAndMorty))
+                    }
                 case .failure:
                     completion(.failure(.decodingError))
                 }

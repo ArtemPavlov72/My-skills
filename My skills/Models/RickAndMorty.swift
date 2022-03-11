@@ -10,16 +10,18 @@ struct RickAndMorty: Decodable {
     let results: [Hero]
     
     init() {
-       info = Info()
+        info = Info()
         results = []
     }
     
     init(rickAndMortyData: [String: Any]) {
         let infoDict = rickAndMortyData["info"] as? [String: Any] ?? [:]
         info = Info(value: infoDict)
-        results = rickAndMortyData["results"] as? [Hero] ?? []
+        let heroes = rickAndMortyData["results"] as? [[String: Any]] ?? []
+        results = heroes.compactMap { Hero(value: $0)
+        }
     }
-
+    
     static func getRickAndMorty(from value: Any) -> RickAndMorty {
         guard let data = value as? [String: Any] else { return RickAndMorty() }
         let rickAndMorty = RickAndMorty(rickAndMortyData: data)
@@ -43,7 +45,6 @@ struct Info: Decodable {
         next = value["next"] as? String
         prev = value["prev"] as? String
     }
-    
 }
 
 struct Hero: Decodable {
@@ -65,10 +66,10 @@ struct Hero: Decodable {
         species = value["species"] as? String ?? ""
         gender = value["gender"] as? String ?? ""
         
-        let originDict = value["status"] as? [String: String] ?? [:]
+        let originDict = value["origin"] as? [String: String] ?? [:]
         origin = Location(value: originDict)
         
-        let locationDict = value["status"] as? [String: String] ?? [:]
+        let locationDict = value["location"] as? [String: String] ?? [:]
         location = Location(value: locationDict)
         
         image = value["image"] as? String ?? ""
@@ -83,7 +84,7 @@ struct Hero: Decodable {
     Раса: \(species)
     Пол: \(gender)
     Место рождения: \(origin.name)
-    Текущее местоположения: \(location.name)
+    Текущее местоположение: \(location.name)
     """
     }
 }
