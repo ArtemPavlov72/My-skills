@@ -33,6 +33,7 @@
 		88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */; };
 		88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E3279F274F008CDC58 /* TabBarViewController.swift */; };
 		88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE12E527A1C656008CDC58 /* ProjectsTableViewController.swift */; };
+		88F6179127DB89F60087FE7F /* StaringR&MViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F6179027DB89F60087FE7F /* StaringR&MViewController.swift */; };
 		C900467EF181E8E9A146B8EE /* Pods_My_skills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960485E6A491B9CB5AC0AD44 /* Pods_My_skills.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		88EE12E1279BCEFC008CDC58 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		88EE12E3279F274F008CDC58 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		88EE12E527A1C656008CDC58 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
+		88F6179027DB89F60087FE7F /* StaringR&MViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaringR&MViewController.swift"; sourceTree = "<group>"; };
 		960485E6A491B9CB5AC0AD44 /* Pods_My_skills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_skills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C655C1190121253C496EC1 /* Pods-My skills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My skills.release.xcconfig"; path = "Target Support Files/Pods-My skills/Pods-My skills.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		8831C48A27BEBFFB00EC0EDA /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				88F6179027DB89F60087FE7F /* StaringR&MViewController.swift */,
 				8831C48827BEBFEF00EC0EDA /* CharactersListController.swift */,
 				8831C49127C2084100EC0EDA /* CharacterDetailsViewController.swift */,
 				8831C48D27BECAA900EC0EDA /* RickAndMortyCell.swift */,
@@ -228,7 +231,6 @@
 				612E14F0D5E39D870ECEB65F /* Pods-My skills.debug.xcconfig */,
 				E4C655C1190121253C496EC1 /* Pods-My skills.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -358,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				886D996927ACF5D000FF3B6C /* QuestionsViewController.swift in Sources */,
+				88F6179127DB89F60087FE7F /* StaringR&MViewController.swift in Sources */,
 				88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */,
 				886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */,
 				88D54E6E27C804B600B115EF /* NetworkManager.swift in Sources */,

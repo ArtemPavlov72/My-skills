@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LnQ-WG-BZS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu2-73-ZMZ">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -138,6 +138,54 @@
             </objects>
             <point key="canvasLocation" x="1578.75" y="80.281690140845072"/>
         </scene>
+        <!--StartingRM View Controller-->
+        <scene sceneID="CDV-Oa-xsZ">
+            <objects>
+                <viewController id="Fu2-73-ZMZ" customClass="StartingRMViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RVn-c5-h4k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-iL-uf5">
+                                <rect key="frame" x="65.5" y="238" width="189" height="92"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="not-8D-3bT">
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Automatic Fetch"/>
+                                        <connections>
+                                            <action selector="pressButton:" destination="Fu2-73-ZMZ" eventType="touchUpInside" id="Tr2-yh-9OL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsQ-jF-VdN">
+                                        <rect key="frame" x="0.0" y="56" width="189" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Fetch With Alamofire"/>
+                                        <connections>
+                                            <action selector="pressButton:" destination="Fu2-73-ZMZ" eventType="touchUpInside" id="AxI-kp-ZvL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" systemColor="labelColor"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dIo-5s-Ek9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j9f-iL-uf5" firstAttribute="centerY" secondItem="RVn-c5-h4k" secondAttribute="centerY" id="BGZ-4M-wFP"/>
+                            <constraint firstItem="j9f-iL-uf5" firstAttribute="centerX" secondItem="RVn-c5-h4k" secondAttribute="centerX" id="u1L-3b-XWH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="LnQ-WG-BZS" kind="presentation" identifier="startRickAndMorty" id="V8Y-y4-rJI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akd-dQ-vBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-784" y="81"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="k49-P5-tX9">
             <objects>
@@ -158,6 +206,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
