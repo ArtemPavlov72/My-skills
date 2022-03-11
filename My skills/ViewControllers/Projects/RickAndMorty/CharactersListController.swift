@@ -8,7 +8,7 @@
 import UIKit
 
 class CharactersListController: UITableViewController {
-
+    
     // MARK: - Private Properties
     private var rickAndMorty: RickAndMorty?
     private var filteredHero: [Hero] = []
@@ -22,14 +22,16 @@ class CharactersListController: UITableViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
     
+    //MARK: - Public Properties
+    var automaticFetch: Bool!
+    
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .always
         tableView.rowHeight = 90
         setupSearchController()
-        //fetchHeroes(from: Link.rickAndMorty.rawValue)
-        fetchHeroesWitAlamofire(from: Link.rickAndMorty.rawValue)
+        fetchingMethod(from: Link.rickAndMorty.rawValue, with: automaticFetch)
     }
     
     // MARK: - IB Actions
@@ -39,10 +41,8 @@ class CharactersListController: UITableViewController {
     
     @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
         sender.tag == 1
-        //? fetchHeroes(from: rickAndMorty?.info.next ?? "")
-        //: fetchHeroes(from: rickAndMorty?.info.prev ?? "")
-        ? fetchHeroesWitAlamofire(from: rickAndMorty?.info.next ?? "")
-        : fetchHeroesWitAlamofire(from: rickAndMorty?.info.prev ?? "")
+        ? fetchingMethod(from: rickAndMorty?.info.next ?? "", with: automaticFetch)
+        : fetchingMethod(from: rickAndMorty?.info.prev ?? "", with: automaticFetch)
     }
     
     // MARK: - Table view data source
@@ -95,6 +95,14 @@ class CharactersListController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    private func fetchingMethod(from url: String, with automicMethod: Bool) {
+        if automicMethod {
+            fetchHeroes(from: url)
+        } else {
+            fetchHeroesWitAlamofire(from: url)
         }
     }
 }
