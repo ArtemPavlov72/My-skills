@@ -74,7 +74,7 @@ class CharactersListController: UITableViewController {
         definesPresentationContext = true
     }
     
-    private func fetchHeroes(from url: String) {
+    private func automaticFetchHeroes(from url: String) {
         NetworkManager.shared.fetchData(from: url) { result in
             switch result {
             case .success(let rickAndMorty):
@@ -100,7 +100,7 @@ class CharactersListController: UITableViewController {
     
     private func fetchingMethod(from url: String, with automicMethod: Bool) {
         if automicMethod {
-            fetchHeroes(from: url)
+            automaticFetchHeroes(from: url)
         } else {
             fetchHeroesWitAlamofire(from: url)
         }

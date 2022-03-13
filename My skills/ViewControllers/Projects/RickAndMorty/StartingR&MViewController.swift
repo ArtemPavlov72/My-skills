@@ -2,7 +2,7 @@
 //  StaringR&MViewController.swift
 //  My skills
 //
-//  Created by iMac on 11.03.2022.
+//  Created by Artem Pavlov on 11.03.2022.
 //
 
 import UIKit
@@ -23,11 +23,15 @@ class StartingRMViewController: UIViewController {
     @IBAction func pressButton(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            automaticFetch = true
-            performSegue(withIdentifier: "startRickAndMorty", sender: nil)
+            perfomSegueWithAutomaticFetch(true)
         default:
-            automaticFetch = false
-            performSegue(withIdentifier: "startRickAndMorty", sender: nil)
+            perfomSegueWithAutomaticFetch(false)
         }
+    }
+    
+    // MARK: - private methods
+    private func perfomSegueWithAutomaticFetch(_ type: Bool) {
+        automaticFetch = type
+        performSegue(withIdentifier: "startRickAndMorty", sender: nil)
     }
 }
