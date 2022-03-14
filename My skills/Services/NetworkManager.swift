@@ -2,7 +2,7 @@
 //  NetworkManager.swift
 //  My skills
 //
-//  Created by iMac on 24.02.2022.
+//  Created by Artem Pavlov on 24.02.2022.
 //
 
 import Foundation
@@ -15,9 +15,7 @@ enum NetworkError: Error {
 }
 
 class NetworkManager {
-    
     static let shared = NetworkManager()
-    
     private init() {}
     
     func fetchData(from url: String, completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
@@ -44,8 +42,8 @@ class NetworkManager {
         } .resume()
     }
     
-    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
-        AF.request(Link.rickAndMorty.rawValue)
+    func fetchDataWithAlamofire(from url: String, completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
+        AF.request(url)
             .validate()
             .responseJSON { dataResponse in
                 switch dataResponse.result {
@@ -60,18 +58,27 @@ class NetworkManager {
                 
             }
     }
-    
-    
 }
 
 class ImageManager {
-    
     static let shared = ImageManager()
-    
     private init() {}
     
     func loadImage(from url: String?) -> Data? {
         guard let imageURL = URL(string: url ?? "") else {return nil}
         return try? Data(contentsOf: imageURL)
+    }
+    
+    func loadImageWithAlamofire(from url: String, completion: @escaping(Data) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    completion(data)
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
 }
