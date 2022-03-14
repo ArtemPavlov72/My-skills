@@ -21,6 +21,7 @@ class CharacterDetailsViewController: UIViewController {
     
     //MARK: - Public Properties
     var hero: Hero!
+    var automaticFetch: Bool!
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -29,14 +30,30 @@ class CharacterDetailsViewController: UIViewController {
         
         heroNameLabel.text = hero.name
         heroDetailsLabel.text = hero.description
-        getImage(from: hero.image)
+        imageFetchMethod(from: hero.image, with: automaticFetch)
     }
     
     // MARK: - Private methods
-    private func getImage(from url: String) {
+    private func imageFetchMethod(from url: String?, with automaticMethod: Bool) {
+        if automaticMethod {
+            getImage(from: url)
+        } else {
+            getImagewithAlamofire(from: url)
+        }
+    }
+    
+    private func getImage(from url: String?) {
         DispatchQueue.global().async {
             guard let imageData = ImageManager.shared.loadImage(from: url) else {return}
             DispatchQueue.main.async {
+                self.heroImage.image = UIImage(data: imageData)
+            }
+        }
+    }
+    
+    private func getImagewithAlamofire(from url: String?) {
+        if let imageURL = url {
+            ImageManager.shared.loadImageWithAlamofire(from: imageURL) { imageData in
                 self.heroImage.image = UIImage(data: imageData)
             }
         }

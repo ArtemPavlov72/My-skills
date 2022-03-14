@@ -34,17 +34,6 @@ class CharactersListController: UITableViewController {
         fetchingMethod(from: Link.rickAndMorty.rawValue, with: automaticFetch)
     }
     
-    // MARK: - IB Actions
-    @IBAction func exitButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
-        sender.tag == 1
-        ? fetchingMethod(from: rickAndMorty?.info.next ?? "", with: automaticFetch)
-        : fetchingMethod(from: rickAndMorty?.info.prev ?? "", with: automaticFetch)
-    }
-    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         isFiltering ? filteredHero.count : rickAndMorty?.results.count ?? 0
@@ -53,7 +42,7 @@ class CharactersListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rickMortyCell", for: indexPath) as! RickAndMortyCell
         let hero = isFiltering ? filteredHero[indexPath.row] : rickAndMorty?.results[indexPath.row]
-        cell.configure(with: hero)
+        cell.configure(with: hero, automaticMethod: automaticFetch)
         return cell
     }
     
@@ -63,6 +52,18 @@ class CharactersListController: UITableViewController {
         let hero = isFiltering ? filteredHero[indexPath.row] : rickAndMorty?.results[indexPath.row]
         guard let characterVC = segue.destination as? CharacterDetailsViewController else {return}
         characterVC.hero = hero
+        characterVC.automaticFetch = automaticFetch
+    }
+    
+    // MARK: - IB Actions
+    @IBAction func exitButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
+        sender.tag == 1
+        ? fetchingMethod(from: rickAndMorty?.info.next ?? "", with: automaticFetch)
+        : fetchingMethod(from: rickAndMorty?.info.prev ?? "", with: automaticFetch)
     }
     
     // MARK: - Private methods
@@ -87,7 +88,7 @@ class CharactersListController: UITableViewController {
     }
     
     private func fetchHeroesWitAlamofire(from url: String) {
-        NetworkManager.shared.fetchDataWithAlamofire(url) { result in
+        NetworkManager.shared.fetchDataWithAlamofire(from: url) { result in
             switch result {
             case .success(let rickAndMorty):
                 self.rickAndMorty = rickAndMorty
@@ -98,8 +99,8 @@ class CharactersListController: UITableViewController {
         }
     }
     
-    private func fetchingMethod(from url: String, with automicMethod: Bool) {
-        if automicMethod {
+    private func fetchingMethod(from url: String, with automaticMethod: Bool) {
+        if automaticMethod {
             automaticFetchHeroes(from: url)
         } else {
             fetchHeroesWitAlamofire(from: url)
