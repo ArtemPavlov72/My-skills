@@ -10,28 +10,30 @@ import UIKit
 class StartingRMViewController: UIViewController {
     
     // MARK: - Private Properties
-    private var automaticFetch = true
+    private var fetchingMethod = FetchingMethod.automatic
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationVC = segue.destination as? UINavigationController else {return}
         guard let mainVC = navigationVC.topViewController as? CharactersListController else {return}
-        mainVC.automaticFetch = automaticFetch
+        mainVC.fetchingMethod = fetchingMethod
     }
     
     // MARK: - IB Actions
     @IBAction func pressButton(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            perfomSegueWithAutomaticFetch(true)
+            perfomSegueUsing(FetchingMethod.automatic)
+        case 2:
+            perfomSegueUsing(FetchingMethod.withAlamofire)
         default:
-            perfomSegueWithAutomaticFetch(false)
+            perfomSegueUsing(FetchingMethod.withCache)
         }
     }
     
     // MARK: - private methods
-    private func perfomSegueWithAutomaticFetch(_ type: Bool) {
-        automaticFetch = type
+    private func perfomSegueUsing(_ method: FetchingMethod) {
+        fetchingMethod = method
         performSegue(withIdentifier: "startRickAndMorty", sender: nil)
     }
 }

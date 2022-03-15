@@ -23,7 +23,7 @@ class CharactersListController: UITableViewController {
     }
     
     //MARK: - Public Properties
-    var automaticFetch: Bool!
+    var fetchingMethod = FetchingMethod.automatic
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class CharactersListController: UITableViewController {
         self.navigationItem.largeTitleDisplayMode = .always
         tableView.rowHeight = 90
         setupSearchController()
-        fetchingMethod(from: Link.rickAndMorty.rawValue, with: automaticFetch)
+        fetchingMethod(from: Link.rickAndMorty.rawValue, with: fetchingMethod)
     }
     
     // MARK: - Table view data source
@@ -42,7 +42,7 @@ class CharactersListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rickMortyCell", for: indexPath) as! RickAndMortyCell
         let hero = isFiltering ? filteredHero[indexPath.row] : rickAndMorty?.results[indexPath.row]
-        cell.configure(with: hero, automaticMethod: automaticFetch)
+        cell.configure(with: hero, method: fetchingMethod)
         return cell
     }
     
@@ -52,7 +52,7 @@ class CharactersListController: UITableViewController {
         let hero = isFiltering ? filteredHero[indexPath.row] : rickAndMorty?.results[indexPath.row]
         guard let characterVC = segue.destination as? CharacterDetailsViewController else {return}
         characterVC.hero = hero
-        characterVC.automaticFetch = automaticFetch
+        characterVC.fetchingMethod = fetchingMethod
     }
     
     // MARK: - IB Actions
@@ -62,8 +62,8 @@ class CharactersListController: UITableViewController {
     
     @IBAction func barButtonNavigation(_ sender: UIBarButtonItem) {
         sender.tag == 1
-        ? fetchingMethod(from: rickAndMorty?.info.next ?? "", with: automaticFetch)
-        : fetchingMethod(from: rickAndMorty?.info.prev ?? "", with: automaticFetch)
+        ? fetchingMethod(from: rickAndMorty?.info.next ?? "", with: fetchingMethod)
+        : fetchingMethod(from: rickAndMorty?.info.prev ?? "", with: fetchingMethod)
     }
     
     // MARK: - Private methods
@@ -99,11 +99,14 @@ class CharactersListController: UITableViewController {
         }
     }
     
-    private func fetchingMethod(from url: String, with automaticMethod: Bool) {
-        if automaticMethod {
+    private func fetchingMethod(from url: String, with fetchingMethod: FetchingMethod) {
+        switch fetchingMethod {
+        case .automatic:
             automaticFetchHeroes(from: url)
-        } else {
+        case .withAlamofire:
             fetchHeroesWitAlamofire(from: url)
+        case .withCache:
+            automaticFetchHeroes(from: url)
         }
     }
 }

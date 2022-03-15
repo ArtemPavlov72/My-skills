@@ -10,7 +10,7 @@ import UIKit
 class HeroImageView: UIImageView {
     func fetchImage(from url: String) {
         guard let url = URL(string: url) else {
-            image = UIImage(named: "no image")
+            image = UIImage(named: "no_image")
             return
         }
         

@@ -10,7 +10,7 @@ import UIKit
 class CharacterDetailsViewController: UIViewController {
     
     //MARK: - IB Outlets
-    @IBOutlet var heroImage: UIImageView! {
+    @IBOutlet var heroImage: HeroImageView! {
         didSet {
             heroImage.layer.cornerRadius = heroImage.frame.height / 2
         }
@@ -21,7 +21,7 @@ class CharacterDetailsViewController: UIViewController {
     
     //MARK: - Public Properties
     var hero: Hero!
-    var automaticFetch: Bool!
+    var fetchingMethod = FetchingMethod.automatic
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -30,15 +30,18 @@ class CharacterDetailsViewController: UIViewController {
         
         heroNameLabel.text = hero.name
         heroDetailsLabel.text = hero.description
-        imageFetchMethod(from: hero.image, with: automaticFetch)
+        imageFetchMethod(from: hero.image, with: fetchingMethod)
     }
     
     // MARK: - Private methods
-    private func imageFetchMethod(from url: String?, with automaticMethod: Bool) {
-        if automaticMethod {
+    private func imageFetchMethod(from url: String?, with method: FetchingMethod) {
+        switch method {
+        case .automatic:
             getImage(from: url)
-        } else {
-            getImagewithAlamofire(from: url)
+        case .withAlamofire:
+            getImageWithAlamofire(from: url)
+        case .withCache:
+            getImageWithCache(from: url)
         }
     }
     
@@ -51,11 +54,15 @@ class CharacterDetailsViewController: UIViewController {
         }
     }
     
-    private func getImagewithAlamofire(from url: String?) {
+    private func getImageWithAlamofire(from url: String?) {
         if let imageURL = url {
             ImageManager.shared.loadImageWithAlamofire(from: imageURL) { imageData in
                 self.heroImage.image = UIImage(data: imageData)
             }
         }
+    }
+    
+    private func getImageWithCache(from url: String?) {
+        heroImage.fetchImage(from: url ?? "")
     }
 }

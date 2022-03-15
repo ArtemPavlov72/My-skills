@@ -100,3 +100,9 @@ struct Location: Decodable {
 enum Link: String {
     case rickAndMorty = "https://rickandmortyapi.com/api/character"
 }
+
+enum FetchingMethod {
+    case automatic
+    case withAlamofire
+    case withCache
+}
