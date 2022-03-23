@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		849C46A627EB9150009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A527EB9150009BFC7E /* SceneDelegate.swift */; };
+		84DECE9327EA5786004080DC /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9227EA5786004080DC /* TaskListViewController.swift */; };
+		84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9527EA59AB004080DC /* MySkillsCoreData.xcdatamodeld */; };
 		882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B32799D335005F8FF6 /* AppDelegate.swift */; };
-		882344B62799D335005F8FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B52799D335005F8FF6 /* SceneDelegate.swift */; };
 		882344B82799D335005F8FF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B72799D335005F8FF6 /* LoginViewController.swift */; };
 		882344BB2799D335005F8FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882344B92799D335005F8FF6 /* Main.storyboard */; };
 		882344BD2799D337005F8FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882344BC2799D337005F8FF6 /* Assets.xcassets */; };
@@ -40,9 +42,11 @@
 
 /* Begin PBXFileReference section */
 		612E14F0D5E39D870ECEB65F /* Pods-My skills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My skills.debug.xcconfig"; path = "Target Support Files/Pods-My skills/Pods-My skills.debug.xcconfig"; sourceTree = "<group>"; };
+		849C46A527EB9150009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
+		84DECE9227EA5786004080DC /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		84DECE9627EA59AB004080DC /* MySkillsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkillsCoreData.xcdatamodel; sourceTree = "<group>"; };
 		882344B02799D335005F8FF6 /* My skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		882344B32799D335005F8FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		882344B52799D335005F8FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		882344B72799D335005F8FF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		882344BA2799D335005F8FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		882344BC2799D337005F8FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84DECE9427EA5790004080DC /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				84DECE9227EA5786004080DC /* TaskListViewController.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
 		882344A72799D335005F8FF6 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 				886D996C27ACF6E900FF3B6C /* Quiz */,
 				88ECCC2427B1449F0017015F /* ColorMix */,
 				8831C48A27BEBFFB00EC0EDA /* RickAndMorty */,
+				84DECE9427EA5790004080DC /* TaskList */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -203,7 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				882344B32799D335005F8FF6 /* AppDelegate.swift */,
-				882344B52799D335005F8FF6 /* SceneDelegate.swift */,
+				849C46A527EB9150009BFC7E /* SceneDelegate.swift */,
+				84DECE9527EA59AB004080DC /* MySkillsCoreData.xcdatamodeld */,
 				882344C12799D337005F8FF6 /* Info.plist */,
 			);
 			path = App;
@@ -366,7 +380,9 @@
 				88F6179127DB89F60087FE7F /* StartingR&MViewController.swift in Sources */,
 				88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */,
 				886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */,
+				84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */,
 				88F6179327E0C9C50087FE7F /* HeroImageView.swift in Sources */,
+				84DECE9327EA5786004080DC /* TaskListViewController.swift in Sources */,
 				88D54E6E27C804B600B115EF /* NetworkManager.swift in Sources */,
 				8831C48927BEBFEF00EC0EDA /* CharactersListController.swift in Sources */,
 				882344B82799D335005F8FF6 /* LoginViewController.swift in Sources */,
@@ -374,13 +390,13 @@
 				8831C48C27BEC40E00EC0EDA /* RickAndMorty.swift in Sources */,
 				882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */,
 				8831C48E27BECAA900EC0EDA /* RickAndMortyCell.swift in Sources */,
-				882344B62799D335005F8FF6 /* SceneDelegate.swift in Sources */,
 				88B5C58827BA158400E12DE0 /* Extension + UIButton.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
 				886D996E27AD025A00FF3B6C /* Question.swift in Sources */,
 				88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */,
 				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
+				849C46A627EB9150009BFC7E /* SceneDelegate.swift in Sources */,
 				88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */,
 				8831C49227C2084100EC0EDA /* CharacterDetailsViewController.swift in Sources */,
 				88782C9427A50A680015041B /* Project.swift in Sources */,
@@ -610,6 +626,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84DECE9527EA59AB004080DC /* MySkillsCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84DECE9627EA59AB004080DC /* MySkillsCoreData.xcdatamodel */,
+			);
+			currentVersion = 84DECE9627EA59AB004080DC /* MySkillsCoreData.xcdatamodel */;
+			path = MySkillsCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 882344A82799D335005F8FF6 /* Project object */;
 }

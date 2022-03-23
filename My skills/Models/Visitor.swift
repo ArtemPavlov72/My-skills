@@ -2,7 +2,7 @@
 //  Visitor.swift
 //  My skills
 //
-//  Created by iMac on 22.01.2022.
+//  Created by Artem Pavlov on 22.01.2022.
 //
 
 struct Visitor {

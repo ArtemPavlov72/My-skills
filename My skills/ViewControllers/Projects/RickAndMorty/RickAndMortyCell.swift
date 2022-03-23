@@ -23,7 +23,6 @@ class RickAndMortyCell: UITableViewCell {
     //MARK: - Methods
     func configure(with hero: Hero?, method: FetchingMethod) {
         heroNameLabel.text = hero?.name
-        spinnerView = showSpinner(in: heroImage)
         imageFetchMethod(with: hero?.image ?? "", with: method)
     }
     
@@ -31,8 +30,10 @@ class RickAndMortyCell: UITableViewCell {
     private func imageFetchMethod(with url: String, with method: FetchingMethod) {
         switch method {
         case .automatic:
+            spinnerView = showSpinner(in: heroImage)
             imageFetchAutomatic(from: url)
         case .withAlamofire:
+            spinnerView = showSpinner(in: heroImage)
             imageFetchWithAlamofire(from: url)
         case .withCache:
             imageFetchWithCached(from: url)
@@ -60,7 +61,6 @@ class RickAndMortyCell: UITableViewCell {
     
     private func imageFetchWithCached(from url: String?) {
         heroImage.fetchImage(from: url ?? "")
-        self.spinnerView?.stopAnimating()
     }
     
     private func showSpinner(in view: UIView) -> UIActivityIndicatorView {
