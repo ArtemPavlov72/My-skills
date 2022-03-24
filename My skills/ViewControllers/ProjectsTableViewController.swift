@@ -48,7 +48,8 @@ class ProjectsTableViewController: UITableViewController {
             performSegue(withIdentifier: "rickAndMorty", sender: nil)
             
         case .taskList:
-            print("")
+            let taskListVC = TaskListViewController()
+            show(taskListVC, sender: nil)
         }
     }
 }
