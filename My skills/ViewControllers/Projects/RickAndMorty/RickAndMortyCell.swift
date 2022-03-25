@@ -59,8 +59,8 @@ class RickAndMortyCell: UITableViewCell {
         }
     }
     
-    private func imageFetchWithCached(from url: String?) {
-        heroImage.fetchImage(from: url ?? "")
+    private func imageFetchWithCached(from url: String) {
+        heroImage.fetchImage(from: url)
     }
     
     private func showSpinner(in view: UIView) -> UIActivityIndicatorView {

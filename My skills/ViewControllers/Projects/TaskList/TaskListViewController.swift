@@ -13,14 +13,22 @@ class TaskListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Задачи"
+        setupNavigationBar()
     }
     
     // MARK: - Private Methods
     private func setupNavigationBar() {
+        title = "Список задач"
         
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addAction)
+        )
     }
-
-
+    
+    @objc private func addAction() {
+        let newTaskVC = NewTaskViewController()
+        present(newTaskVC, animated: true)
+    }
 }

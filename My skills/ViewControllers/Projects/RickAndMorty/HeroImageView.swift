@@ -3,7 +3,7 @@
 //  My skills
 //
 //  Created by Artem Pavlov on 15.03.2022.
-//
+// 
 
 import UIKit
 
