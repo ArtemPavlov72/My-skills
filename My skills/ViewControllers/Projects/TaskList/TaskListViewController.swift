@@ -18,7 +18,7 @@ class TaskListViewController: UITableViewController {
     
     // MARK: - Private Methods
     private func setupNavigationBar() {
-        title = "Список задач"
+        title = "Список задач "
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
