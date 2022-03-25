@@ -19,7 +19,7 @@ class NewTaskViewController: UIViewController {
     private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0/255, green: 200/255, blue: 20/255, alpha: 1)
-        button.setTitle("Cохранить ", for: .normal)
+        button.setTitle("Cохранить", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
