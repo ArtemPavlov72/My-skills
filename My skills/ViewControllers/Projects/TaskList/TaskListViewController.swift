@@ -15,7 +15,6 @@ protocol TaskListViewControllerDelegate {
 class TaskListViewController: UITableViewController {
     
     //MARK: - Private Properties
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let cellID = "cell"
     private var tasks: [Task] = []
@@ -26,7 +25,7 @@ class TaskListViewController: UITableViewController {
         view.backgroundColor = .white
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         setupNavigationBar()
-        fetchData()
+        fetchTasks()
     }
     
     // MARK: - Table view data source
@@ -63,14 +62,14 @@ class TaskListViewController: UITableViewController {
         present(newTaskVC, animated: true)
     }
     
-    private func fetchData() {
-        let fetchRequest = Task.fetchRequest()
-        
-        do {
-            tasks = try context.fetch(fetchRequest)
-        }
-        catch let error {
-            print("Failed to fetch data", error)
+    private func fetchTasks() {
+        StorageManager.shared.fetchData { result in
+            switch result {
+            case .success(let tasks):
+                self.tasks = tasks
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
 }
@@ -78,7 +77,7 @@ class TaskListViewController: UITableViewController {
 // MARK: - Delegate Tasks
 extension TaskListViewController: TaskListViewControllerDelegate {
     func reloadTasks() {
-        fetchData()
+        fetchTasks()
         tableView.reloadData()
     }
 }
