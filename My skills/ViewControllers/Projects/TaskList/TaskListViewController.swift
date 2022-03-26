@@ -9,11 +9,12 @@ import UIKit
 import CoreData
 
 protocol TaskListViewControllerDelegate {
-    
+    func reloadTasks()
 }
 
 class TaskListViewController: UITableViewController {
     
+    //MARK: - Private Properties
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let cellID = "cell"
@@ -36,6 +37,12 @@ class TaskListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
+        var content = cell.defaultContentConfiguration()
+        let task = tasks[indexPath.row]
+        
+        content.text = task.title
+        cell.contentConfiguration = content
+        
         return cell
     }
     
@@ -52,6 +59,7 @@ class TaskListViewController: UITableViewController {
     
     @objc private func addAction() {
         let newTaskVC = NewTaskViewController()
+        newTaskVC.delegate = self
         present(newTaskVC, animated: true)
     }
     
@@ -67,6 +75,10 @@ class TaskListViewController: UITableViewController {
     }
 }
 
+// MARK: - Delegate Tasks
 extension TaskListViewController: TaskListViewControllerDelegate {
-    
+    func reloadTasks() {
+        fetchData()
+        tableView.reloadData()
+    }
 }

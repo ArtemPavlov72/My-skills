@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
                 and: "Попробуйте ввести имя при помощи букв"
             )
         }
-        visitor.name = visitorNameTextField.text ?? "888"
+        visitor.name = visitorNameTextField.text ?? ""
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {

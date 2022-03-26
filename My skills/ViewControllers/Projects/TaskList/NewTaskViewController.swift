@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class NewTaskViewController: UIViewController {
-
+    
+    //MARK: - Private Properties
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private lazy var taskTextField: UITextField = {
@@ -38,6 +40,10 @@ class NewTaskViewController: UIViewController {
         return button
     }()
     
+    //MARK: - Public Properties
+    var delegate: TaskListViewControllerDelegate?
+    
+    //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -45,12 +51,36 @@ class NewTaskViewController: UIViewController {
         setupConstraints()
     }
     
+    //MARK: - Private Methods
     private func setupSubviews(_ subviews: UIView...) {
         subviews.forEach { subview in
             view.addSubview(subview)
         }
     }
     
+    @objc private func saveAction() {
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return }
+        guard let task = NSManagedObject(entity: entityDescription, insertInto: context) as? Task else { return }
+        
+        task.title = taskTextField.text
+        
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch let error {
+                print (error)
+            }
+        }
+        
+        delegate?.reloadTasks()
+        dismiss(animated: true)
+    }
+    
+    @objc private func cancelAction() {
+        dismiss(animated: true)
+    }
+    
+    //MARK: - Constraints
     private func setupConstraints() {
         taskTextField.translatesAutoresizingMaskIntoConstraints = false
         
@@ -69,20 +99,11 @@ class NewTaskViewController: UIViewController {
         ])
         
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
-       
+        
         NSLayoutConstraint.activate([
             cancelButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 20),
             cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
             cancelButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100)
         ])
     }
-    
-    @objc private func saveAction() {
-        dismiss(animated: true)
-    }
-    
-    @objc private func cancelAction() {
-        dismiss(animated: true)
-    }
-
 }
