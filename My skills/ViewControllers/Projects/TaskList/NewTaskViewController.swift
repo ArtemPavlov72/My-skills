@@ -2,7 +2,7 @@
 //  NewTaskViewController.swift
 //  My skills
 //
-//  Created by admin  on 24.03.2022.
+//  Created by Artem Pavlov on 24.03.2022.
 //
 
 import UIKit

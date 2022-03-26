@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
 		849C46AA27ECEB75009BFC7E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */; };
+		84A730E427EF814000F0A9A0 /* Storage Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E327EF814000F0A9A0 /* Storage Manager.swift */; };
 		84DECE9327EA5786004080DC /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9227EA5786004080DC /* TaskListViewController.swift */; };
 		84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9527EA59AB004080DC /* MySkillsCoreData.xcdatamodeld */; };
 		882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B32799D335005F8FF6 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		612E14F0D5E39D870ECEB65F /* Pods-My skills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My skills.debug.xcconfig"; path = "Target Support Files/Pods-My skills/Pods-My skills.debug.xcconfig"; sourceTree = "<group>"; };
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		84A730E327EF814000F0A9A0 /* Storage Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage Manager.swift"; sourceTree = "<group>"; };
 		84DECE9227EA5786004080DC /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		84DECE9627EA59AB004080DC /* MySkillsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkillsCoreData.xcdatamodel; sourceTree = "<group>"; };
 		882344B02799D335005F8FF6 /* My skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				88D54E6D27C804B600B115EF /* NetworkManager.swift */,
+				84A730E327EF814000F0A9A0 /* Storage Manager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				8831C48E27BECAA900EC0EDA /* RickAndMortyCell.swift in Sources */,
 				88B5C58827BA158400E12DE0 /* Extension + UIButton.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
+				84A730E427EF814000F0A9A0 /* Storage Manager.swift in Sources */,
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
 				886D996E27AD025A00FF3B6C /* Question.swift in Sources */,
 				88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */,
