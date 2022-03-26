@@ -9,6 +9,8 @@ import UIKit
 
 class NewTaskViewController: UIViewController {
 
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Новая задача"

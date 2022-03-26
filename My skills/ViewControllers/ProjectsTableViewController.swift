@@ -2,7 +2,7 @@
 //  ProjectsTableViewController.swift
 //  My skills
 //
-//  Created by iMac on 26.01.2022.
+//  Created by Artem Pavlov on 26.01.2022.
 //
 
 import UIKit
