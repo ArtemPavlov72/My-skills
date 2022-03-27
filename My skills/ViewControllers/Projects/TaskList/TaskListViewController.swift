@@ -45,6 +45,7 @@ class TaskListViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let task = tasks[indexPath.row]
         
@@ -52,6 +53,14 @@ class TaskListViewController: UITableViewController {
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             StorageManager.shared.deleteData(task)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let task = tasks[indexPath.row]
+        showAlert(task: task) {
+            tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
     
@@ -84,10 +93,24 @@ class TaskListViewController: UITableViewController {
     }
 }
 
-// MARK: - Delegate Tasks
+//MARK: - Delegate Tasks
 extension TaskListViewController: TaskListViewControllerDelegate {
     func reloadTasks() {
         fetchTasks()
         tableView.reloadData()
+    }
+}
+
+//MARK: - Alert Controller
+extension TaskListViewController {
+    private func showAlert(task: Task?, completion: (() -> Void)?) {
+        let alert = UIAlertController(title: "Редактируем заметку", message: "Введите новое название", preferredStyle: .alert)
+        alert.action(task: task) { taskName in
+            if let task = task, let completion = completion {
+                StorageManager.shared.editData(task, newTask: taskName)
+                completion()
+            }
+        }
+        present(alert, animated: true)
     }
 }
