@@ -2,7 +2,7 @@
 //  TrafficLightController.swift
 //  My skills
 //
-//  Created by iMac on 31.01.2022.
+//  Created by Artem Pavlov on 31.01.2022.
 //
 
 import UIKit
@@ -40,8 +40,8 @@ class TrafficLightController: UIViewController {
     // MARK: - IB Actions
     @IBAction func startButtonPressed(_ sender: UIButton) {
         sender.pulsate()
-        if startButton.currentTitle == "START" {
-            startButton.setTitle("NEXT", for: .normal)
+        if startButton.currentTitle == "НАЧАТЬ" {
+            startButton.setTitle("СЛЕДУЮЩИЙ", for: .normal)
         }
         
         switch currentLight {

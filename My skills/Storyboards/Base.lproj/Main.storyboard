@@ -208,14 +208,14 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-kd-R8d">
-                                <rect key="frame" x="99.5" y="475.5" width="121" height="52.5"/>
+                                <rect key="frame" x="47.5" y="482.5" width="225" height="45.5"/>
                                 <color key="backgroundColor" red="0.30149926960000001" green="0.29382866800000002" blue="0.78474716909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="40H-An-bRK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="40H-An-bRK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="START">
+                                <state key="normal" title="НАЧАТЬ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -226,13 +226,12 @@
                         <viewLayoutGuide key="safeArea" id="2ap-d6-XeQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4PL-kd-R8d" firstAttribute="height" secondItem="mTB-c4-SwC" secondAttribute="height" multiplier="0.0924296" id="71J-Zx-yZ9"/>
+                            <constraint firstItem="4PL-kd-R8d" firstAttribute="height" secondItem="mTB-c4-SwC" secondAttribute="height" multiplier="0.08" id="71J-Zx-yZ9"/>
                             <constraint firstItem="bF9-wj-bhd" firstAttribute="centerX" secondItem="2ap-d6-XeQ" secondAttribute="centerX" id="JFy-BQ-AMy"/>
                             <constraint firstItem="2ap-d6-XeQ" firstAttribute="bottom" secondItem="4PL-kd-R8d" secondAttribute="bottom" constant="40" id="K9v-Mv-DD1"/>
                             <constraint firstItem="2ap-d6-XeQ" firstAttribute="top" secondItem="bF9-wj-bhd" secondAttribute="top" id="MlU-Qm-DFc"/>
                             <constraint firstItem="bF9-wj-bhd" firstAttribute="height" secondItem="mTB-c4-SwC" secondAttribute="height" multiplier="0.580986" id="Tkp-Np-Ooq"/>
-                            <constraint firstItem="4PL-kd-R8d" firstAttribute="centerX" secondItem="mTB-c4-SwC" secondAttribute="centerX" id="gXR-Ub-DGr"/>
-                            <constraint firstItem="4PL-kd-R8d" firstAttribute="width" secondItem="mTB-c4-SwC" secondAttribute="width" multiplier="0.378125" id="lvM-0E-lRk"/>
+                            <constraint firstItem="4PL-kd-R8d" firstAttribute="centerX" secondItem="mTB-c4-SwC" secondAttribute="centerX" id="ZNt-c5-XBK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mOv-DM-EIe"/>

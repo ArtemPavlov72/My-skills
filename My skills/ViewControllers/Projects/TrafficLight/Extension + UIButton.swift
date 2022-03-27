@@ -2,7 +2,7 @@
 //  Extension + UIButton.swift
 //  My skills
 //
-//  Created by iMac on 14.02.2022.
+//  Created by Artem Pavlov on 14.02.2022.
 //
 
 import UIKit
