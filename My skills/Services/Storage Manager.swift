@@ -2,7 +2,7 @@
 //  Storage Manager.swift
 //  My skills
 //
-//  Created by Artem Pavlov  on 26.03.2022.
+//  Created by Artem Pavlov on 26.03.2022.
 //
 
 import CoreData
@@ -37,6 +37,12 @@ class StorageManager {
         } catch let error {
             completion(.failure(error))
         }
+    }
+    
+    func saveData(nameOfTask: String) {
+        let task = Task(context: viewContext)
+        task.title = nameOfTask
+        saveContext()
     }
 
     // MARK: - Core Data Saving support
