@@ -10,6 +10,7 @@
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
 		849C46AA27ECEB75009BFC7E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */; };
 		84A730E427EF814000F0A9A0 /* Storage Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E327EF814000F0A9A0 /* Storage Manager.swift */; };
+		84A730E627F04C7F00F0A9A0 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E527F04C7F00F0A9A0 /* AlertController.swift */; };
 		84DECE9327EA5786004080DC /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9227EA5786004080DC /* TaskListViewController.swift */; };
 		84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9527EA59AB004080DC /* MySkillsCoreData.xcdatamodeld */; };
 		882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B32799D335005F8FF6 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		84A730E327EF814000F0A9A0 /* Storage Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage Manager.swift"; sourceTree = "<group>"; };
+		84A730E527F04C7F00F0A9A0 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		84DECE9227EA5786004080DC /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		84DECE9627EA59AB004080DC /* MySkillsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkillsCoreData.xcdatamodel; sourceTree = "<group>"; };
 		882344B02799D335005F8FF6 /* My skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 			children = (
 				84DECE9227EA5786004080DC /* TaskListViewController.swift */,
 				849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */,
+				84A730E527F04C7F00F0A9A0 /* AlertController.swift */,
 			);
 			path = TaskList;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */,
 				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
 				849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */,
+				84A730E627F04C7F00F0A9A0 /* AlertController.swift in Sources */,
 				88EE12E627A1C656008CDC58 /* ProjectsTableViewController.swift in Sources */,
 				8831C49227C2084100EC0EDA /* CharacterDetailsViewController.swift in Sources */,
 				88782C9427A50A680015041B /* Project.swift in Sources */,

@@ -45,6 +45,11 @@ class StorageManager {
         saveContext()
     }
     
+    func editData(_ task: Task, newTask: String) {
+        task.title = newTask
+        saveContext()
+    }
+    
     func deleteData(_ task: Task) {
         viewContext.delete(task)
         saveContext()
