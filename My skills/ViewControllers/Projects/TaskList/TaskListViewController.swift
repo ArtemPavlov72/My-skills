@@ -45,6 +45,16 @@ class TaskListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let task = tasks[indexPath.row]
+        
+        if editingStyle == .delete {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteData(task)
+        }
+    }
+    
     // MARK: - Private Methods
     private func setupNavigationBar() {
         title = "Список задач"

@@ -44,6 +44,11 @@ class StorageManager {
         task.title = nameOfTask
         saveContext()
     }
+    
+    func deleteData(_ task: Task) {
+        viewContext.delete(task)
+        saveContext()
+    }
 
     // MARK: - Core Data Saving support
     func saveContext() {
