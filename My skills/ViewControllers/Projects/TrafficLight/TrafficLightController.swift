@@ -41,7 +41,7 @@ class TrafficLightController: UIViewController {
     @IBAction func startButtonPressed(_ sender: UIButton) {
         sender.pulsate()
         if startButton.currentTitle == "НАЧАТЬ" {
-            startButton.setTitle("СЛЕДУЮЩИЙ", for: .normal)
+            startButton.setTitle("ДАЛЬШЕ", for: .normal)
         }
         
         switch currentLight {
