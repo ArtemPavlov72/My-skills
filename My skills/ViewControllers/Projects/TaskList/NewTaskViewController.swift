@@ -20,7 +20,7 @@ class NewTaskViewController: UIViewController {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 0/255, green: 200/255, blue: 20/255, alpha: 1)
+        button.backgroundColor = UIColor(red: 0/255, green: 200/255, blue: 150/255, alpha: 1)
         button.setTitle("Cохранить", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
@@ -30,7 +30,7 @@ class NewTaskViewController: UIViewController {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 220/255, green: 50/255, blue: 20/255, alpha: 1)
+        button.backgroundColor = UIColor(red: 200/255, green: 80/255, blue: 20/255, alpha: 1)
         button.setTitle("Отмена", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
@@ -44,7 +44,7 @@ class NewTaskViewController: UIViewController {
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 230/255, alpha: 1)
         setupSubviews(taskTextField, saveButton, cancelButton)
         setupConstraints()
     }
@@ -57,6 +57,7 @@ class NewTaskViewController: UIViewController {
     }
     
     @objc private func saveAction() {
+        self.saveButton.pulsate()
         guard let inputText = taskTextField.text, !inputText.isEmpty else { return }
         StorageManager.shared.saveData(nameOfTask: inputText)
         delegate?.reloadTasks()
@@ -64,6 +65,7 @@ class NewTaskViewController: UIViewController {
     }
     
     @objc private func cancelAction() {
+        self.cancelButton.pulsate()
         dismiss(animated: true)
     }
     
