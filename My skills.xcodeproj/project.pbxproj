@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84689A1327F62D4900713F46 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84689A1227F62D4900713F46 /* TaskListViewController.swift */; };
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
 		849C46AA27ECEB75009BFC7E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */; };
 		84A730E427EF814000F0A9A0 /* Storage Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E327EF814000F0A9A0 /* Storage Manager.swift */; };
 		84A730E627F04C7F00F0A9A0 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E527F04C7F00F0A9A0 /* AlertController.swift */; };
-		84DECE9327EA5786004080DC /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9227EA5786004080DC /* TaskListViewController.swift */; };
+		84DECE9327EA5786004080DC /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9227EA5786004080DC /* TaskListTableViewController.swift */; };
 		84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9527EA59AB004080DC /* MySkillsCoreData.xcdatamodeld */; };
 		882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B32799D335005F8FF6 /* AppDelegate.swift */; };
 		882344B82799D335005F8FF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882344B72799D335005F8FF6 /* LoginViewController.swift */; };
@@ -45,11 +46,12 @@
 
 /* Begin PBXFileReference section */
 		612E14F0D5E39D870ECEB65F /* Pods-My skills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My skills.debug.xcconfig"; path = "Target Support Files/Pods-My skills/Pods-My skills.debug.xcconfig"; sourceTree = "<group>"; };
+		84689A1227F62D4900713F46 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		84A730E327EF814000F0A9A0 /* Storage Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage Manager.swift"; sourceTree = "<group>"; };
 		84A730E527F04C7F00F0A9A0 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		84DECE9227EA5786004080DC /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		84DECE9227EA5786004080DC /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		84DECE9627EA59AB004080DC /* MySkillsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkillsCoreData.xcdatamodel; sourceTree = "<group>"; };
 		882344B02799D335005F8FF6 /* My skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		882344B32799D335005F8FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +109,8 @@
 		84DECE9427EA5790004080DC /* TaskList */ = {
 			isa = PBXGroup;
 			children = (
-				84DECE9227EA5786004080DC /* TaskListViewController.swift */,
+				84DECE9227EA5786004080DC /* TaskListTableViewController.swift */,
+				84689A1227F62D4900713F46 /* TaskListViewController.swift */,
 				849C46A927ECEB75009BFC7E /* NewTaskViewController.swift */,
 				84A730E527F04C7F00F0A9A0 /* AlertController.swift */,
 			);
@@ -400,8 +403,9 @@
 				84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */,
 				88F6179327E0C9C50087FE7F /* HeroImageView.swift in Sources */,
 				849C46AA27ECEB75009BFC7E /* NewTaskViewController.swift in Sources */,
-				84DECE9327EA5786004080DC /* TaskListViewController.swift in Sources */,
+				84DECE9327EA5786004080DC /* TaskListTableViewController.swift in Sources */,
 				88D54E6E27C804B600B115EF /* NetworkManager.swift in Sources */,
+				84689A1327F62D4900713F46 /* TaskListViewController.swift in Sources */,
 				8831C48927BEBFEF00EC0EDA /* CharactersListController.swift in Sources */,
 				882344B82799D335005F8FF6 /* LoginViewController.swift in Sources */,
 				88ECCC2127B144600017015F /* ColorViewController.swift in Sources */,

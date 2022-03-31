@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIAlertController {
-    func action(task: Task?, completion: @escaping(String) -> Void) {
+    func action(taskList: TaskList?, completion: @escaping(String) -> Void) {
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
             guard let textValue = self.textFields?.first?.text else { return }
             guard !textValue.isEmpty else { return }
@@ -21,7 +21,7 @@ extension UIAlertController {
         addAction(cancelAction)
         addTextField { textField in
             textField.placeholder = "Текст заметки"
-            textField.text = task?.title
+            textField.text = taskList?.title
         }
     }
 }

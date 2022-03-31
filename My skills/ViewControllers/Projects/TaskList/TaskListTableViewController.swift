@@ -2,10 +2,9 @@
 //  TaskListViewController.swift
 //  My skills
 //
-//  Created by admin  on 31.03.2022.
+//  Created by Artem Pavlov  on 23.03.2022.
 //
 
-/*
 import UIKit
 import CoreData
 
@@ -18,7 +17,7 @@ class TaskListTableViewController: UITableViewController {
     //MARK: - Private Properties
     
     private let cellID = "cell"
-    private var tasks: [Task] = []
+    private var taskLists: [TaskList] = []
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -31,14 +30,14 @@ class TaskListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.count
+        taskLists.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         var content = cell.defaultContentConfiguration()
-        let task = tasks[indexPath.row]
+        let task = taskLists[indexPath.row]
         
         content.text = task.title
         cell.contentConfiguration = content
@@ -47,36 +46,36 @@ class TaskListTableViewController: UITableViewController {
     }
     
     //MARK: - Table View Delegate
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+ /*   override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         tableView.deselectRow(at: indexPath, animated: true)
-        let task = tasks[indexPath.row]
+        let taskList = taskLists[indexPath.row]
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
-            self.tasks.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            StorageManager.shared.deleteData(task)
-        }
+      //  let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+        //    self.taskLists.remove(at: indexPath.row)
+        //    tableView.deleteRows(at: [indexPath], with: .automatic)
+        //    StorageManager.shared.deleteData(taskList)
+      //  }
         
-        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
-            self.showAlert(task: task) {
-                tableView.reloadRows(at: [indexPath], with: .automatic)
-            }
+  //      let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
+   //         self.showAlert(task: task) {
+    //            tableView.reloadRows(at: [indexPath], with: .automatic)
+    //        }
         }
-        editAction.backgroundColor = .orange
+     //   editAction.backgroundColor = .orange
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
-    }
+    } */
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let task = tasks[indexPath.row]
-        showAlert(task: task) {
+        let task = taskLists[indexPath.row]
+        showAlert(task: taskLists) {
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
     
     // MARK: - Private Methods
     private func setupNavigationBar() {
-        title = "Список задач"
+        title = "Списки задач"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
@@ -92,10 +91,10 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func fetchTasks() {
-        StorageManager.shared.fetchData { result in
+        StorageManager.shared.fetchTaskList { result in
             switch result {
-            case .success(let tasks):
-                self.tasks = tasks
+            case .success(let taskLists):
+                self.taskLists = taskLists
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -113,15 +112,14 @@ extension TaskListTableViewController: TaskListViewControllerDelegate {
 
 //MARK: - Alert Controller
 extension TaskListTableViewController {
-    private func showAlert(task: Task?, completion: (() -> Void)?) {
+    private func showAlert(task: TaskList?, completion: (() -> Void)?) {
         let alert = UIAlertController(title: "Редактируем заметку", message: "Введите новое название", preferredStyle: .alert)
-        alert.action(task: task) { taskName in
+        alert.action(taskList: task) { taskName in
             if let task = task, let completion = completion {
-                StorageManager.shared.editData(task, newTask: taskName)
+                StorageManager.shared.editData(taskList, newTask: taskName)
                 completion()
             }
         }
         present(alert, animated: true)
     }
 }
-*/

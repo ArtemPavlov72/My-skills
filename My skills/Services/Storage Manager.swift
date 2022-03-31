@@ -27,7 +27,34 @@ class StorageManager {
         viewContext = persistentContainer.viewContext
     }
     
-    //MARK: - Private Methods
+    //MARK: - Private Methods of TaskList
+    func fetchTaskList(completion: (Result<[TaskList], Error>) -> Void) {
+        let fetchRequest = TaskList.fetchRequest()
+        
+        do {
+            let tasksLists = try viewContext.fetch(fetchRequest)
+            completion(.success(tasksLists))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+    
+    func saveTasklist(nameOfTaskList: String) {
+        let taskList = TaskList(context: viewContext)
+        taskList.title = nameOfTaskList
+    }
+    
+    func editTaskList(_ taskList: TaskList, newTaskList: String) {
+        taskList.title = newTaskList
+        saveContext()
+    }
+    
+    func deleteTaskList(_ tasklist: TaskList) {
+        viewContext.delete(tasklist)
+        saveContext()
+    }
+    
+    //MARK: - Private Methods of Task
     func fetchData(completion: (Result<[Task], Error>) -> Void) {
         let fetchRequest = Task.fetchRequest()
         
