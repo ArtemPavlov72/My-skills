@@ -46,10 +46,11 @@ class ProjectsTableViewController: UITableViewController {
             }
         case .rickAndMorty:
             performSegue(withIdentifier: "rickAndMorty", sender: nil)
-            
         case .taskList:
             let taskListVC = TaskListViewController()
             show(taskListVC, sender: nil)
+        case .realmTaskList:
+            print("Hi")
         }
     }
 }

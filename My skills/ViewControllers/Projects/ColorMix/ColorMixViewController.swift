@@ -46,7 +46,7 @@ class ColorMixViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor(red: 150/255, green: 130/255, blue: 160/255, alpha: 1)
     }
     
     // MARK: - IB Actions

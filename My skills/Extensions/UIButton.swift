@@ -1,5 +1,5 @@
 //
-//  Extension + UIButton.swift
+//  UIButton.swift
 //  My skills
 //
 //  Created by Artem Pavlov on 14.02.2022.
