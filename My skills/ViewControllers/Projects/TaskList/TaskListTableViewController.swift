@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 protocol TaskListViewControllerDelegate {
-    func reloadTasks()
+    func reloadTaskLists()
 }
 
 class TaskListTableViewController: UITableViewController {
@@ -67,10 +67,11 @@ class TaskListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let task = taskLists[indexPath.row]
-        showAlert(task: taskLists) {
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-        }
+        let taskList = taskLists[indexPath.row]
+        
+        let taskVC = TaskTableViewController()
+        taskVC.taskList = taskList
+        show(taskVC, sender: nil)
     }
     
     // MARK: - Private Methods
@@ -85,9 +86,9 @@ class TaskListTableViewController: UITableViewController {
     }
     
     @objc private func addAction() {
-        let newTaskVC = NewTaskViewController()
-        newTaskVC.delegate = self
-        present(newTaskVC, animated: true)
+        let AddInfoVC = AddInfoViewController()
+        AddInfoVC.delegate = self
+        present(AddInfoVC, animated: true)
     }
     
     private func fetchTasks() {
@@ -104,7 +105,7 @@ class TaskListTableViewController: UITableViewController {
 
 //MARK: - Delegate Tasks
 extension TaskListTableViewController: TaskListViewControllerDelegate {
-    func reloadTasks() {
+    func reloadTaskLists() {
         fetchTasks()
         tableView.reloadData()
     }
@@ -112,11 +113,11 @@ extension TaskListTableViewController: TaskListViewControllerDelegate {
 
 //MARK: - Alert Controller
 extension TaskListTableViewController {
-    private func showAlert(task: TaskList?, completion: (() -> Void)?) {
+    private func showAlert(taskList: TaskList?, completion: (() -> Void)?) {
         let alert = UIAlertController(title: "Редактируем заметку", message: "Введите новое название", preferredStyle: .alert)
-        alert.action(taskList: task) { taskName in
-            if let task = task, let completion = completion {
-                StorageManager.shared.editData(taskList, newTask: taskName)
+        alert.action(taskList: taskList) { taskName in
+            if let taskList = taskList, let completion = completion {
+                StorageManager.shared.editTaskList(taskList, newTaskList: taskName)
                 completion()
             }
         }

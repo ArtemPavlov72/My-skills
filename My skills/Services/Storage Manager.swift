@@ -42,6 +42,7 @@ class StorageManager {
     func saveTasklist(nameOfTaskList: String) {
         let taskList = TaskList(context: viewContext)
         taskList.title = nameOfTaskList
+        saveContext()
     }
     
     func editTaskList(_ taskList: TaskList, newTaskList: String) {
@@ -55,20 +56,13 @@ class StorageManager {
     }
     
     //MARK: - Private Methods of Task
-    func fetchData(completion: (Result<[Task], Error>) -> Void) {
-        let fetchRequest = Task.fetchRequest()
-        
-        do {
-            let tasks = try viewContext.fetch(fetchRequest)
-            completion(.success(tasks))
-        } catch let error {
-            completion(.failure(error))
-        }
-    }
     
-    func saveData(nameOfTask: String) {
+    func saveTask(_ taskName: String, to taskListed: TaskList) {
         let task = Task(context: viewContext)
-        task.title = nameOfTask
+        
+        task.title = taskName
+        task.taskList = taskListed
+        
         saveContext()
     }
     

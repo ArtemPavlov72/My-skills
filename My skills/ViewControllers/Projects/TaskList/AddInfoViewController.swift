@@ -1,5 +1,5 @@
 //
-//  NewTaskViewController.swift
+//  AddInfoViewController.swift
 //  My skills
 //
 //  Created by Artem Pavlov on 24.03.2022.
@@ -8,12 +8,12 @@
 import UIKit
 import CoreData
 
-class NewTaskViewController: UIViewController {
+class AddInfoViewController: UIViewController {
     
     //MARK: - Private Properties
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Новая задача"
+        textField.placeholder = "Новая список"
         textField.borderStyle = .roundedRect
         return textField
     }()
@@ -59,8 +59,8 @@ class NewTaskViewController: UIViewController {
     @objc private func saveAction() {
         self.saveButton.pulsate()
         guard let inputText = taskTextField.text, !inputText.isEmpty else { return }
-        StorageManager.shared.saveData(nameOfTask: inputText)
-        delegate?.reloadTasks()
+        StorageManager.shared.saveTasklist(nameOfTaskList: inputText)
+        delegate?.reloadTaskLists()
         dismiss(animated: true)
     }
     
