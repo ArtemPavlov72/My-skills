@@ -45,8 +45,8 @@ class StorageManager {
         saveContext()
     }
     
-    func editTaskList(_ taskList: TaskList, newTaskList: String) {
-        taskList.title = newTaskList
+    func editTaskList(_ taskList: TaskList, newTaskListName: String) {
+        taskList.title = newTaskListName
         saveContext()
     }
     
@@ -56,13 +56,11 @@ class StorageManager {
     }
     
     //MARK: - Private Methods of Task
-    
-    func saveTask(_ taskName: String, to taskListed: TaskList) {
+    func saveTask(_ taskName: String, note text: String, to taskListed: TaskList) {
         let task = Task(context: viewContext)
-        
         task.title = taskName
+        task.note = text
         task.taskList = taskListed
-        
         saveContext()
     }
     
@@ -71,7 +69,7 @@ class StorageManager {
         saveContext()
     }
     
-    func deleteData(_ task: Task) {
+    func deleteTask(_ task: Task) {
         viewContext.delete(task)
         saveContext()
     }

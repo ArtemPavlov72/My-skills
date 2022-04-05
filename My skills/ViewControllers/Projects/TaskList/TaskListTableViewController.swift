@@ -15,7 +15,6 @@ protocol TaskListViewControllerDelegate {
 class TaskListTableViewController: UITableViewController {
     
     //MARK: - Private Properties
-    
     private let cellID = "cell"
     private var taskLists: [TaskList] = []
     
@@ -25,7 +24,7 @@ class TaskListTableViewController: UITableViewController {
         view.backgroundColor = .white
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         setupNavigationBar()
-        fetchTasks()
+        fetchTaskLists()
     }
     
     // MARK: - Table view data source
@@ -46,24 +45,24 @@ class TaskListTableViewController: UITableViewController {
     }
     
     //MARK: - Table View Delegate
- /*   override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         tableView.deselectRow(at: indexPath, animated: true)
         let taskList = taskLists[indexPath.row]
         
-      //  let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
-        //    self.taskLists.remove(at: indexPath.row)
-        //    tableView.deleteRows(at: [indexPath], with: .automatic)
-        //    StorageManager.shared.deleteData(taskList)
-      //  }
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+            self.taskLists.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteTaskList(taskList)
+        }
         
   //      let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
    //         self.showAlert(task: task) {
     //            tableView.reloadRows(at: [indexPath], with: .automatic)
     //        }
-        }
+      //  }
      //   editAction.backgroundColor = .orange
-        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
-    } */
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -91,7 +90,7 @@ class TaskListTableViewController: UITableViewController {
         present(AddInfoVC, animated: true)
     }
     
-    private func fetchTasks() {
+    private func fetchTaskLists() {
         StorageManager.shared.fetchTaskList { result in
             switch result {
             case .success(let taskLists):
@@ -106,7 +105,7 @@ class TaskListTableViewController: UITableViewController {
 //MARK: - Delegate Tasks
 extension TaskListTableViewController: TaskListViewControllerDelegate {
     func reloadTaskLists() {
-        fetchTasks()
+        fetchTaskLists()
         tableView.reloadData()
     }
 }
@@ -117,7 +116,7 @@ extension TaskListTableViewController {
         let alert = UIAlertController(title: "Редактируем заметку", message: "Введите новое название", preferredStyle: .alert)
         alert.action(taskList: taskList) { taskName in
             if let taskList = taskList, let completion = completion {
-                StorageManager.shared.editTaskList(taskList, newTaskList: taskName)
+                StorageManager.shared.editTaskList(taskList, newTaskListName: taskName)
                 completion()
             }
         }

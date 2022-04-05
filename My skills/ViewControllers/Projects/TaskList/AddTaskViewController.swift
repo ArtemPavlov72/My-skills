@@ -2,7 +2,7 @@
 //  AddTaskViewController.swift
 //  My skills
 //
-//  Created by admin  on 03.04.2022.
+//  Created by Artem Pavlov  on 03.04.2022.
 //
 
 import UIKit
@@ -14,6 +14,13 @@ class AddTaskViewController: UIViewController {
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Новая задача"
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    
+    private lazy var taskNoteTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Описание задачи"
         textField.borderStyle = .roundedRect
         return textField
     }()
@@ -46,7 +53,7 @@ class AddTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 230/255, alpha: 1)
-        setupSubviews(taskTextField, saveButton, cancelButton)
+        setupSubviews(taskTextField, taskNoteTextField, saveButton, cancelButton)
         setupConstraints()
     }
     
@@ -60,7 +67,8 @@ class AddTaskViewController: UIViewController {
     @objc private func saveAction() {
         self.saveButton.pulsate()
         guard let inputText = taskTextField.text, !inputText.isEmpty else { return }
-        StorageManager.shared.saveTask(inputText, to: taskList)
+        let inputNoteText = taskNoteTextField.text ?? ""
+        StorageManager.shared.saveTask(inputText, note: inputNoteText, to: taskList)
         delegate?.reloadTasks()
         dismiss(animated: true)
     }
@@ -80,10 +88,18 @@ class AddTaskViewController: UIViewController {
             taskTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
         
+        taskNoteTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            taskNoteTextField.topAnchor.constraint(equalTo: taskTextField.bottomAnchor, constant: 30),
+            taskNoteTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            taskNoteTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+        ])
+        
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: taskTextField.bottomAnchor, constant: 70),
+            saveButton.topAnchor.constraint(equalTo: taskNoteTextField.bottomAnchor, constant: 70),
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100)
         ])
