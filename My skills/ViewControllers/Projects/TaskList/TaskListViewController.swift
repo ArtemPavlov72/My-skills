@@ -2,9 +2,8 @@
 //  TaskListViewController.swift
 //  My skills
 //
-//  Created by Artem Pavlov  on 31.03.2022.
+//  Created by Artem Pavlov on 31.03.2022.
 //
-
 
 import UIKit
 import CoreData
@@ -60,7 +59,10 @@ class TaskTableViewController: UITableViewController {
         }
         
         let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
-            
+            self.showAlert(task: task) {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            isDone(true)
         }
         
         editAction.backgroundColor = .orange
@@ -109,6 +111,16 @@ extension TaskTableViewController: TaskTableViewControllerDelegate {
 
 //MARK: - Alert Controller
 extension TaskTableViewController {
-    
+    private func showAlert(task: Task?, completion: (() -> Void)?) {
+        let alert = UIAlertController.createAlert(withTitle: "Редактируем название заметки", andMessage: "Введите новое название")
+        
+        alert.taskAction(task: task) { newValue, note in
+            if let task = task, let completion = completion {
+                StorageManager.shared.editTask(task, withNewName: newValue, andNote: note)
+                completion()
+            }
+        }
+        present(alert, animated: true)
+    }
 }
 

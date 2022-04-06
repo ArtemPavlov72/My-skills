@@ -64,8 +64,9 @@ class StorageManager {
         saveContext()
     }
     
-    func editData(_ task: Task, newTask: String) {
-        task.title = newTask
+    func editTask(_ task: Task, withNewName name: String, andNote note: String) {
+        task.title = name
+        task.note = note
         saveContext()
     }
     

@@ -2,12 +2,11 @@
 //  TaskListViewController.swift
 //  My skills
 //
-//  Created by Artem Pavlov  on 23.03.2022.
+//  Created by Artem Pavlov on 23.03.2022.
 //
 
 import UIKit
 import CoreData
-import Alamofire
 
 protocol TaskListViewControllerDelegate {
     func reloadTaskLists()
@@ -23,7 +22,7 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        registerCell()
         setupNavigationBar()
         fetchTaskLists()
     }
@@ -58,10 +57,11 @@ class TaskListTableViewController: UITableViewController {
         }
         
         let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
-            self.showAlert(taskList: taskList, completion: {
-               tableView.reloadRows(at: [indexPath], with: .automatic)
+            self.showAlert(taskList: taskList) {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
             }
-        )}
+            isDone(true)
+        }
         
         editAction.backgroundColor = .orange
         deleteAction.backgroundColor = .red
@@ -104,6 +104,10 @@ class TaskListTableViewController: UITableViewController {
             }
         }
     }
+    
+    private func registerCell() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+    }
 }
 
 //MARK: - Delegate Tasks
@@ -117,14 +121,12 @@ extension TaskListTableViewController: TaskListViewControllerDelegate {
 //MARK: - Alert Controller
 extension TaskListTableViewController {
     private func showAlert(taskList: TaskList?, completion: (() -> Void)?) {
-        let alert = UIAlertController.createAlert(withTitle: "Редактируем заметку", andMessage: "Введите новое название")
+        let alert = UIAlertController.createAlert(withTitle: "Редактируем название списка", andMessage: "Введите новое название")
         
         alert.taskListAction(taskList: taskList) { taskName in
             if let taskList = taskList, let completion = completion {
                 StorageManager.shared.editTaskList(taskList, newTaskListName: taskName)
                 completion()
-            } else {
-                completion(
             }
         }
         present(alert, animated: true)
