@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 protocol TaskListViewControllerDelegate {
     func reloadTaskLists()
@@ -47,6 +48,7 @@ class TaskListTableViewController: UITableViewController {
     //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         tableView.deselectRow(at: indexPath, animated: true)
+        
         let taskList = taskLists[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
@@ -55,19 +57,21 @@ class TaskListTableViewController: UITableViewController {
             StorageManager.shared.deleteTaskList(taskList)
         }
         
-  //      let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
-   //         self.showAlert(task: task) {
-    //            tableView.reloadRows(at: [indexPath], with: .automatic)
-    //        }
-      //  }
-     //   editAction.backgroundColor = .orange
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
+            self.showAlert(taskList: taskList, completion: {
+               tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        )}
+        
+        editAction.backgroundColor = .orange
+        deleteAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let taskList = taskLists[indexPath.row]
-        
         let taskVC = TaskTableViewController()
         taskVC.taskList = taskList
         show(taskVC, sender: nil)
@@ -113,11 +117,14 @@ extension TaskListTableViewController: TaskListViewControllerDelegate {
 //MARK: - Alert Controller
 extension TaskListTableViewController {
     private func showAlert(taskList: TaskList?, completion: (() -> Void)?) {
-        let alert = UIAlertController(title: "Редактируем заметку", message: "Введите новое название", preferredStyle: .alert)
-        alert.action(taskList: taskList) { taskName in
+        let alert = UIAlertController.createAlert(withTitle: "Редактируем заметку", andMessage: "Введите новое название")
+        
+        alert.taskListAction(taskList: taskList) { taskName in
             if let taskList = taskList, let completion = completion {
                 StorageManager.shared.editTaskList(taskList, newTaskListName: taskName)
                 completion()
+            } else {
+                completion(
             }
         }
         present(alert, animated: true)
