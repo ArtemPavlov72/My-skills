@@ -13,7 +13,7 @@ class AddInfoViewController: UIViewController {
     //MARK: - Private Properties
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Новая список"
+        textField.placeholder = "Новый список"
         textField.borderStyle = .roundedRect
         return textField
     }()

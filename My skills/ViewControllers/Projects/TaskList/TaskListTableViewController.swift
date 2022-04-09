@@ -33,14 +33,11 @@ class TaskListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        let task = taskLists[indexPath.row]
-        
-        content.text = task.title
-        cell.contentConfiguration = content
-        
+        //var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let cell = UITableViewCell(style: .value2, reuseIdentifier: cellID)
+        //var content = cell.defaultContentConfiguration()
+        let taskList = taskLists[indexPath.row]
+        cell.configure(with: taskList)
         return cell
     }
     
