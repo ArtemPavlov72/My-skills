@@ -2,27 +2,29 @@
 //  Extension + UITableViewCell.swift
 //  My skills
 //
-//  Created by admin  on 07.04.2022.
+//  Created by Artem Pavlov on 07.04.2022.
 //
 
 import UIKit
 
 extension UITableViewCell {
     func configure(with taskList: TaskList) {
-        guard let currentTasks = taskList.tasks?.allObjects as? [Task] else {return}
-   /*     for i in currentTasks {
-            if i.isComplete == false {
-           }
+        guard let taskLists = taskList.tasks?.allObjects as? [Task] else {return}
+        
+        let currentTasks = taskLists.filter { task in
+            task.isComplete == false
         }
-        currentTasks.filter({ task in
-            task.isComplete
-        }) */
         
         var content = defaultContentConfiguration()
+        
         content.text = taskList.title
         
-        if currentTasks.isEmpty {
+        if taskLists.isEmpty {
             content.secondaryText = "0"
+            accessoryType = .none
+        } else if currentTasks.isEmpty {
+            content.secondaryText = nil
+            accessoryType = .checkmark
         } else {
             content.secondaryText = "\(currentTasks.count)"
             accessoryType = .none

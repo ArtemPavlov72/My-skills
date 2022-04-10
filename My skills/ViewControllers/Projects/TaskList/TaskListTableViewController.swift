@@ -27,15 +27,18 @@ class TaskListTableViewController: UITableViewController {
         fetchTaskLists()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         taskLists.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let cell = UITableViewCell(style: .value2, reuseIdentifier: cellID)
-        //var content = cell.defaultContentConfiguration()
         let taskList = taskLists[indexPath.row]
         cell.configure(with: taskList)
         return cell

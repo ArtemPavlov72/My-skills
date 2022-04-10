@@ -16,7 +16,9 @@ class TaskTableViewController: UITableViewController {
     
     //MARK: - Private Properties
     private let cellID = "cell"
-    private var tasks: [Task] = []
+    private var currentTasks: [Task] = []
+    private var completedTasks: [Task] = []
+    
     
     //MARK: - Public Properties
     var taskList: TaskList!
@@ -31,29 +33,39 @@ class TaskTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        section == 0 ? "Текущие задачи" : "Завершенные задачи"
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.count
+        section == 0 ? currentTasks.count : completedTasks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
+        let task = indexPath.section == 0 ? currentTasks[indexPath.row] : completedTasks[indexPath.row]
         var content = cell.defaultContentConfiguration()
-        let task = tasks[indexPath.row]
-        
         content.text = task.title
         content.secondaryText = task.note
         cell.contentConfiguration = content
-        
         return cell
     }
     
     //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let task = tasks[indexPath.row]
+        let task = indexPath.section == 0 ? currentTasks[indexPath.row] : completedTasks[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .normal, title: "Удалить") { _, _, _ in
-            self.tasks.remove(at: indexPath.row)
+            if indexPath.section == 0 {
+                self.currentTasks.remove(at: indexPath.row)
+            } else {
+                self.completedTasks.remove(at: indexPath.row)
+            }
+            
             tableView.deleteRows(at: [indexPath], with: .automatic)
             StorageManager.shared.deleteTask(task)
         }
@@ -65,9 +77,31 @@ class TaskTableViewController: UITableViewController {
             isDone(true)
         }
         
+        let doneButtonTitle = indexPath.section == 0 ? "Завершить" : "Восстановить"
+        
+        let doneAction = UIContextualAction(style: .normal, title: doneButtonTitle) { _, _, isDone in
+            
+            if indexPath.section == 0 {
+                let movableTask = self.currentTasks.remove(at: indexPath.row)
+                self.completedTasks.append(movableTask)
+            } else {
+                let movableTask = self.completedTasks.remove(at: indexPath.row)
+                self.currentTasks.append(movableTask)
+            }
+            
+            StorageManager.shared.addDoneFor(task)
+            
+            let indexPathForCurrentTask = IndexPath(row: self.currentTasks.count - 1, section: 0)
+            let indexPathForCompletedTask = IndexPath(row: self.completedTasks.count - 1, section: 1)
+            let destinationIndex = indexPath.section == 0 ? indexPathForCompletedTask : indexPathForCurrentTask
+            tableView.moveRow(at: indexPath, to: destinationIndex)
+            
+            isDone(true)
+        }
+        
         editAction.backgroundColor = .orange
         deleteAction.backgroundColor = .red
-        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return UISwipeActionsConfiguration(actions: [doneAction, deleteAction, editAction])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,7 +127,13 @@ class TaskTableViewController: UITableViewController {
     }
     
     private func loadTasks() {
-        tasks = taskList.tasks?.allObjects as? [Task] ?? []
+        guard let taskLists = taskList.tasks?.allObjects as? [Task] else {return}
+        currentTasks = taskLists.filter({ task in
+            task.isComplete == false
+        })
+        completedTasks = taskLists.filter({ task in
+            task.isComplete == true
+        })
     }
     
     private func registerCell() {

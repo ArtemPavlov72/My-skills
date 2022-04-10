@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 class StorageManager {
     static let shared = StorageManager()
@@ -72,6 +73,11 @@ class StorageManager {
     
     func deleteTask(_ task: Task) {
         viewContext.delete(task)
+        saveContext()
+    }
+    
+    func addDoneFor(_ task: Task) {
+        task.isComplete.toggle()
         saveContext()
     }
 
