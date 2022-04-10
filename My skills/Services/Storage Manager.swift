@@ -56,7 +56,7 @@ class StorageManager {
         saveContext()
     }
     
-    func done(_ taskList: TaskList) {
+    func addDoneFor(_ taskList: TaskList) {
         taskList.tasks?.setValue(true, forKey: "isComplete")
         saveContext()
     }

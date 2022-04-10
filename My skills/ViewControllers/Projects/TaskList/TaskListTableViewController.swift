@@ -64,7 +64,7 @@ class TaskListTableViewController: UITableViewController {
         }
         
         let doneAction = UIContextualAction(style: .normal, title: "Выполнить") { _, _, isDone in
-            StorageManager.shared.done(taskList)
+            StorageManager.shared.addDoneFor(taskList)
             tableView.reloadRows(at: [indexPath], with: .automatic)
             
             isDone(true)
@@ -72,6 +72,7 @@ class TaskListTableViewController: UITableViewController {
         
         editAction.backgroundColor = .orange
         deleteAction.backgroundColor = .red
+        doneAction.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         
         return UISwipeActionsConfiguration(actions: [deleteAction, doneAction, editAction])
     }
