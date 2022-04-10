@@ -56,6 +56,11 @@ class StorageManager {
         saveContext()
     }
     
+    func done(_ taskList: TaskList) {
+        taskList.tasks?.setValue(true, forKey: "isComplete")
+        saveContext()
+    }
+    
     //MARK: - Private Methods of Task
     func saveTask(_ taskName: String, note text: String, to taskListed: TaskList) {
         let task = Task(context: viewContext)

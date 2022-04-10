@@ -63,10 +63,17 @@ class TaskListTableViewController: UITableViewController {
             isDone(true)
         }
         
+        let doneAction = UIContextualAction(style: .normal, title: "Выполнить") { _, _, isDone in
+            StorageManager.shared.done(taskList)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            
+            isDone(true)
+        }
+        
         editAction.backgroundColor = .orange
         deleteAction.backgroundColor = .red
         
-        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return UISwipeActionsConfiguration(actions: [deleteAction, doneAction, editAction])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

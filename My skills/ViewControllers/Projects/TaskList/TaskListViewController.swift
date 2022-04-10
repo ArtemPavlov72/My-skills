@@ -101,7 +101,8 @@ class TaskTableViewController: UITableViewController {
         
         editAction.backgroundColor = .orange
         deleteAction.backgroundColor = .red
-        return UISwipeActionsConfiguration(actions: [doneAction, deleteAction, editAction])
+        doneAction.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [deleteAction, doneAction, editAction])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
