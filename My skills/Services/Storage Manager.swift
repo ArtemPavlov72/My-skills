@@ -62,7 +62,7 @@ class StorageManager {
     }
     
     //MARK: - Private Methods of Task
-    func saveTask(_ taskName: String, note text: String, to taskListed: TaskList) {
+    func saveTask(_ taskName: String, note text: String, to taskListed: TaskList?) {
         let task = Task(context: viewContext)
         task.title = taskName
         task.note = text

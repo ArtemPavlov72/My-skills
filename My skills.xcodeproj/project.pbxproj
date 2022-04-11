@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		84689A1327F62D4900713F46 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84689A1227F62D4900713F46 /* TaskListViewController.swift */; };
-		8481FE9527F8E1E800761993 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FE9427F8E1E800761993 /* AddTaskViewController.swift */; };
+		8481FE9527F8E1E800761993 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FE9427F8E1E800761993 /* AddInfoViewController.swift */; };
 		8481FEB127FF56B100761993 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */; };
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
-		849C46AA27ECEB75009BFC7E /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A927ECEB75009BFC7E /* AddInfoViewController.swift */; };
 		84A730E427EF814000F0A9A0 /* Storage Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E327EF814000F0A9A0 /* Storage Manager.swift */; };
 		84A730E627F04C7F00F0A9A0 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A730E527F04C7F00F0A9A0 /* AlertController.swift */; };
 		84DECE9327EA5786004080DC /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DECE9227EA5786004080DC /* TaskListTableViewController.swift */; };
@@ -49,10 +48,9 @@
 /* Begin PBXFileReference section */
 		612E14F0D5E39D870ECEB65F /* Pods-My skills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My skills.debug.xcconfig"; path = "Target Support Files/Pods-My skills/Pods-My skills.debug.xcconfig"; sourceTree = "<group>"; };
 		84689A1227F62D4900713F46 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
-		8481FE9427F8E1E800761993 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		8481FE9427F8E1E800761993 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		849C46A927ECEB75009BFC7E /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		84A730E327EF814000F0A9A0 /* Storage Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage Manager.swift"; sourceTree = "<group>"; };
 		84A730E527F04C7F00F0A9A0 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		84DECE9227EA5786004080DC /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
@@ -115,8 +113,7 @@
 			children = (
 				84DECE9227EA5786004080DC /* TaskListTableViewController.swift */,
 				84689A1227F62D4900713F46 /* TaskListViewController.swift */,
-				849C46A927ECEB75009BFC7E /* AddInfoViewController.swift */,
-				8481FE9427F8E1E800761993 /* AddTaskViewController.swift */,
+				8481FE9427F8E1E800761993 /* AddInfoViewController.swift */,
 				84A730E527F04C7F00F0A9A0 /* AlertController.swift */,
 				8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */,
 			);
@@ -408,7 +405,6 @@
 				886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */,
 				84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */,
 				88F6179327E0C9C50087FE7F /* HeroImageView.swift in Sources */,
-				849C46AA27ECEB75009BFC7E /* AddInfoViewController.swift in Sources */,
 				84DECE9327EA5786004080DC /* TaskListTableViewController.swift in Sources */,
 				88D54E6E27C804B600B115EF /* NetworkManager.swift in Sources */,
 				84689A1327F62D4900713F46 /* TaskListViewController.swift in Sources */,
@@ -421,7 +417,7 @@
 				88B5C58827BA158400E12DE0 /* UIButton.swift in Sources */,
 				88EE12E4279F274F008CDC58 /* TabBarViewController.swift in Sources */,
 				84A730E427EF814000F0A9A0 /* Storage Manager.swift in Sources */,
-				8481FE9527F8E1E800761993 /* AddTaskViewController.swift in Sources */,
+				8481FE9527F8E1E800761993 /* AddInfoViewController.swift in Sources */,
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
 				8481FEB127FF56B100761993 /* Extension + UITableViewCell.swift in Sources */,
 				886D996E27AD025A00FF3B6C /* Question.swift in Sources */,

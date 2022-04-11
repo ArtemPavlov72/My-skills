@@ -121,10 +121,11 @@ class TaskTableViewController: UITableViewController {
     }
     
     @objc private func addAction() {
-        let AddTaskVC = AddTaskViewController()
-        AddTaskVC.delegate = self
-        AddTaskVC.taskList = taskList
-        present(AddTaskVC, animated: true)
+        let AddInfoVC = AddInfoViewController()
+        AddInfoVC.delegateTask = self
+        AddInfoVC.isTaskList = false
+        AddInfoVC.taskList = taskList
+        present(AddInfoVC, animated: true)
     }
     
     private func loadTasks() {

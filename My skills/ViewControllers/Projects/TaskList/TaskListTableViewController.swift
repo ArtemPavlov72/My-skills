@@ -98,7 +98,8 @@ class TaskListTableViewController: UITableViewController {
     
     @objc private func addAction() {
         let AddInfoVC = AddInfoViewController()
-        AddInfoVC.delegate = self
+        AddInfoVC.delegateTaskList = self
+        AddInfoVC.isTaskList = true
         present(AddInfoVC, animated: true)
     }
     

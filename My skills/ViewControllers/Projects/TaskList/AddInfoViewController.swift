@@ -1,8 +1,8 @@
 //
-//  AddInfoViewController.swift
+//  AddTaskViewController.swift
 //  My skills
 //
-//  Created by Artem Pavlov on 24.03.2022.
+//  Created by Artem Pavlov on 03.04.2022.
 //
 
 import UIKit
@@ -13,7 +13,14 @@ class AddInfoViewController: UIViewController {
     //MARK: - Private Properties
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Новый список"
+        isTaskList ? (textField.placeholder = "Новый список") : (textField.placeholder = "Новая задача")
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    
+    private lazy var taskNoteTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Описание задачи"
         textField.borderStyle = .roundedRect
         return textField
     }()
@@ -39,13 +46,16 @@ class AddInfoViewController: UIViewController {
     }()
     
     //MARK: - Public Properties
-    var delegate: TaskListViewControllerDelegate?
+    var delegateTaskList: TaskListViewControllerDelegate?
+    var delegateTask: TaskTableViewControllerDelegate?
+    var taskList: TaskList?
+    var isTaskList = true
     
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 230/255, alpha: 1)
-        setupSubviews(taskTextField, saveButton, cancelButton)
+        setupSubviewsIf(isTaskList)
         setupConstraints()
     }
     
@@ -56,11 +66,23 @@ class AddInfoViewController: UIViewController {
         }
     }
     
+    private func setupSubviewsIf(_ taskList: Bool) {
+        taskList == true
+        ? setupSubviews(taskTextField, saveButton, cancelButton)
+        : setupSubviews(taskTextField, taskNoteTextField, saveButton, cancelButton)
+    }
+    
     @objc private func saveAction() {
         self.saveButton.pulsate()
         guard let inputText = taskTextField.text, !inputText.isEmpty else { return }
-        StorageManager.shared.saveTasklist(nameOfTaskList: inputText)
-        delegate?.reloadTaskLists()
+        if isTaskList {
+            StorageManager.shared.saveTasklist(nameOfTaskList: inputText)
+            delegateTaskList?.reloadTaskLists()
+        } else {
+            let inputNoteText = taskNoteTextField.text ?? ""
+            StorageManager.shared.saveTask(inputText, note: inputNoteText, to: taskList)
+            delegateTask?.reloadTasks()
+        }
         dismiss(animated: true)
     }
     
@@ -79,10 +101,17 @@ class AddInfoViewController: UIViewController {
             taskTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
         
+        addTaskNoteTextFieldToConstraints(if: isTaskList)
+        
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: taskTextField.bottomAnchor, constant: 70),
+            saveButton.topAnchor.constraint(
+                equalTo:
+                    isTaskList ? taskTextField.bottomAnchor : taskNoteTextField.bottomAnchor,
+                constant:
+                    70
+            ),
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100)
         ])
@@ -94,5 +123,16 @@ class AddInfoViewController: UIViewController {
             cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
             cancelButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100)
         ])
+    }
+    
+    private func addTaskNoteTextFieldToConstraints(if tasklist: Bool) {
+        if tasklist == false {
+            taskNoteTextField.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                taskNoteTextField.topAnchor.constraint(equalTo: taskTextField.bottomAnchor, constant: 30),
+                taskNoteTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+                taskNoteTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+            ])
+        }
     }
 }
