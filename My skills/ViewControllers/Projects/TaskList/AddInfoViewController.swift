@@ -27,7 +27,7 @@ class AddInfoViewController: UIViewController {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 0/255, green: 200/255, blue: 150/255, alpha: 1)
+        button.backgroundColor = .systemGreen
         button.setTitle("Cохранить", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
@@ -37,7 +37,7 @@ class AddInfoViewController: UIViewController {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 200/255, green: 80/255, blue: 20/255, alpha: 1)
+        button.backgroundColor = .systemRed
         button.setTitle("Отмена", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
@@ -54,7 +54,7 @@ class AddInfoViewController: UIViewController {
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 230/255, alpha: 1)
+        view.backgroundColor = .systemBackground
         setupSubviewsIf(isTaskList)
         setupConstraints()
     }

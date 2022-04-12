@@ -26,7 +26,7 @@ class TaskTableViewController: UITableViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         registerCell()
         setupNavigationBar()
         loadTasks()
