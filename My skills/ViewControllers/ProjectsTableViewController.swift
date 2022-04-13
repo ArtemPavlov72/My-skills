@@ -49,7 +49,7 @@ class ProjectsTableViewController: UITableViewController {
         case .taskList:
             let taskListVC = TaskListTableViewController()
             show(taskListVC, sender: nil)
-        case .realmTaskList:
+        case .phoneBook:
             print("Hi")
         }
     }
