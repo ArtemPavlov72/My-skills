@@ -7,6 +7,7 @@
 
 import CoreData
 import SwiftUI
+import RealmSwift
 
 class StorageManager {
     static let shared = StorageManager()
@@ -97,4 +98,30 @@ class StorageManager {
             }
         }
     }
+}
+
+// MARK: - Realm
+class StorageManagerRealm {
+    static let shared = StorageManagerRealm()
+    
+    let realm = try! Realm()
+    
+    init() {}
+    
+    //MARK: - Realm writing data
+    private func write(completion: () -> Void) {
+        do {
+            try realm.write{ completion() }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    //MARK: - Real private methods of Contact
+    func save(contacts: [Contact]) {
+        write {
+            realm.add(contacts)
+        }
+    }
+    
 }

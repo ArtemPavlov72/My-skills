@@ -8,8 +8,8 @@
 import RealmSwift
 
 class Contact: Object {
-    @objc dynamic let name = ""
-    @objc dynamic let surname = ""
+    @objc dynamic var name = ""
+    @objc dynamic var surname = ""
     var fullName: String {
         "(\(name) \(surname)"
     }
@@ -17,8 +17,7 @@ class Contact: Object {
 }
 
 class ContactData: Object {
-    @objc dynamic let phoneNumber = ""
-    @objc dynamic let mail = ""
-    @objc dynamic let adress = ""
-    @objc dynamic let date = Date()
+    @objc dynamic var phoneNumber = ""
+    @objc dynamic var mail = ""
+    @objc dynamic var adress = ""
 }
