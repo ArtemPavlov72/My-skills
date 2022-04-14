@@ -39,7 +39,7 @@ class ProjectsTableViewController: UITableViewController {
         case .quiz:
             performSegue(withIdentifier: "showQuiz", sender: nil)
         case .colorMix:
-            let colorMixStoryboard = UIStoryboard(name: "ColorMix", bundle: Bundle.main)
+            let colorMixStoryboard = UIStoryboard(name: "ColorMix", bundle: nil)
             let colorVC = colorMixStoryboard.instantiateInitialViewController()
             if let viewController = colorVC {
                 show(viewController, sender: nil)
@@ -50,7 +50,11 @@ class ProjectsTableViewController: UITableViewController {
             let taskListVC = TaskListTableViewController()
             show(taskListVC, sender: nil)
         case .phoneBook:
-            print("Hi")
+            let phoneBookStoryBoard = UIStoryboard(name: "PhoneBook", bundle: nil)
+            let navigationVC = phoneBookStoryBoard.instantiateInitialViewController()
+            if let viewController = navigationVC {
+                present(viewController, animated: true)
+            }
         }
     }
 }

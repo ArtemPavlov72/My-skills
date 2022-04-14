@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		84689A1327F62D4900713F46 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84689A1227F62D4900713F46 /* TaskListViewController.swift */; };
 		84754F52280662F9000A3B32 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F51280662F9000A3B32 /* Contact.swift */; };
+		84754F5428073F99000A3B32 /* PhoneBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84754F5328073F99000A3B32 /* PhoneBook.storyboard */; };
+		84754F56280745FC000A3B32 /* PhoneBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */; };
 		8481FE9527F8E1E800761993 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FE9427F8E1E800761993 /* AddInfoViewController.swift */; };
 		8481FEB127FF56B100761993 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */; };
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
@@ -50,6 +52,8 @@
 		612E14F0D5E39D870ECEB65F /* Pods-My skills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My skills.debug.xcconfig"; path = "Target Support Files/Pods-My skills/Pods-My skills.debug.xcconfig"; sourceTree = "<group>"; };
 		84689A1227F62D4900713F46 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		84754F51280662F9000A3B32 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		84754F5328073F99000A3B32 /* PhoneBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneBook.storyboard; sourceTree = "<group>"; };
+		84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookTableViewController.swift; sourceTree = "<group>"; };
 		8481FE9427F8E1E800761993 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84754F5728074609000A3B32 /* PhoneBook */ = {
+			isa = PBXGroup;
+			children = (
+				84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */,
+			);
+			path = PhoneBook;
+			sourceTree = "<group>";
+		};
 		84B62FE027F4E18600EDB429 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +204,7 @@
 				88ECCC2427B1449F0017015F /* ColorMix */,
 				8831C48A27BEBFFB00EC0EDA /* RickAndMorty */,
 				84DECE9427EA5790004080DC /* TaskList */,
+				84754F5728074609000A3B32 /* PhoneBook */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -221,6 +234,7 @@
 				882344BE2799D337005F8FF6 /* LaunchScreen.storyboard */,
 				88ECCC1E27B142990017015F /* ColorMix.storyboard */,
 				8831C48627BEB73900EC0EDA /* RickAndMorty.storyboard */,
+				84754F5328073F99000A3B32 /* PhoneBook.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -347,6 +361,7 @@
 			files = (
 				882344C02799D337005F8FF6 /* LaunchScreen.storyboard in Resources */,
 				8831C48727BEB73900EC0EDA /* RickAndMorty.storyboard in Resources */,
+				84754F5428073F99000A3B32 /* PhoneBook.storyboard in Resources */,
 				882344BD2799D337005F8FF6 /* Assets.xcassets in Resources */,
 				882344BB2799D335005F8FF6 /* Main.storyboard in Resources */,
 				88ECCC1F27B142990017015F /* ColorMix.storyboard in Resources */,
@@ -415,6 +430,7 @@
 				882344B82799D335005F8FF6 /* LoginViewController.swift in Sources */,
 				88ECCC2127B144600017015F /* ColorViewController.swift in Sources */,
 				8831C48C27BEC40E00EC0EDA /* RickAndMorty.swift in Sources */,
+				84754F56280745FC000A3B32 /* PhoneBookTableViewController.swift in Sources */,
 				84754F52280662F9000A3B32 /* Contact.swift in Sources */,
 				882344B42799D335005F8FF6 /* AppDelegate.swift in Sources */,
 				8831C48E27BECAA900EC0EDA /* RickAndMortyCell.swift in Sources */,
