@@ -8,16 +8,16 @@
 import RealmSwift
 
 class Contact: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var surname = ""
+    @Persisted var name = ""
+    @Persisted var surname = ""
     var fullName: String {
-        "(\(name) \(surname)"
+        "\(name) \(surname)"
     }
-    let contactsData = List<ContactData>()
+    @Persisted var contactsData = List<ContactData>()
 }
 
 class ContactData: Object {
-    @objc dynamic var phoneNumber = ""
-    @objc dynamic var mail = ""
-    @objc dynamic var adress = ""
+    @Persisted var phoneNumber = ""
+    @Persisted var mail = ""
+    @Persisted var adress = ""
 }

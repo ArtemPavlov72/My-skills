@@ -2,34 +2,62 @@
 //  PhoneBookTableViewController.swift
 //  My skills
 //
-//  Created by admin  on 13.04.2022.
+//  Created by Artem Pavlov on 13.04.2022.
 //
 
+import RealmSwift
 import UIKit
 
 class PhoneBookTableViewController: UITableViewController {
 
+    //MARK: - Private Properties
+    private var contacts: Results<Contact>!
+    
+    //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        getTestData()
+        contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
     }
 
-    @IBAction func exitButton(_ sender: Any) {
-        dismiss(animated: true)
+    // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        contacts.count
     }
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-
-        return 0
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        contacts[section].fullName
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
- 
-        return 0
+        3
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let contact = contacts[indexPath.section]
+        let contactInfo = contact.contactsData
+        var content = cell.defaultContentConfiguration()
+        
+     
+            
+        
+        cell.contentConfiguration = content
+        return cell
+    }
+    
+    
+    
+    //MARK: - IB Actions
+    @IBAction func exitButton(_ sender: Any) {
+        dismiss(animated: true)
     }
 
-
+    //MARK: - Private Methods
+    private func getTestData() {
+        DataManager.shared.createContactData {
+            self.tableView.reloadData()
+        }
+    }
 }

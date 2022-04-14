@@ -14,6 +14,7 @@ class DataManager {
     
     func createContactData(completion: @escaping () -> Void) {
         if !UserDefaults.standard.bool(forKey: "done") {
+            UserDefaults.standard.set(true, forKey: "done")
             
             let contactOne = Contact()
             contactOne.name = "Jack"
@@ -24,7 +25,7 @@ class DataManager {
             contactTwo.surname = "Katcher"
             
             let firstContactInfo = ContactData(value: ["9-888-777-66-66", "sun@gmail.com", "75'Street"])
-            let secondContactInfo = ContactData(value: ["9-888-777-66-66", "sun@gmail.com", "75'Street"])
+            let secondContactInfo = ContactData(value: ["9-828-457-64-21", "grow_tt@icloud.com", "Synny wall"])
             
             contactOne.contactsData.append(firstContactInfo)
             contactTwo.contactsData.append(secondContactInfo)
