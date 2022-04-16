@@ -10,14 +10,15 @@ import RealmSwift
 class Contact: Object {
     @Persisted var name = ""
     @Persisted var surname = ""
-    var fullName: String {
-        "\(name) \(surname)"
-    }
-    @Persisted var contactsData = List<ContactData>()
-}
-
-class ContactData: Object {
     @Persisted var phoneNumber = ""
     @Persisted var mail = ""
     @Persisted var adress = ""
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+}
+
+class SectionTitleForContact: Object {
+    @Persisted var title = ""
+    @Persisted var containsContacts = List<Contact>()
 }

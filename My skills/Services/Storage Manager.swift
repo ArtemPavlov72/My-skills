@@ -118,7 +118,7 @@ class StorageManagerRealm {
     }
     
     //MARK: - Real private methods of Contact
-    func save(contacts: [Contact]) {
+    func save(contacts: [SectionTitleForContact]) {
         write {
             realm.add(contacts)
         }
