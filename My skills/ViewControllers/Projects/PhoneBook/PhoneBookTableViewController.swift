@@ -8,6 +8,10 @@
 import RealmSwift
 import UIKit
 
+protocol PhoneBookTableViewControllerDelegate {
+    func reloadRealmData()
+}
+
 class PhoneBookTableViewController: UITableViewController {
     
     //MARK: - Private Properties
@@ -37,12 +41,18 @@ class PhoneBookTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let contact = contacts[indexPath.section]
+        let contacts = sections[indexPath.section]
+        let contact = contacts.containsContacts[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = contact.fullName
-        
         cell.contentConfiguration = content
         return cell
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let addContactVC = segue.destination as? AddContactViewController else {return}
+        addContactVC.delegate = self
     }
     
     //MARK: - IB Actions
@@ -60,5 +70,12 @@ class PhoneBookTableViewController: UITableViewController {
     private func loadRealm() {
         sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self)
         contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
+    }
+}
+    //MARK: - DelegateNewContact
+extension PhoneBookTableViewController: PhoneBookTableViewControllerDelegate {
+    func reloadRealmData() {
+        loadRealm()
+        tableView.reloadData()
     }
 }

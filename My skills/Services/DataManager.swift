@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - data for PhoneBook project
 class DataManager {
     static let shared = DataManager()
     
@@ -41,7 +42,7 @@ class DataManager {
             sectionTitleForSecondContact.containsContacts.append(contactTwo)
             
             DispatchQueue.main.async {
-                StorageManagerRealm.shared.save(contacts: [sectionTitleForFirstContact, sectionTitleForSecondContact])
+                StorageManagerRealm.shared.save([sectionTitleForFirstContact, sectionTitleForSecondContact])
                 UserDefaults.standard.set(true, forKey: "done")
                 completion()
             }

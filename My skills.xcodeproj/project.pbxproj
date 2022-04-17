@@ -12,6 +12,7 @@
 		84754F5428073F99000A3B32 /* PhoneBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84754F5328073F99000A3B32 /* PhoneBook.storyboard */; };
 		84754F56280745FC000A3B32 /* PhoneBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */; };
 		84754F59280850EC000A3B32 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F58280850EC000A3B32 /* DataManager.swift */; };
+		84754F5B280AC717000A3B32 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F5A280AC717000A3B32 /* AddContactViewController.swift */; };
 		8481FE9527F8E1E800761993 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FE9427F8E1E800761993 /* AddInfoViewController.swift */; };
 		8481FEB127FF56B100761993 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */; };
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		84754F5328073F99000A3B32 /* PhoneBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneBook.storyboard; sourceTree = "<group>"; };
 		84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookTableViewController.swift; sourceTree = "<group>"; };
 		84754F58280850EC000A3B32 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		84754F5A280AC717000A3B32 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		8481FE9427F8E1E800761993 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */,
+				84754F5A280AC717000A3B32 /* AddContactViewController.swift */,
 			);
 			path = PhoneBook;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				88EE12E2279BCEFC008CDC58 /* WelcomeViewController.swift in Sources */,
 				8481FEB127FF56B100761993 /* Extension + UITableViewCell.swift in Sources */,
 				886D996E27AD025A00FF3B6C /* Question.swift in Sources */,
+				84754F5B280AC717000A3B32 /* AddContactViewController.swift in Sources */,
 				88ECCC2327B144880017015F /* ColorMixViewController.swift in Sources */,
 				88782C9627A7781E0015041B /* TrafficLightController.swift in Sources */,
 				849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */,

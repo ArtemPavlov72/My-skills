@@ -103,9 +103,7 @@ class StorageManager {
 // MARK: - Realm
 class StorageManagerRealm {
     static let shared = StorageManagerRealm()
-    
     let realm = try! Realm()
-    
     init() {}
     
     //MARK: - Realm writing data
@@ -118,9 +116,21 @@ class StorageManagerRealm {
     }
     
     //MARK: - Real private methods of Contact
-    func save(contacts: [SectionTitleForContact]) {
+    func save(_ contacts: [SectionTitleForContact]) {
         write {
             realm.add(contacts)
+        }
+    }
+    
+    func save(_ contact: SectionTitleForContact) {
+        write {
+            realm.add(contact)
+        }
+    }
+    
+    func save(_ contact: Contact, to section: SectionTitleForContact) {
+        write {
+            section.containsContacts.append(contact)
         }
     }
     
