@@ -49,6 +49,29 @@ class PhoneBookTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let contactsSection = sections[indexPath.section]
+        let contact = contactsSection.containsContacts[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+            StorageManagerRealm.shared.delete(contact)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            if contactsSection.containsContacts.isEmpty {
+                StorageManagerRealm.shared.delete(contactsSection)
+                tableView.deleteSections([indexPath.section], with: .automatic)
+            }
+        }
+        
+        
+        deleteAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let addContactVC = segue.destination as? AddContactViewController else {return}
@@ -56,7 +79,7 @@ class PhoneBookTableViewController: UITableViewController {
     }
     
     //MARK: - IB Actions
-    @IBAction func exitButton(_ sender: Any) {
+    @IBAction func exitButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     
@@ -72,7 +95,7 @@ class PhoneBookTableViewController: UITableViewController {
         contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
     }
 }
-    //MARK: - DelegateNewContact
+//MARK: - DelegateNewContact
 extension PhoneBookTableViewController: PhoneBookTableViewControllerDelegate {
     func reloadRealmData() {
         loadRealm()

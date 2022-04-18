@@ -29,7 +29,6 @@ class AddContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRealm()
-        
     }
     
     //MARK: - IB Actions
@@ -61,14 +60,14 @@ class AddContactViewController: UIViewController {
                 delegate?.reloadRealmData()
             }
         }
-            
-            if createNew {
-                let sectionTitleOfNewContact = SectionTitleForContact()
-                sectionTitleOfNewContact.title = sectionTitleForNewContact
-                sectionTitleOfNewContact.containsContacts.append(newContact)
-                StorageManagerRealm.shared.save(sectionTitleOfNewContact)
-                delegate?.reloadRealmData()
-            }
+        
+        if createNew {
+            let sectionTitleOfNewContact = SectionTitleForContact()
+            sectionTitleOfNewContact.title = sectionTitleForNewContact
+            sectionTitleOfNewContact.containsContacts.append(newContact)
+            StorageManagerRealm.shared.save(sectionTitleOfNewContact)
+            delegate?.reloadRealmData()
+        }
         dismiss(animated: true)
     }
     

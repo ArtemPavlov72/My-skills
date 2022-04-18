@@ -134,4 +134,16 @@ class StorageManagerRealm {
         }
     }
     
+    func delete(_ section: SectionTitleForContact) {
+        write {
+            realm.delete(section)
+        }
+    }
+    
+    func delete(_ contact: Contact) {
+        write {
+            realm.delete(contact)
+        }
+    }
+    
 }

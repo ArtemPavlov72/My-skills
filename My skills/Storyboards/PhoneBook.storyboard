@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" title="PhoneBook" id="ebf-eO-xsG">
                         <barButtonItem key="leftBarButtonItem" title="Выход" id="9lq-bm-u5a">
                             <connections>
-                                <action selector="exitButton:" destination="aqj-bH-Ied" id="rND-Hp-wz9"/>
+                                <action selector="exitButton:" destination="aqj-bH-Ied" id="k3m-qA-GiL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IwN-rp-R2I">
