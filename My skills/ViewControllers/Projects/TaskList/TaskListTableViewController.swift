@@ -46,7 +46,6 @@ class TaskListTableViewController: UITableViewController {
     
     //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        tableView.deselectRow(at: indexPath, animated: true)
         
         let taskList = taskLists[indexPath.row]
         
