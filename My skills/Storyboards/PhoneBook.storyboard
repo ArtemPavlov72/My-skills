@@ -59,13 +59,13 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a28-Us-QtR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <items>
                                     <navigationItem title="Новый контакт" id="Aug-Pk-aeW"/>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="oIT-5u-uCb">
-                                <rect key="frame" x="30" y="144" width="354" height="326"/>
+                                <rect key="frame" x="30" y="144" width="354" height="330.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="854-f6-yPA">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
@@ -93,20 +93,27 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="h3G-7b-Fce">
-                                        <rect key="frame" x="0.0" y="295" width="354" height="31"/>
+                                        <rect key="frame" x="0.0" y="295" width="354" height="35.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iG-FF-hk4">
-                                                <rect key="frame" x="0.0" y="0.0" width="149" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="158" height="35.5"/>
+                                                <color key="tintColor" systemColor="systemMintColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Сохранить"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Сохранить">
+                                                    <backgroundConfiguration key="background"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="saveButton" destination="TbB-vl-Hvd" eventType="touchUpInside" id="sIm-TA-gBw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bth-Eb-TLk">
-                                                <rect key="frame" x="215" y="0.0" width="139" height="31"/>
+                                                <rect key="frame" x="224" y="0.0" width="130" height="35.5"/>
+                                                <color key="tintColor" systemColor="systemPinkColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Выход"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Выход">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="cancelButton" destination="TbB-vl-Hvd" eventType="touchUpInside" id="lmU-s8-B9A"/>
                                                 </connections>
@@ -158,8 +165,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

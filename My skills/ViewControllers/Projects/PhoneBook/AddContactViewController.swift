@@ -36,14 +36,15 @@ class AddContactViewController: UIViewController {
         
         let newContact = Contact()
         
-        let inputNameText = inputText(from: nameTextField)
-        newContact.name = inputNameText
+        guard let inputTextName = nameTextField.text, !inputTextName.isEmpty else { return }
+        newContact.name = inputTextName
         
-        let inputSurnameText = inputText(from: secondNameTextField)
+        guard let inputSurnameText = secondNameTextField.text, !inputSurnameText.isEmpty else { return }
         newContact.surname = inputSurnameText
         
-        let inputPhoneNumberText = inputText(from: phoneNumberTextField)
-        newContact.phoneNumber = inputPhoneNumberText
+        let inputPhoneText = inputText(from: phoneNumberTextField)
+        newContact.phoneNumber = inputPhoneText
+        
         
         let inputMailText = inputText(from: mailTextField)
         newContact.mail = inputMailText
@@ -51,7 +52,7 @@ class AddContactViewController: UIViewController {
         let inputAdressText = inputText(from: adressTextField)
         newContact.adress = inputAdressText
         
-        let sectionTitleForNewContact = String(newContact.surname.prefix(1))
+        let sectionTitleForNewContact = String(newContact.surname.prefix(1).capitalized)
         
         for sectionName in sections {
             if sectionName.title == sectionTitleForNewContact {
