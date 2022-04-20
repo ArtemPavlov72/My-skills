@@ -41,7 +41,7 @@ class PhoneBookTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let contacts = sections[indexPath.section]
-        let contact = contacts.containsContacts[indexPath.row]
+        let contact = contacts.containsContacts.sorted(byKeyPath: "surname", ascending: true)[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = contact.fullName
         cell.contentConfiguration = content
@@ -88,7 +88,7 @@ class PhoneBookTableViewController: UITableViewController {
     }
     
     private func loadRealm() {
-        sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self)
+        sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self).sorted(byKeyPath: "title", ascending: true)
         contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
     }
 }
