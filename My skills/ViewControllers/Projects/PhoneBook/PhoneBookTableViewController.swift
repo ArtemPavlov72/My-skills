@@ -18,7 +18,6 @@ class PhoneBookTableViewController: UITableViewController {
     private var sections: Results<SectionTitleForContact>!
     private var contacts: Results<Contact>!
     
-    
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +64,10 @@ class PhoneBookTableViewController: UITableViewController {
             }
         }
         
-        
         deleteAction.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

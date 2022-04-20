@@ -33,43 +33,7 @@ class AddContactViewController: UIViewController {
     
     //MARK: - IB Actions
     @IBAction func saveButton() {
-        
-        let newContact = Contact()
-        
-        guard let inputTextName = nameTextField.text, !inputTextName.isEmpty else { return }
-        newContact.name = inputTextName
-        
-        guard let inputSurnameText = secondNameTextField.text, !inputSurnameText.isEmpty else { return }
-        newContact.surname = inputSurnameText
-        
-        let inputPhoneText = inputText(from: phoneNumberTextField)
-        newContact.phoneNumber = inputPhoneText
-        
-        
-        let inputMailText = inputText(from: mailTextField)
-        newContact.mail = inputMailText
-        
-        let inputAdressText = inputText(from: adressTextField)
-        newContact.adress = inputAdressText
-        
-        let sectionTitleForNewContact = String(newContact.surname.prefix(1).capitalized)
-        
-        for sectionName in sections {
-            if sectionName.title == sectionTitleForNewContact {
-                StorageManagerRealm.shared.save(newContact, to: sectionName)
-                createNew.toggle()
-                delegate?.reloadRealmData()
-            }
-        }
-        
-        if createNew {
-            let sectionTitleOfNewContact = SectionTitleForContact()
-            sectionTitleOfNewContact.title = sectionTitleForNewContact
-            sectionTitleOfNewContact.containsContacts.append(newContact)
-            StorageManagerRealm.shared.save(sectionTitleOfNewContact)
-            delegate?.reloadRealmData()
-        }
-        dismiss(animated: true)
+        saveNewContact()
     }
     
     @IBAction func cancelButton() {
@@ -82,8 +46,49 @@ class AddContactViewController: UIViewController {
         contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
     }
     
-    private func inputText(from text: UITextField) -> String {
-        guard let inputText = text.text, !inputText.isEmpty else { return "" }
-        return inputText
+    private func createNewContact() -> Contact {
+        let newContact = Contact()
+        newContact.name = nameTextField.text ?? ""
+        newContact.surname = secondNameTextField.text ?? ""
+        newContact.phoneNumber = phoneNumberTextField.text ?? ""
+        newContact.mail = mailTextField.text ?? ""
+        newContact.adress = adressTextField.text ?? ""
+        return newContact
+    }
+    
+    private func setSectionTitle(for contact: Contact) -> String {
+        let sectionTitleForNewContact = String(contact.surname.prefix(1).capitalized)
+        return sectionTitleForNewContact
+    }
+    
+    private func updateSectionTitle(for contact: Contact, in sectionTitle: String) {
+        for sectionName in sections {
+            if sectionName.title == sectionTitle {
+                StorageManagerRealm.shared.save(contact, to: sectionName)
+                createNew.toggle()
+            }
+        }
+    }
+    
+    private func createSectionTitle(for contact: Contact, with sectionTitle: String) {
+        if createNew {
+            let sectionTitleForNewContact = SectionTitleForContact()
+            sectionTitleForNewContact.title = sectionTitle
+            sectionTitleForNewContact.containsContacts.append(contact)
+            StorageManagerRealm.shared.save(sectionTitleForNewContact)
+        }
+    }
+    
+    private func saveNewContact() {
+        let newContact = createNewContact()
+        guard !newContact.name.isEmpty else { return }
+        guard !newContact.surname.isEmpty else { return }
+        
+        let sectionTitle = setSectionTitle(for: newContact)
+        updateSectionTitle(for: newContact, in: sectionTitle)
+        createSectionTitle(for: newContact, with: sectionTitle)
+        
+        delegate?.reloadRealmData()
+        dismiss(animated: true)
     }
 }

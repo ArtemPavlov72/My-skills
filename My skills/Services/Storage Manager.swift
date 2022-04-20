@@ -122,12 +122,14 @@ class StorageManagerRealm {
         }
     }
     
-    func save(_ contact: SectionTitleForContact) {
+    //create new section with contact
+    func save(_ sectionWithContact: SectionTitleForContact) {
         write {
-            realm.add(contact)
+            realm.add(sectionWithContact)
         }
     }
     
+    //update list of contacts in section
     func save(_ contact: Contact, to section: SectionTitleForContact) {
         write {
             section.containsContacts.append(contact)
@@ -145,5 +147,4 @@ class StorageManagerRealm {
             realm.delete(contact)
         }
     }
-    
 }
