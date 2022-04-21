@@ -50,7 +50,7 @@ class AddContactViewController: UIViewController {
         let newContact = Contact()
         newContact.name = nameTextField.text ?? ""
         newContact.surname = secondNameTextField.text ?? ""
-        newContact.phoneNumber = phoneNumberTextField.text ?? ""
+        newContact.phoneNumber = formatPhoneNumber(for: phoneNumberTextField.text ?? "")
         newContact.mail = mailTextField.text ?? ""
         newContact.adress = adressTextField.text ?? ""
         return newContact
@@ -90,5 +90,32 @@ class AddContactViewController: UIViewController {
         
         delegate?.reloadRealmData()
         dismiss(animated: true)
+    }
+    
+    private func formatPhoneNumber(for number: String) -> String {
+        let phoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let mask = "+7 (XXX) XXX-XXXX"
+        var phoneNumberInMask = ""
+        var index = phoneNumber.startIndex
+        
+        for character in mask where index < phoneNumber.endIndex {
+            if character == "X" {
+                phoneNumberInMask.append(phoneNumber[index])
+                index = phoneNumber.index(after: index)
+            } else {
+                phoneNumberInMask.append(character)
+            }
+        }
+        return phoneNumberInMask
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension AddContactViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = formatPhoneNumber(for: newString)
+        return false
     }
 }

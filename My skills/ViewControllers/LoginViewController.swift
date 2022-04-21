@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-//MARK: - Private Methods
+//MARK: - Alert Controller
 extension LoginViewController {
     private func showAlert(with title: String, and massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
