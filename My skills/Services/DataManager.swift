@@ -19,7 +19,7 @@ class DataManager {
             let contactOne = Contact()
             contactOne.name = "Jack"
             contactOne.surname = "Riker"
-            contactOne.phoneNumber = "9-888-777-66-66"
+            contactOne.phoneNumber = "+7 (333) 444-5555"
             contactOne.mail = "sun@gmail.com"
             
             let sectionTitleContactOne = String(contactOne.surname.prefix(1))
@@ -27,7 +27,7 @@ class DataManager {
             let contactTwo = Contact()
             contactTwo.name = "Sam"
             contactTwo.surname = "Katcher"
-            contactTwo.phoneNumber = "9-828-457-64-21"
+            contactTwo.phoneNumber = "+7 (222) 666-1111"
             contactTwo.mail = "grow_tt@icloud.com"
             contactTwo.adress = "Synny wall"
             

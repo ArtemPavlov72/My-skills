@@ -40,8 +40,7 @@ class PhoneBookTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let contacts = sections[indexPath.section]
-        let contact = contacts.containsContacts.sorted(byKeyPath: "surname", ascending: true)[indexPath.row]
+        let contact = getFilteredContactIndexPath(indexPath)
         var content = cell.defaultContentConfiguration()
         content.text = contact.fullName
         cell.contentConfiguration = content
@@ -52,7 +51,7 @@ class PhoneBookTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let contactsSection = sections[indexPath.section]
-        let contact = contactsSection.containsContacts[indexPath.row]
+        let contact = contactsSection.containsContacts.sorted(byKeyPath: "surname", ascending: true)[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
             StorageManagerRealm.shared.delete(contact)
@@ -71,8 +70,15 @@ class PhoneBookTableViewController: UITableViewController {
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let addContactVC = segue.destination as? AddContactViewController else {return}
-        addContactVC.delegate = self
+        if segue.identifier == "addCell" {
+            guard let addContactVC = segue.destination as? AddContactViewController else {return}
+            addContactVC.delegate = self
+        } else {
+            guard let contactVC = segue.destination as? ContactInfoViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let contact = getFilteredContactIndexPath(indexPath)
+            contactVC.contact = contact
+        }
     }
     
     //MARK: - IB Actions
@@ -89,9 +95,16 @@ class PhoneBookTableViewController: UITableViewController {
     
     private func loadRealm() {
         sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self).sorted(byKeyPath: "title", ascending: true)
-        contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
+        contacts = StorageManagerRealm.shared.realm.objects(Contact.self).sorted(byKeyPath: "surname", ascending: true)
+    }
+    
+    private func getFilteredContactIndexPath(_ indexPath: IndexPath) -> Contact {
+        let contactsSection = sections[indexPath.section]
+        let contact = contactsSection.containsContacts.sorted(byKeyPath: "surname", ascending: true)[indexPath.row]
+        return contact
     }
 }
+
 //MARK: - DelegateNewContact
 extension PhoneBookTableViewController: PhoneBookTableViewControllerDelegate {
     func reloadRealmData() {

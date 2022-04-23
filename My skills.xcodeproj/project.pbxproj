@@ -13,6 +13,7 @@
 		84754F56280745FC000A3B32 /* PhoneBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */; };
 		84754F59280850EC000A3B32 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F58280850EC000A3B32 /* DataManager.swift */; };
 		84754F5B280AC717000A3B32 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F5A280AC717000A3B32 /* AddContactViewController.swift */; };
+		84754F5D2811D3BD000A3B32 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84754F5C2811D3BD000A3B32 /* ContactInfoViewController.swift */; };
 		8481FE9527F8E1E800761993 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FE9427F8E1E800761993 /* AddInfoViewController.swift */; };
 		8481FEB127FF56B100761993 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */; };
 		849C46A827EB91F2009BFC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C46A727EB91F2009BFC7E /* SceneDelegate.swift */; };
@@ -58,6 +59,7 @@
 		84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookTableViewController.swift; sourceTree = "<group>"; };
 		84754F58280850EC000A3B32 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84754F5A280AC717000A3B32 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
+		84754F5C2811D3BD000A3B32 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		8481FE9427F8E1E800761993 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		8481FEB027FF56B100761993 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 		849C46A727EB91F2009BFC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				84754F55280745FC000A3B32 /* PhoneBookTableViewController.swift */,
 				84754F5A280AC717000A3B32 /* AddContactViewController.swift */,
+				84754F5C2811D3BD000A3B32 /* ContactInfoViewController.swift */,
 			);
 			path = PhoneBook;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				886D996927ACF5D000FF3B6C /* QuestionsViewController.swift in Sources */,
 				88F6179127DB89F60087FE7F /* StartingR&MViewController.swift in Sources */,
 				88EE12DF279BCA7F008CDC58 /* Visitor.swift in Sources */,
+				84754F5D2811D3BD000A3B32 /* ContactInfoViewController.swift in Sources */,
 				886D996727ACF43000FF3B6C /* QuizViewController.swift in Sources */,
 				84DECE9727EA59AB004080DC /* MySkillsCoreData.xcdatamodeld in Sources */,
 				88F6179327E0C9C50087FE7F /* HeroImageView.swift in Sources */,
