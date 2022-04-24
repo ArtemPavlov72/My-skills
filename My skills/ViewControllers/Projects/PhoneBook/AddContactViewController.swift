@@ -57,7 +57,10 @@ class AddContactViewController: UIViewController {
     }
     
     private func setSectionTitle(for contact: Contact) -> String {
-        let sectionTitleForNewContact = String(contact.surname.prefix(1).capitalized)
+        var sectionTitleForNewContact = String(contact.surname.prefix(1).capitalized)
+        if let _ = Double(sectionTitleForNewContact) {
+            sectionTitleForNewContact = "#"
+        }
         return sectionTitleForNewContact
     }
     
@@ -119,3 +122,5 @@ extension AddContactViewController: UITextFieldDelegate {
         return false
     }
 }
+
+
