@@ -7,6 +7,7 @@
 
 import CoreData
 import SwiftUI
+import RealmSwift
 
 class StorageManager {
     static let shared = StorageManager()
@@ -95,6 +96,55 @@ class StorageManager {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+}
+
+// MARK: - Realm
+class StorageManagerRealm {
+    static let shared = StorageManagerRealm()
+    let realm = try! Realm()
+    init() {}
+    
+    //MARK: - Realm writing data
+    private func write(completion: () -> Void) {
+        do {
+            try realm.write{ completion() }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    //MARK: - Real private methods of Contact
+    func save(_ contacts: [SectionTitleForContact]) {
+        write {
+            realm.add(contacts)
+        }
+    }
+    
+    //create new section with contact
+    func save(_ sectionWithContact: SectionTitleForContact) {
+        write {
+            realm.add(sectionWithContact)
+        }
+    }
+    
+    //update list of contacts in section
+    func save(_ contact: Contact, to section: SectionTitleForContact) {
+        write {
+            section.containsContacts.append(contact)
+        }
+    }
+    
+    func delete(_ section: SectionTitleForContact) {
+        write {
+            realm.delete(section)
+        }
+    }
+    
+    func delete(_ contact: Contact) {
+        write {
+            realm.delete(contact)
         }
     }
 }

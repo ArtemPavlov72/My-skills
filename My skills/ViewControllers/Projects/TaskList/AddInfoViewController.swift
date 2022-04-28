@@ -28,6 +28,7 @@ class AddInfoViewController: UIViewController {
     private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemGreen
+        button.alpha = 0.8
         button.setTitle("Cохранить", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
@@ -38,6 +39,7 @@ class AddInfoViewController: UIViewController {
     private lazy var cancelButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemRed
+        button.alpha = 0.8
         button.setTitle("Отмена", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15

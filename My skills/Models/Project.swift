@@ -11,5 +11,5 @@ enum Project: String, CaseIterable {
          colorMix = "Смешай цвета",
          rickAndMorty = "Рик и Морти",
          taskList = "Список задач",
-         realmTaskList = "Список задач Realm"
+         phoneBook = "Телефонный справочник"
 }
