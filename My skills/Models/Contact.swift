@@ -12,7 +12,7 @@ class Contact: Object {
     @Persisted var surname = ""
     @Persisted var phoneNumber = ""
     @Persisted var mail = ""
-    @Persisted var adress = ""
+    @Persisted var address = ""
     var fullName: String {
         "\(name) \(surname)"
     }

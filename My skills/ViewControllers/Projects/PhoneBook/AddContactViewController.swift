@@ -15,11 +15,10 @@ class AddContactViewController: UIViewController {
     @IBOutlet weak var secondNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var mailTextField: UITextField!
-    @IBOutlet weak var adressTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     
     //MARK: - Private Properties
     private var sections: Results<SectionTitleForContact>!
-    //private var contacts: Results<Contact>!
     private var createNew = true
     
     //MARK: - Public Properties
@@ -45,7 +44,6 @@ class AddContactViewController: UIViewController {
     //MARK: - Private Methods
     private func loadRealm() {
         sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self)
-        //      contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
     }
     
     private func loadContactInfoForEdit() {
@@ -53,7 +51,7 @@ class AddContactViewController: UIViewController {
         secondNameTextField.text = additingContact?.surname
         phoneNumberTextField.text = additingContact?.phoneNumber
         mailTextField.text = additingContact?.mail
-        adressTextField.text = additingContact?.adress
+        addressTextField.text = additingContact?.address
     }
     
     private func createContact() -> Contact {
@@ -61,9 +59,11 @@ class AddContactViewController: UIViewController {
         
         contact.name = nameTextField.text ?? ""
         contact.surname = secondNameTextField.text ?? ""
-        contact.phoneNumber = formatPhoneNumber(for: phoneNumberTextField.text ?? "")
+        if let _ = Double(phoneNumberTextField.text ?? "") {
+            contact.phoneNumber = phoneNumberTextField.text ?? ""
+        }
         contact.mail = mailTextField.text ?? ""
-        contact.adress = adressTextField.text ?? ""
+        contact.address = addressTextField.text ?? ""
         return contact
     }
     
@@ -119,32 +119,38 @@ class AddContactViewController: UIViewController {
         delegate?.reloadRealmData()
         dismiss(animated: true)
     }
-    
-    private func formatPhoneNumber(for number: String) -> String {
-        let phoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        let mask = "+7 (XXX) XXX-XXXX"
-        var phoneNumberInMask = ""
-        var index = phoneNumber.startIndex
-        
-        for character in mask where index < phoneNumber.endIndex {
-            if character == "X" {
-                phoneNumberInMask.append(phoneNumber[index])
-                index = phoneNumber.index(after: index)
-            } else {
-                phoneNumberInMask.append(character)
-            }
-        }
-        return phoneNumberInMask
-    }
 }
 
 //MARK: - UITextFieldDelegate
 extension AddContactViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return false }
-        let newString = (text as NSString).replacingCharacters(in: range, with: string)
-        textField.text = formatPhoneNumber(for: newString)
-        return false
+        if textField == phoneNumberTextField {
+            guard let currentString = textField.text as? NSString else { return false}
+            let newString = currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= 10
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameTextField:
+            secondNameTextField.becomeFirstResponder()
+        case secondNameTextField:
+            phoneNumberTextField.becomeFirstResponder()
+        case phoneNumberTextField:
+            mailTextField.becomeFirstResponder()
+        case mailTextField:
+            addressTextField.becomeFirstResponder()
+        default:
+            saveButton()
+        }
+        return true
     }
 }
 

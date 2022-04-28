@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Телефонный справочник-->
+        <!--Контакты-->
         <scene sceneID="heZ-4m-RvJ">
             <objects>
                 <tableViewController id="aqj-bH-Ied" customClass="PhoneBookTableViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                             <outlet property="delegate" destination="aqj-bH-Ied" id="7To-r2-Rug"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Телефонный справочник" id="ebf-eO-xsG">
+                    <navigationItem key="navigationItem" title="Контакты" id="ebf-eO-xsG">
                         <barButtonItem key="leftBarButtonItem" title="Выход" id="9lq-bm-u5a">
                             <connections>
                                 <action selector="exitButton:" destination="aqj-bH-Ied" id="k3m-qA-GiL"/>
@@ -80,7 +80,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hIA-r7-Vgb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hIA-r7-Vgb">
                                         <rect key="frame" x="0.0" y="96" width="330" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -134,27 +134,42 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="854-f6-yPA">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="TbB-vl-Hvd" id="ilT-0E-OTQ"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите фамилию" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-2e-ErL">
                                         <rect key="frame" x="0.0" y="59" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="TbB-vl-Hvd" id="RT2-wm-Lsw"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите 10-ти значный номер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-oG-S2N">
                                         <rect key="frame" x="0.0" y="118" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="TbB-vl-Hvd" id="laW-Gg-m7w"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4k-TR-UcR">
                                         <rect key="frame" x="0.0" y="177" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="TbB-vl-Hvd" id="Xpz-8C-wt7"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите адрес" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKR-2u-eJg">
                                         <rect key="frame" x="0.0" y="236" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="TbB-vl-Hvd" id="I7g-37-96m"/>
+                                        </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="h3G-7b-Fce">
                                         <rect key="frame" x="0.0" y="295" width="330" height="35.666666666666686"/>
@@ -197,7 +212,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressTextField" destination="oKR-2u-eJg" id="tQs-BE-rzR"/>
+                        <outlet property="addressTextField" destination="oKR-2u-eJg" id="tQs-BE-rzR"/>
                         <outlet property="mailTextField" destination="N4k-TR-UcR" id="zVq-Ji-Lcw"/>
                         <outlet property="nameTextField" destination="854-f6-yPA" id="vaP-oo-w7m"/>
                         <outlet property="phoneNumberTextField" destination="fjL-oG-S2N" id="TLc-sn-6OH"/>

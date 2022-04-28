@@ -27,8 +27,26 @@ class ContactInfoViewController: UIViewController {
     //MARK: - Private Methods
     private func getContactInfo() {
         contactNameTitle.text = contact.fullName
-        phoneNumberTitle.text = !contact.phoneNumber.isEmpty ? ("Телефон: \(contact.phoneNumber)") : nil
+        let phoneNumber = formatPhoneNumber(for: contact.phoneNumber)
+        phoneNumberTitle.text = !contact.phoneNumber.isEmpty ? ("Телефон: \(phoneNumber)") : nil
         mailTitle.text = !contact.mail.isEmpty ? ("Почта: \(contact.mail)") : nil
-        adressTitle.text = !contact.adress.isEmpty ? ("Адрес: \(contact.adress)") : nil
+        adressTitle.text = !contact.address.isEmpty ? ("Адрес: \(contact.address)") : nil
+    }
+    
+    private func formatPhoneNumber(for number: String) -> String {
+        let phoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let mask = "+7 (XXX) XXX-XXXX"
+        var phoneNumberInMask = ""
+        var index = phoneNumber.startIndex
+        
+        for character in mask where index < phoneNumber.endIndex {
+            if character == "X" {
+                phoneNumberInMask.append(phoneNumber[index])
+                index = phoneNumber.index(after: index)
+            } else {
+                phoneNumberInMask.append(character)
+            }
+        }
+        return phoneNumberInMask
     }
 }
