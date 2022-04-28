@@ -19,21 +19,23 @@ class AddContactViewController: UIViewController {
     
     //MARK: - Private Properties
     private var sections: Results<SectionTitleForContact>!
-    private var contacts: Results<Contact>!
+    //private var contacts: Results<Contact>!
     private var createNew = true
     
     //MARK: - Public Properties
     var delegate: PhoneBookTableViewControllerDelegate?
+    var additingContact: Contact?
     
     //MARK: - Life cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRealm()
+        loadContactInfoForEdit()
     }
     
     //MARK: - IB Actions
     @IBAction func saveButton() {
-        saveNewContact()
+        saveContact()
     }
     
     @IBAction func cancelButton() {
@@ -43,25 +45,34 @@ class AddContactViewController: UIViewController {
     //MARK: - Private Methods
     private func loadRealm() {
         sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self)
-        contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
+        //      contacts = StorageManagerRealm.shared.realm.objects(Contact.self)
     }
     
-    private func createNewContact() -> Contact {
-        let newContact = Contact()
-        newContact.name = nameTextField.text ?? ""
-        newContact.surname = secondNameTextField.text ?? ""
-        newContact.phoneNumber = formatPhoneNumber(for: phoneNumberTextField.text ?? "")
-        newContact.mail = mailTextField.text ?? ""
-        newContact.adress = adressTextField.text ?? ""
-        return newContact
+    private func loadContactInfoForEdit() {
+        nameTextField.text = additingContact?.name
+        secondNameTextField.text = additingContact?.surname
+        phoneNumberTextField.text = additingContact?.phoneNumber
+        mailTextField.text = additingContact?.mail
+        adressTextField.text = additingContact?.adress
+    }
+    
+    private func createContact() -> Contact {
+        let contact = Contact()
+        
+        contact.name = nameTextField.text ?? ""
+        contact.surname = secondNameTextField.text ?? ""
+        contact.phoneNumber = formatPhoneNumber(for: phoneNumberTextField.text ?? "")
+        contact.mail = mailTextField.text ?? ""
+        contact.adress = adressTextField.text ?? ""
+        return contact
     }
     
     private func setSectionTitle(for contact: Contact) -> String {
-        var sectionTitleForNewContact = String(contact.surname.prefix(1).capitalized)
-        if let _ = Double(sectionTitleForNewContact) {
-            sectionTitleForNewContact = "#"
+        var sectionTitleForContact = String(contact.surname.prefix(1).capitalized)
+        if let _ = Double(sectionTitleForContact) {
+            sectionTitleForContact = "#"
         }
-        return sectionTitleForNewContact
+        return sectionTitleForContact
     }
     
     private func updateSectionTitle(for contact: Contact, in sectionTitle: String) {
@@ -82,15 +93,29 @@ class AddContactViewController: UIViewController {
         }
     }
     
-    private func saveNewContact() {
-        let newContact = createNewContact()
-        guard !newContact.name.isEmpty else { return }
-        guard !newContact.surname.isEmpty else { return }
+    private func removeAditingContact() {
+        guard let contactForRemove = additingContact else { return }
+        let sectionTitleOfRemovingContact = setSectionTitle(for: contactForRemove)
+        StorageManagerRealm.shared.delete(contactForRemove)
+        for section in sections {
+            if section.title == sectionTitleOfRemovingContact, section.containsContacts.isEmpty {
+                StorageManagerRealm.shared.delete(section)
+            }
+        }
+    }
+    
+    private func saveContact() {
+        let contact = createContact()
+        guard !contact.name.isEmpty else { return }
+        guard !contact.surname.isEmpty else { return }
         
-        let sectionTitle = setSectionTitle(for: newContact)
-        updateSectionTitle(for: newContact, in: sectionTitle)
-        createSectionTitle(for: newContact, with: sectionTitle)
+        let sectionTitle = setSectionTitle(for: contact)
+        updateSectionTitle(for: contact, in: sectionTitle)
+        createSectionTitle(for: contact, with: sectionTitle)
         
+        if additingContact != nil {
+            removeAditingContact()
+        }
         delegate?.reloadRealmData()
         dismiss(animated: true)
     }
@@ -122,5 +147,5 @@ extension AddContactViewController: UITextFieldDelegate {
         return false
     }
 }
-//
+
 

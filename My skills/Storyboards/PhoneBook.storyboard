@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PhoneBook-->
+        <!--Телефонный справочник-->
         <scene sceneID="heZ-4m-RvJ">
             <objects>
                 <tableViewController id="aqj-bH-Ied" customClass="PhoneBookTableViewController" customModule="My_skills" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                             <outlet property="delegate" destination="aqj-bH-Ied" id="7To-r2-Rug"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="PhoneBook" id="ebf-eO-xsG">
+                    <navigationItem key="navigationItem" title="Телефонный справочник" id="ebf-eO-xsG">
                         <barButtonItem key="leftBarButtonItem" title="Выход" id="9lq-bm-u5a">
                             <connections>
                                 <action selector="exitButton:" destination="aqj-bH-Ied" id="k3m-qA-GiL"/>
@@ -60,13 +60,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="SMQ-UA-BVt">
-                                <rect key="frame" x="30" y="88" width="330" height="33.666666666666657"/>
+                                <rect key="frame" x="30" y="98" width="330" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2Z8-yR-I5d">
-                                <rect key="frame" x="30" y="210" width="330" height="120"/>
+                                <rect key="frame" x="30" y="220" width="330" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kbd-rJ-y76">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="24"/>
@@ -92,7 +92,7 @@
                         <viewLayoutGuide key="safeArea" id="j6S-vg-NCK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SMQ-UA-BVt" firstAttribute="top" secondItem="j6S-vg-NCK" secondAttribute="top" id="2fe-oy-NE0"/>
+                            <constraint firstItem="SMQ-UA-BVt" firstAttribute="top" secondItem="j6S-vg-NCK" secondAttribute="top" constant="10" id="2fe-oy-NE0"/>
                             <constraint firstItem="j6S-vg-NCK" firstAttribute="trailing" secondItem="2Z8-yR-I5d" secondAttribute="trailing" constant="30" id="BNQ-tK-qIJ"/>
                             <constraint firstItem="2Z8-yR-I5d" firstAttribute="leading" secondItem="j6S-vg-NCK" secondAttribute="leading" constant="30" id="YhB-lt-XZh"/>
                             <constraint firstItem="2Z8-yR-I5d" firstAttribute="top" secondItem="SMQ-UA-BVt" secondAttribute="bottom" constant="88.329999999999998" id="fhD-Db-yc1"/>
@@ -141,7 +141,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите 10- ти значный номер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-oG-S2N">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите 10-ти значный номер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-oG-S2N">
                                         <rect key="frame" x="0.0" y="118" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>

@@ -63,9 +63,15 @@ class PhoneBookTableViewController: UITableViewController {
             }
         }
         
-        deleteAction.backgroundColor = .red
+        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
+            self.performSegue(withIdentifier: "addCell", sender: indexPath)
+            isDone(true)
+        }
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        deleteAction.backgroundColor = .red
+        editAction.backgroundColor = .orange
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
     //MARK: - Navigation
@@ -73,6 +79,10 @@ class PhoneBookTableViewController: UITableViewController {
         if segue.identifier == "addCell" {
             guard let addContactVC = segue.destination as? AddContactViewController else {return}
             addContactVC.delegate = self
+            if let indexPath = sender as? IndexPath {
+                let contact = getFilteredContactIndexPath(indexPath)
+                addContactVC.additingContact = contact
+            }
         } else {
             guard let contactVC = segue.destination as? ContactInfoViewController else { return }
             guard let indexPath = tableView.indexPathForSelectedRow else { return }

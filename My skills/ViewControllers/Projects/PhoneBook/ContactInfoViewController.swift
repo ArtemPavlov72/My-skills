@@ -15,7 +15,6 @@ class ContactInfoViewController: UIViewController {
     @IBOutlet weak var mailTitle: UILabel!
     @IBOutlet weak var adressTitle: UILabel!
     
-    
     //MARK: - Public Properties
     var contact: Contact!
     
