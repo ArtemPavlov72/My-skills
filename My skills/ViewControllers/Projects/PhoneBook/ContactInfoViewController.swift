@@ -27,10 +27,11 @@ class ContactInfoViewController: UIViewController {
     //MARK: - Private Methods
     private func getContactInfo() {
         contactNameTitle.text = contact.fullName
-        let phoneNumber = formatPhoneNumber(for: contact.phoneNumber)
-        phoneNumberTitle.text = !contact.phoneNumber.isEmpty ? ("Телефон: \(phoneNumber)") : nil
         mailTitle.text = !contact.mail.isEmpty ? ("Почта: \(contact.mail)") : nil
         adressTitle.text = !contact.address.isEmpty ? ("Адрес: \(contact.address)") : nil
+        
+        let phoneNumber = formatPhoneNumber(for: contact.phoneNumber)
+        phoneNumberTitle.text = !contact.phoneNumber.isEmpty ? ("Телефон: \(phoneNumber)") : nil
     }
     
     private func formatPhoneNumber(for number: String) -> String {

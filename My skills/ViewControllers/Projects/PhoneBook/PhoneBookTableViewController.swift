@@ -16,7 +16,6 @@ class PhoneBookTableViewController: UITableViewController {
     
     //MARK: - Private Properties
     private var sections: Results<SectionTitleForContact>!
-    private var contacts: Results<Contact>!
     
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -105,7 +104,6 @@ class PhoneBookTableViewController: UITableViewController {
     
     private func loadRealm() {
         sections = StorageManagerRealm.shared.realm.objects(SectionTitleForContact.self).sorted(byKeyPath: "title", ascending: true)
-        contacts = StorageManagerRealm.shared.realm.objects(Contact.self).sorted(byKeyPath: "surname", ascending: true)
     }
     
     private func getFilteredContactIndexPath(_ indexPath: IndexPath) -> Contact {
