@@ -3,4 +3,114 @@
    uuid = "3F46090F-57C0-4F2E-BAF3-4763875F35A7"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "fetchHeroesWithAsync(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4 - b7389975f8c955ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_skills.CharactersListController.fetchHeroesWithAsync(from: Swift.String) -&gt; ()"
+                  moduleName = "My skills"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SWIFT/Projects/My%20slills/My-skills/My%20skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4 - d9ba706901e11b1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in My_skills.CharactersListController.fetchHeroesWithAsync(from: Swift.String) -&gt; ()"
+                  moduleName = "My skills"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SWIFT/Projects/My%20slills/My-skills/My%20skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4 - ba546a052b2babb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in My_skills.CharactersListController.fetchHeroesWithAsync(from: Swift.String) -&gt; ()"
+                  moduleName = "My skills"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SWIFT/Projects/My%20slills/My-skills/My%20skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4 - dfbef21dcbc88ec4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in My_skills.CharactersListController.fetchHeroesWithAsync(from: Swift.String) -&gt; ()"
+                  moduleName = "My skills"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SWIFT/Projects/My%20slills/My-skills/My%20skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4 - eba7924ff75453b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in My_skills.CharactersListController.fetchHeroesWithAsync(from: Swift.String) -&gt; ()"
+                  moduleName = "My skills"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SWIFT/Projects/My%20slills/My-skills/My%20skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "710FDC4F-99B1-4B40-8DFB-92CBC7B7D6E4 - 337e95ab1abf9fbc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in My_skills.CharactersListController.fetchHeroesWithAsync(from: Swift.String) -&gt; ()"
+                  moduleName = "My skills"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SWIFT/Projects/My%20slills/My-skills/My%20skills/ViewControllers/Projects/RickAndMorty/CharactersListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
