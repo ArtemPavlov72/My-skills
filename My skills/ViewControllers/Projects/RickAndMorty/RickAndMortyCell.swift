@@ -37,6 +37,9 @@ class RickAndMortyCell: UITableViewCell {
             imageFetchWithAlamofire(from: url)
         case .withCache:
             imageFetchWithCached(from: url)
+        case .withAsyncAwait:
+            spinnerView = showSpinner(in: heroImage)
+            imageFetchAutomatic(from: url)
         }
     }
     

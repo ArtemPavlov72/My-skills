@@ -75,7 +75,7 @@ class CharactersListController: UITableViewController {
         definesPresentationContext = true
     }
     
-    /* private func automaticFetchHeroes(from url: String) {
+    private func fetchHeroesWithAsync(from url: String) {
         Task {
             do {
                 rickAndMorty = try await NetworkManager.shared.fetchDataAsync(from: url)
@@ -84,7 +84,7 @@ class CharactersListController: UITableViewController {
                 print(error)
             }
         }
-    } */
+    }
     
     private func automaticFetchHeroes(from url: String) {
         NetworkManager.shared.fetchData(from: url) { result in
@@ -118,6 +118,8 @@ class CharactersListController: UITableViewController {
             fetchHeroesWitAlamofire(from: url)
         case .withCache:
             automaticFetchHeroes(from: url)
+        case .withAsyncAwait:
+            fetchHeroesWithAsync(from: url)
         }
     }
 }

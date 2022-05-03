@@ -42,6 +42,8 @@ class CharacterDetailsViewController: UIViewController {
             getImageWithAlamofire(from: url)
         case .withCache:
             getImageWithCache(from: url)
+        case .withAsyncAwait:
+            getImage(from: url)
         }
     }
     

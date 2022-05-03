@@ -104,6 +104,6 @@ enum Link: String {
 enum FetchingMethod {
     case automatic
     case withAlamofire
-    //case withAsyncAwait
     case withCache
+    case withAsyncAwait
 }

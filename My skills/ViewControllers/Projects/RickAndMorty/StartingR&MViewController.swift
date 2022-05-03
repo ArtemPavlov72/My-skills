@@ -26,8 +26,10 @@ class StartingRMViewController: UIViewController {
             perfomSegueUsing(FetchingMethod.automatic)
         case 2:
             perfomSegueUsing(FetchingMethod.withAlamofire)
-        default:
+        case 3:
             perfomSegueUsing(FetchingMethod.withCache)
+        default:
+            perfomSegueUsing(FetchingMethod.withAsyncAwait)
         }
     }
     
