@@ -42,6 +42,19 @@ class NetworkManager {
         } .resume()
     }
     
+    func fetchDataAsync(from url: String) async throws -> RickAndMorty {
+        guard let url = URL(string: url) else {
+            throw NetworkError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoder = JSONDecoder()
+        guard let rickAndMorty = try? decoder.decode(RickAndMorty.self, from: data) else {
+            throw NetworkError.decodingError
+        }
+        return rickAndMorty
+    }
+    
     func fetchDataWithAlamofire(from url: String, completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
         AF.request(url)
             .validate()

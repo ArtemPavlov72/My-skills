@@ -75,6 +75,17 @@ class CharactersListController: UITableViewController {
         definesPresentationContext = true
     }
     
+    /* private func automaticFetchHeroes(from url: String) {
+        Task {
+            do {
+                rickAndMorty = try await NetworkManager.shared.fetchDataAsync(from: url)
+                tableView.reloadData()
+            } catch {
+                print(error)
+            }
+        }
+    } */
+    
     private func automaticFetchHeroes(from url: String) {
         NetworkManager.shared.fetchData(from: url) { result in
             switch result {
@@ -85,7 +96,7 @@ class CharactersListController: UITableViewController {
                 print(error)
             }
         }
-    }
+    } 
     
     private func fetchHeroesWitAlamofire(from url: String) {
         NetworkManager.shared.fetchDataWithAlamofire(from: url) { result in
