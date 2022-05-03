@@ -16,8 +16,8 @@ class TaskTableViewController: UITableViewController {
     
     //MARK: - Private Properties
     private let cellID = "cell"
-    private var currentTasks: [Task] = []
-    private var completedTasks: [Task] = []
+    private var currentTasks: [TaskCD] = []
+    private var completedTasks: [TaskCD] = []
     
     
     //MARK: - Public Properties
@@ -129,7 +129,7 @@ class TaskTableViewController: UITableViewController {
     }
     
     private func loadTasks() {
-        guard let taskLists = taskList.tasks?.allObjects as? [Task] else {return}
+        guard let taskLists = taskList.tasks?.allObjects as? [TaskCD] else {return}
         currentTasks = taskLists.filter({ task in
             task.isComplete == false
         })
@@ -153,7 +153,7 @@ extension TaskTableViewController: TaskTableViewControllerDelegate {
 
 //MARK: - Alert Controller
 extension TaskTableViewController {
-    private func showAlert(task: Task?, completion: (() -> Void)?) {
+    private func showAlert(task: TaskCD?, completion: (() -> Void)?) {
         let alert = UIAlertController.createAlert(withTitle: "Редактируем название заметки", andMessage: "Введите новое название")
         
         alert.taskAction(task: task) { newValue, note in

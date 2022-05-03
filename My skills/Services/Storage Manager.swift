@@ -64,25 +64,25 @@ class StorageManager {
     
     //MARK: - Private Methods of Task
     func saveTask(_ taskName: String, note text: String, to taskListed: TaskList?) {
-        let task = Task(context: viewContext)
+        let task = TaskCD(context: viewContext)
         task.title = taskName
         task.note = text
         task.taskList = taskListed
         saveContext()
     }
     
-    func editTask(_ task: Task, withNewName name: String, andNote note: String) {
+    func editTask(_ task: TaskCD, withNewName name: String, andNote note: String) {
         task.title = name
         task.note = note
         saveContext()
     }
     
-    func deleteTask(_ task: Task) {
+    func deleteTask(_ task: TaskCD) {
         viewContext.delete(task)
         saveContext()
     }
     
-    func addDoneFor(_ task: Task) {
+    func addDoneFor(_ task: TaskCD) {
         task.isComplete.toggle()
         saveContext()
     }

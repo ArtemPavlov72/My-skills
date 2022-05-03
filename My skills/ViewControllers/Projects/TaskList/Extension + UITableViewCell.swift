@@ -9,7 +9,7 @@ import UIKit
 
 extension UITableViewCell {
     func configure(with taskList: TaskList) {
-        guard let taskLists = taskList.tasks?.allObjects as? [Task] else { return }
+        guard let taskLists = taskList.tasks?.allObjects as? [TaskCD] else { return }
         
         let currentTasks = taskLists.filter { task in
             task.isComplete == false

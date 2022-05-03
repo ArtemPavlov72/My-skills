@@ -30,7 +30,7 @@ extension UIAlertController {
         }
     }
     
-    func taskAction(task: Task?, completion: @escaping(String, String) -> Void) {
+    func taskAction(task: TaskCD?, completion: @escaping(String, String) -> Void) {
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
             guard let textValue = self.textFields?.first?.text else { return }
             guard !textValue.isEmpty else { return }
