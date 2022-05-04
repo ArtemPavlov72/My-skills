@@ -47,7 +47,9 @@ class NetworkManager {
             throw NetworkError.invalidURL
         }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        guard let (data, _) = try? await URLSession.shared.data(from: url) else {
+            throw NetworkError.noData
+        }
         let decoder = JSONDecoder()
         guard let rickAndMorty = try? decoder.decode(RickAndMorty.self, from: data) else {
             throw NetworkError.decodingError
