@@ -16,14 +16,10 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
+        title = self.tabBar.selectedItem?.title
     }
     
     //Dynamic title for tabBar
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = self.tabBar.selectedItem?.title
-    }
-    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.navigationItem.title = item.title
     }
