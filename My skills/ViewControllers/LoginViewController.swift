@@ -15,14 +15,14 @@ class LoginViewController: UIViewController {
     //MARK: - Private Properties
     private var visitor = Visitor(name: "")
     
-    //первый цвет для градиента
+    
     private let topColor = UIColor(
         red: 0/255,
         green: 150/255,
         blue: 180/255,
         alpha: 0.1
     )
-    //второй цвет для градиента
+    
     private let bottomColor = UIColor(
         red: 130/255,
         green: 0/255,
