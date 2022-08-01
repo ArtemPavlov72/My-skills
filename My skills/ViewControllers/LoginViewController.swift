@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     //MARK: - Private Properties
     private var visitor = Visitor(name: "")
     
-    //5
     private let topColor = UIColor(
         red: 0/255,
         green: 150/255,
