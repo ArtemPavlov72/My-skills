@@ -28,6 +28,7 @@ class CharactersListController: UITableViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.largeTitleDisplayMode = .always
         tableView.rowHeight = 90
         setupSearchController()

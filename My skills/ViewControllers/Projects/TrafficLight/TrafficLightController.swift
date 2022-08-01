@@ -13,7 +13,6 @@ class TrafficLightController: UIViewController {
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
-    
     @IBOutlet var startButton: UIButton!
     
     // MARK: - Private Properties
