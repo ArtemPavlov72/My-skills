@@ -13,7 +13,6 @@ class TrafficLightController: UIViewController {
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
-    
     @IBOutlet var startButton: UIButton!
     
     // MARK: - Private Properties
@@ -40,8 +39,8 @@ class TrafficLightController: UIViewController {
     // MARK: - IB Actions
     @IBAction func startButtonPressed(_ sender: UIButton) {
         sender.pulsate()
-        if startButton.currentTitle == "НАЧАТЬ" {
-            startButton.setTitle("ДАЛЬШЕ", for: .normal)
+        if startButton.currentTitle == "START" {
+            startButton.setTitle("NEXT", for: .normal)
         }
         
         switch currentLight {

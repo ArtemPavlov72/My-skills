@@ -49,20 +49,20 @@ class TaskListTableViewController: UITableViewController {
         
         let taskList = taskLists[indexPath.row]
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             self.taskLists.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             StorageManager.shared.deleteTaskList(taskList)
         }
         
-        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { _, _, isDone in
             self.showAlert(taskList: taskList) {
                 tableView.reloadRows(at: [indexPath], with: .automatic)
             }
             isDone(true)
         }
         
-        let doneAction = UIContextualAction(style: .normal, title: "Выполнить") { _, _, isDone in
+        let doneAction = UIContextualAction(style: .normal, title: "Perfom") { _, _, isDone in
             StorageManager.shared.addDoneFor(taskList)
             tableView.reloadRows(at: [indexPath], with: .automatic)
             
@@ -86,7 +86,7 @@ class TaskListTableViewController: UITableViewController {
     
     // MARK: - Private Methods
     private func setupNavigationBar() {
-        title = "Списки задач"
+        title = "Task list"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
@@ -129,7 +129,7 @@ extension TaskListTableViewController: TaskListViewControllerDelegate {
 //MARK: - Alert Controller
 extension TaskListTableViewController {
     private func showAlert(taskList: TaskList?, completion: (() -> Void)?) {
-        let alert = UIAlertController.createAlert(withTitle: "Редактируем название списка", andMessage: "Введите новое название")
+        let alert = UIAlertController.createAlert(withTitle: "Editing the list name", andMessage: "Enter a new list name")
         
         alert.taskListAction(taskList: taskList) { taskName in
             if let taskList = taskList, let completion = completion {

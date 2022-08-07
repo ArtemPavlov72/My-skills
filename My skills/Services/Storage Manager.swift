@@ -6,7 +6,6 @@
 //
 
 import CoreData
-import SwiftUI
 import RealmSwift
 
 class StorageManager {

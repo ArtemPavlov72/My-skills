@@ -13,14 +13,14 @@ class AddInfoViewController: UIViewController {
     //MARK: - Private Properties
     private lazy var taskTextField: UITextField = {
         let textField = UITextField()
-        isTaskList ? (textField.placeholder = "Новый список") : (textField.placeholder = "Новая задача")
+        isTaskList ? (textField.placeholder = "New list") : (textField.placeholder = "New task")
         textField.borderStyle = .roundedRect
         return textField
     }()
     
     private lazy var taskNoteTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Описание задачи"
+        textField.placeholder = "Task Description"
         textField.borderStyle = .roundedRect
         return textField
     }()
@@ -29,7 +29,7 @@ class AddInfoViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .systemGreen
         button.alpha = 0.8
-        button.setTitle("Cохранить", for: .normal)
+        button.setTitle("Save", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
@@ -40,7 +40,7 @@ class AddInfoViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .systemRed
         button.alpha = 0.8
-        button.setTitle("Отмена", for: .normal)
+        button.setTitle("Cancel", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)

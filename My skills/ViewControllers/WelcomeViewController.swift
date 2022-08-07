@@ -28,8 +28,8 @@ class WelcomeViewController: UIViewController {
     }
     
     private func getWelcomeInfo() {
-        welcomeLabel.text = "Привет, \(visitor.name.capitalized)👋"
+        welcomeLabel.text = "Hi, \(visitor.name.capitalized)👋"
         developerPhoto.image = UIImage(named: "pavlov_artem")
-        welcomeTextLabel.text = "Меня зовут Артем, и это мое тестовое приложение, где я пробую новые скилы в разработке SWIFT 👨🏻‍🏫... На следующей вкладке ты найдешь некоторые мои проекты 😇"
+        welcomeTextLabel.text = "My name is Artem, and i'm glad to see you in my test app 👨🏻‍🏫... On the next tab you will find some of my projects😇"
     }
 }

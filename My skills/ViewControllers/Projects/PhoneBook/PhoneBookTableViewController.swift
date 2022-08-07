@@ -52,7 +52,7 @@ class PhoneBookTableViewController: UITableViewController {
         let contactsSection = sections[indexPath.section]
         let contact = contactsSection.containsContacts.sorted(byKeyPath: "surname", ascending: true)[indexPath.row]
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             StorageManagerRealm.shared.delete(contact)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
@@ -62,7 +62,7 @@ class PhoneBookTableViewController: UITableViewController {
             }
         }
         
-        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { _, _, isDone in
             self.performSegue(withIdentifier: "addCell", sender: indexPath)
             isDone(true)
         }

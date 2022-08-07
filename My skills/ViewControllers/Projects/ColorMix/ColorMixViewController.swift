@@ -2,7 +2,7 @@
 //  ColorMixViewController.swift
 //  My skills
 //
-//  Created by iMac on 07.02.2022.
+//  Created by Artem Pavlov on 07.02.2022.
 //
 
 import UIKit
@@ -148,7 +148,7 @@ extension ColorMixViewController: UITextFieldDelegate {
             setColor()
             return
         }
-        showAlert(title: "Неправильный формат", message: "Пожалуйста, введите корректное число")
+        showAlert(title: "Wrong format!", message: "Please, enter a valid number")
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

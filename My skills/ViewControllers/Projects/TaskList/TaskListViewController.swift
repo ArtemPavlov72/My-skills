@@ -38,7 +38,7 @@ class TaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        section == 0 ? "Текущие задачи" : "Завершенные задачи"
+        section == 0 ? "Current tasks" : "Completed tasks"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +59,7 @@ class TaskTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let task = indexPath.section == 0 ? currentTasks[indexPath.row] : completedTasks[indexPath.row]
         
-        let deleteAction = UIContextualAction(style: .normal, title: "Удалить") { _, _, _ in
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { _, _, _ in
             if indexPath.section == 0 {
                 self.currentTasks.remove(at: indexPath.row)
             } else {
@@ -70,14 +70,14 @@ class TaskTableViewController: UITableViewController {
             StorageManager.shared.deleteTask(task)
         }
         
-        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { _, _, isDone in
             self.showAlert(task: task) {
                 tableView.reloadRows(at: [indexPath], with: .automatic)
             }
             isDone(true)
         }
         
-        let doneButtonTitle = indexPath.section == 0 ? "Завершить" : "Восстановить"
+        let doneButtonTitle = indexPath.section == 0 ? "Finish" : "Reestablish"
         
         let doneAction = UIContextualAction(style: .normal, title: doneButtonTitle) { _, _, isDone in
             
@@ -154,7 +154,7 @@ extension TaskTableViewController: TaskTableViewControllerDelegate {
 //MARK: - Alert Controller
 extension TaskTableViewController {
     private func showAlert(task: TaskCD?, completion: (() -> Void)?) {
-        let alert = UIAlertController.createAlert(withTitle: "Редактируем название заметки", andMessage: "Введите новое название")
+        let alert = UIAlertController.createAlert(withTitle: "Editing the note title", andMessage: "Enter a new note name")
         
         alert.taskAction(task: task) { newValue, note in
             if let task = task, let completion = completion {

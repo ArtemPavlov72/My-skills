@@ -29,7 +29,7 @@ class ColorViewController: UIViewController {
     // MARK: - Private Methods
     private func changeColorButton() {
         let changeButton = UIBarButtonItem(
-            title: "Редактировать",
+            title: "Edit color",
             style: .plain,
             target: self,
             action: #selector(changeColorButtonAction)
