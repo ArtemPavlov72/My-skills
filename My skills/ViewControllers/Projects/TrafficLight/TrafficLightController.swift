@@ -9,7 +9,7 @@ import UIKit
 
 class TrafficLightController: UIViewController {
     
-    // MARK: - IB Outlets
+    // MARK: - IB Outlets 
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
