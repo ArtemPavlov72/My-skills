@@ -79,12 +79,12 @@ struct Hero: Decodable {
     
     var description: String {
     """
-    Имя: \(name)
-    Статус персонажа: \(status)
-    Раса: \(species)
-    Пол: \(gender)
-    Место рождения: \(origin.name)
-    Текущее местоположение: \(location.name)
+    Name: \(name)
+    Status: \(status)
+    Race: \(species)
+    Gender: \(gender)
+    BirthPlace: \(origin.name)
+    Current location: \(location.name)
     """
     }
 }
