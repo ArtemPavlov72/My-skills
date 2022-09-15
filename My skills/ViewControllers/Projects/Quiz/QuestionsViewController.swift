@@ -87,7 +87,7 @@ extension QuestionsViewController {
         let answersProgress = Float(questionIndex) / Float(questions.count)
         questionProgressView.setProgress(answersProgress, animated: true)
         
-        title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
+        title = "Question № \(questionIndex + 1) of \(questions.count)"
         
         showCurrentAnswers(for: currentQuestion.type)
     }
