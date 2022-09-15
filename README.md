@@ -22,7 +22,7 @@ In this App you find next projects:
 <img src="https://github.com/ArtemPavlov72/Screenshots/blob/main/TrafficLight.png" width="200"> 
 
 2. About me - quiz. Choose some answers for questions about me.
-<img src="https://github.com/ArtemPavlov72/Screenshots/blob/main/Quiz.png" width="200"> 
+<img src="https://github.com/ArtemPavlov72/Screenshots/blob/main/questions.png" width="200"> 
 
 3. ColorMix - mix three colors to get one
 <img src="https://github.com/ArtemPavlov72/Screenshots/blob/main/ColorMIX.png" width="200"> 
